@@ -57,6 +57,9 @@ Timber::$autoescape = false;
  * We're going to configure our theme inside of a subclass of Timber\Site
  * You can move this to its own file and include here via php's include("MySite.php")
  */
+
+require_once('cpt.php'); 
+
 class StarterSite extends Timber\Site {
 	/** Add timber support. */
 	public function __construct() {
@@ -69,8 +72,10 @@ class StarterSite extends Timber\Site {
 	}
 	/** This is where you can register custom post types. */
 	public function register_post_types() {
-
-	}
+	
+	}	
+	
+	
 	/** This is where you can register custom taxonomies. */
 	public function register_taxonomies() {
 
