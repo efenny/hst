@@ -1,0 +1,337 @@
+// Migrants - Website Style Sheet
+.row {
+    overflow: hidden;
+
+    &.page-title {
+        h1 {
+            max-width: 36rem;
+
+            @include breakpoint($tablet-break) {
+                max-width: 27rem;
+            }
+
+
+            @include breakpoint($mobile-break) {
+                max-width: 20rem;
+            }
+        }
+    }
+
+    &.intro {
+        .col {
+            @include text-width;
+        }
+
+        &::before {
+            content: '';
+            width: $col-vw * 10;
+            height: 2px;
+            background: $gray;
+            position: absolute;
+            bottom: 0;
+            left: $col-vw;
+        }
+    }
+
+    &.website {
+        @include side-gutters;
+
+        .col {
+            &.info {
+                .col-inner {
+                    padding-top: $standard / 2;
+
+                    @include breakpoint($tablet-break) {
+                        display: flex;
+                        justify-content: center;
+                        padding-top: 0;
+                    }
+
+
+                    .text-wrapper {
+                        padding: 0;
+                        padding-bottom: $standard / 2;
+                        width: $col-vw * 3;
+                        margin-left: 0 !important;
+
+                        @include breakpoint($laptop-break-sml) {
+                            width: $col-vw * 3.5;
+                        }
+
+
+                        @include breakpoint($tablet-break) {
+                            padding-top: 0;
+
+                            @include text-width;
+                        }
+                    }
+                }
+            }
+        }
+
+        .img-wrapper {
+            @include breakpoint($tablet-break) {
+                padding: 0 ($col-vw / 2);
+            }
+
+
+            @include breakpoint($mobile-break) {
+                padding: 0;
+            }
+        }
+    }
+
+    &.mobile {
+        @include side-gutters-lrg;
+
+        .image-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            @include breakpoint($mobile-break) {
+                justify-content: center;
+            }
+
+
+            .image-item {
+                width: $col-vw * 2 + $col-vw / 3;
+
+                @include breakpoint($tablet-break) {
+                    width: $col-vw * 3;
+                }
+
+
+                @include breakpoint($mobile-break) {
+                    width: $col-vw * 8;
+                }
+
+
+                @for $i from 1 through 2 {
+                    &:nth-child(#{$i + 1}) {
+                        @include breakpoint($mobile-break) {
+                            transition-delay: 0s !important;
+                        }
+
+
+                        margin-top: $col-vw / 2 * $i;
+                        padding-top: 0;
+                        transition-delay: (0.3s * $i) !important;
+                    }
+
+                    @include breakpoint($tablet-break) {
+                        &:nth-child(#{$i + 1}) {
+                            margin-top: $col-vw / 3 * 2 * $i;
+                            padding-top: 0;
+                        }
+                    }
+
+
+                    @include breakpoint($mobile-break) {
+                        &:nth-child(#{$i + 1}) {
+                            margin-top: $col-vw * 2;
+                            padding-top: 0;
+                        }
+                    }
+                }
+
+                img {
+                    @include box-shadow;
+                }
+            }
+        }
+    }
+
+    &.background {
+        height: $col-vw * 5;
+        background-size: cover !important;
+        background-position: center !important;
+
+        @include breakpoint($laptop-break) {
+            height: $col-vw * 6.5;
+        }
+
+
+        @include breakpoint($tablet-break) {
+            height: $col-vw * 9.5;
+        }
+
+
+        @include breakpoint($mobile-break) {
+            height: $col-vw * 10;
+        }
+    }
+
+    &.responsive-columns {
+        padding-left: ($col-vw * 2) !important;
+        padding-right: ($col-vw * 2) !important;
+
+        @include breakpoint($tablet-break) {
+            padding-left: ($col-vw * 1) !important;
+            padding-right: ($col-vw * 1) !important;
+        }
+
+
+        @include breakpoint($mobile-break) {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    }
+
+    &.typography-image {
+        padding-left: ($col-vw * 3) !important;
+        padding-right: ($col-vw * 3) !important;
+
+        @include breakpoint($laptop-break) {
+            padding-left: ($col-vw * 2) !important;
+            padding-right: ($col-vw * 2) !important;
+        }
+
+
+        @include breakpoint($tablet-break) {
+            padding-left: ($col-vw * 1) !important;
+            padding-right: ($col-vw * 1) !important;
+        }
+    }
+
+    &.flow-chart {
+        padding-left: ($col-vw * 3) !important;
+        padding-right: ($col-vw * 3) !important;
+
+        @include breakpoint($tablet-break) {
+            padding-left: ($col-vw * 2) !important;
+            padding-right: ($col-vw * 2) !important;
+        }
+
+
+        @include breakpoint($mobile-break) {
+            padding-left: ($col-vw * 1) !important;
+            padding-right: ($col-vw * 1) !important;
+        }
+    }
+
+    &.phase-one {
+        @include s-padding-bottom($standard);
+
+        &::before {
+            content: '';
+            width: 2px;
+            height: $col-vw * 2.25;
+            position: absolute;
+            background: $black;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            display: none;
+        }
+    }
+
+    &.phase-one,
+    &.phase-two {
+        padding-left: ($col-vw * 2) !important;
+        padding-right: ($col-vw * 2) !important;
+
+        @include breakpoint($tablet-break) {
+            padding-left: ($col-vw * 1) !important;
+            padding-right: ($col-vw * 1) !important;
+        }
+
+
+        h2 {
+            @include s-margin-bottom($standard / 2);
+        }
+    }
+
+    &.color {
+        @include breakpoint($tablet-break) {
+            padding-left: ($col-vw * 2) !important;
+            padding-right: ($col-vw * 2) !important;
+        }
+
+
+        @include breakpoint($mobile-break) {
+            padding-left: $col-vw !important;
+            padding-right: $col-vw !important;
+        }
+
+
+        .col-inner {
+            display: flex;
+            justify-content: center;
+
+            .color-wrapper {
+                display: flex;
+                justify-content: space-between;
+                width: $col-vw * 5;
+
+                @include breakpoint($tablet-break) {
+                    width: $col-vw * 8;
+                }
+
+
+                @include breakpoint($tablet-break) {
+                    width: $col-vw * 10;
+                }
+
+
+                .colour-item {
+                    width: $col-vw;
+                    display: flex;
+                    align-items: flex-end;
+                    height: $col-vw * 1.5;
+
+                    @for $i from 1 through 5 {
+                        &:nth-child(#{$i}) {
+                            transition-delay: 0.3s * $i;
+
+                            .text-wrapper {
+                                transition-delay: 0.3s * $i + 0.95;
+                            }
+                        }
+                    }
+
+                    @include breakpoint($tablet-break) {
+                        width: $col-vw * 2;
+                        height: $col-vw * 3;
+                    }
+
+
+                    @include breakpoint($mobile-break) {
+                        height: $col-vw * 3.5;
+                        width: $col-vw * 3;
+                    }
+
+
+                    @include breakpoint($mobile-break-sml) {
+                        height: $col-vw * 4.25;
+                        width: $col-vw * 3;
+                    }
+
+
+                    &:hover {
+                        .text-wrapper {
+                            opacity: 1;
+                        }
+                    }
+
+                    .text-wrapper {
+                        width: 100%;
+                        padding: 1rem;
+                        background: rgba(255, 255, 255, 0.25);
+                        transition: $transition-slow;
+
+                        @include breakpoint($mobile-break) {
+                            padding: 0.5rem;
+                        }
+
+
+                        p {
+                            color: $white;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

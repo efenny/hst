@@ -1,0 +1,103 @@
+// Home Style Sheet
+.row {
+    &.design {
+        padding-left: ($col-vw / 4 * 3) !important;
+        padding-right: ($col-vw / 4 * 3) !important;
+
+        @include padding-top($col-vw / 4);
+        @include padding-bottom($col-vw / 4);
+
+        .row-inner {
+            display: block;
+
+            .case-study {
+                width: $col-vw * 4.75;
+                padding-bottom: $col-vw / 2;
+                margin: 0 calc(#{$col-vw / 4} - 4px);
+
+                @include breakpoint($tablet-break) {
+                    padding-bottom: $col-vw / 3;
+                }
+
+
+                @include breakpoint($mobile-break) {
+                    padding-bottom: $col-vw / 2;
+                    width: $col-vw * 10;
+                }
+
+
+                a {
+                    &:hover {
+                        .bg {
+                            transform: scale(1);
+                        }
+                    }
+
+                    .case-study-inner {
+                        .bg {
+                            transition: $transition-tile;
+                            width: 100%;
+                            height: $col-vw * 3.25;
+                            background-size: cover !important;
+                            background-position: center !important;
+                            -webkit-perspective: 1000;
+                            -webkit-backface-visibility: hidden;
+                            will-change: transform;
+
+                            &:hover {
+                                transform: scale(0.9675) rotate(0.02deg);
+                            }
+
+                            @include breakpoint($tablet-break) {
+                                height: $col-vw * 3.5;
+                            }
+
+
+                            @include breakpoint($mobile-break) {
+                                height: $col-vw * 6.5;
+                            }
+                        }
+
+                        .info {
+                            text-align: center;
+                            padding: 2.5rem;
+
+                            @include breakpoint($tablet-break) {
+                                padding: 1.5rem;
+                            }
+
+
+                            h3 {
+                                margin-bottom: 1rem;
+                                position: relative;
+                                display: inline-block;
+                                width: auto;
+                                overflow: hidden;
+                            }
+                        }
+                    }
+                }
+
+                &.blue-ocean,
+                &.franciscan-friars {
+                    a {
+                        .case-study-inner {
+                            .bg {
+                                height: $col-vw * 6.25;
+
+                                @include breakpoint($tablet-break) {
+                                    height: $col-vw * 6.5;
+                                }
+
+
+                                @include breakpoint($mobile-break) {
+                                    height: $col-vw * 12.5;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

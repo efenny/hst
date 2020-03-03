@@ -1,0 +1,108 @@
+// Typography Style Sheet
+html {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+
+    @include breakpoint($tablet-break) {
+        font-size: 16px;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        font-size: 14px;
+    }
+}
+
+body {
+    font: $body-font;
+    font-size: 100%;
+    color: $color-p;
+    margin: 0;
+    padding: 0;
+    width: calc(100vw - (100vw - 100%));
+
+    // overflow: hidden;
+
+    // position: relative;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    &.visited,
+    &.first-visit {
+        #main {
+            opacity: 1;
+        }
+    }
+
+    #main {
+        opacity: 0;
+        transition: $transition;
+    }
+}
+
+video {
+    width: 100%;
+}
+
+h1 {
+    @include breakpoint($tablet-break) {
+        font-size: 3.5rem;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        font-size: 2.5rem;
+    }
+}
+
+h2 {
+    @include breakpoint($tablet-break) {
+        font-size: 2rem;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        font-size: 1.8rem;
+    }
+}
+
+h3 {
+    @include breakpoint($tablet-break) {
+        font-size: 1.125rem;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        font-size: 1.15rem;
+    }
+}
+
+h4 {
+    @include breakpoint($tablet-break) {
+        font-size: 1.25rem;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        font-size: 1.5rem;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    color: $color1;
+    -webkit-font-smoothing: antialiased;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+    text-decoration: none;
+}

@@ -1,0 +1,100 @@
+// Retouching Style Sheet
+.row {
+    &.pre {
+        padding-left: ($col-vw / 4 * 2.75) !important;
+        padding-right: ($col-vw / 4 * 2.75) !important;
+
+        .col-inner {
+            text-align: center;
+
+            .text-wrapper {
+                padding-top: $col-vw / 2;
+                padding-bottom: $col-vw;
+
+                @include breakpoint($tablet-break) {
+                    padding-bottom: $col-vw * 1.5;
+                }
+
+
+                @include breakpoint($mobile-break) {
+                    padding-bottom: $col-vw;
+                }
+            }
+        }
+    }
+
+    &.retouching {
+        padding-left: ($col-vw / 4 * 2.75) !important;
+        padding-right: ($col-vw / 4 * 2.75) !important;
+
+        // @include padding-top($col-vw / 4);
+        // @include padding-bottom($col-vw / 4);
+
+        // @include breakpoint($mobile-break) {
+        //     padding-top: $col-vw / 2;
+        // }
+
+        .row-inner {
+            display: block;
+
+            .retouched {
+                margin: 0 calc(#{$col-vw / 4} - 0px);
+                margin-bottom: $col-vw / 2;
+                cursor: pointer;
+                box-shadow: none !important;
+
+                a {
+                    &:hover {
+                        .img-wrapper {
+                            transform: scale(0.9675) rotate(0.02deg);
+                        }
+                    }
+
+                    .img-wrapper {
+                        transition: $transition-tile;
+                        -webkit-perspective: 1000;
+                        -webkit-backface-visibility: hidden;
+                        will-change: transform;
+                    }
+                }
+
+                &.width-3 {
+                    width: calc(#{$col-vw * 3} - 3px);
+
+                    @include breakpoint($mobile-break) {
+                        width: calc(#{$col-vw * 3} - 3px);
+                        margin: 0 calc(#{$col-vw / 4} - 0px);
+                        margin-bottom: $col-vw / 2;
+                        cursor: pointer;
+                    }
+                }
+
+                &.width-6-5 {
+                    width: calc(#{$col-vw * 6.5} - 6px);
+
+                    @include breakpoint($mobile-break) {
+                        width: calc(#{$col-vw * 6.5} - 6px);
+                        margin: 0 calc(#{$col-vw / 4} - 0px);
+                        margin-bottom: $col-vw / 2;
+                        cursor: pointer;
+                    }
+                }
+
+                &:nth-child(4),
+                &:nth-child(6) {
+                    @include breakpoint($mobile-break) {
+                        width: calc(#{$col-vw * 3} - 3px);
+                        margin: 0 calc(#{$col-vw / 4} - 0px);
+                        margin-bottom: $col-vw / 2;
+                    }
+                }
+            }
+        }
+    }
+
+    &.credits {
+        text-align: center;
+
+        @include padding-bottom($col-vw);
+    }
+}
