@@ -26,5 +26,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/efenny/hst.git"
+  },
+  "dependencies": {
+    "gulp-sourcemaps": "^2.6.5"
   }
 }

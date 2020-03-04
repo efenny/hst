@@ -19,16 +19,19 @@ if ( file_exists( $composer_autoload ) ) {
 	$timber = new Timber\Timber();
 }
 
-/**
- * This ensures that Timber is loaded and available as a PHP class.
- * If not, it gives an error message to help direct developers on where to activate
- */
 if ( ! class_exists( 'Timber' ) ) {
 
 	add_action(
 		'admin_notices',
 		function() {
 			echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php' ) ) . '</a></p></div>';
+		}
+	);
+
+	add_filter(
+		'template_include',
+		function( $template ) {
+			return get_stylesheet_directory() . '/static/no-timber.html';
 		}
 	);
 
@@ -60,6 +63,13 @@ Timber::$autoescape = false;
 
 require_once('cpt.php'); 
 
+function wpdocs_theme_name_scripts() {
+	wp_enqueue_script( 'main-js', get_template_directory_uri() . '/dist/js/main.min.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_style( 'main-style', get_template_directory_uri() . '/dist/css/main.css');
+}
+
+add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' );
+
 class StarterSite extends Timber\Site {
 	/** Add timber support. */
 	public function __construct() {
@@ -69,16 +79,6 @@ class StarterSite extends Timber\Site {
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		parent::__construct();
-	}
-	/** This is where you can register custom post types. */
-	public function register_post_types() {
-	
-	}	
-	
-	
-	/** This is where you can register custom taxonomies. */
-	public function register_taxonomies() {
-
 	}
 
 	/** This is where you add some context
@@ -170,3 +170,4 @@ class StarterSite extends Timber\Site {
 }
 
 new StarterSite();
+
