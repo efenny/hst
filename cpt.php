@@ -38,6 +38,9 @@ function education_method() {
         'taxonomies'            => array( 'method_cat' ),
         'hierarchical'          => false,
         'public'                => true,
+        'rewrite' => array(
+            'slug' => 'education-methods'
+        ),
         'show_ui'               => true,
         'show_in_menu'          => true,
         'menu_position'         => 7,
@@ -50,7 +53,7 @@ function education_method() {
         'publicly_queryable'    => true,
         'capability_type'       => 'page',
     ); 
-    register_post_type( 'education_method', $args );
+    register_post_type( 'education_methods', $args );
 
 }
 add_action( 'init', 'education_method', 0 );
