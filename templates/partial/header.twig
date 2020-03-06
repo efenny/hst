@@ -1,0 +1,20 @@
+{% import 'partial/ui.twig' as ui %}
+
+<header class='header'>
+  <div class='header-inner'>
+    <div class='col x-lrg-col-5 lrg-col-5 med-col-5 sml-col-5'>
+      <div class='col-inner'>
+        <a href="{{ site.url }}">
+          {{ ui.image(options.logo, 'logo') }}
+        </a>    
+      </div>
+    </div>
+    <div class='col x-lrg-col-5 lrg-col-5 med-col-5 sml-col-5'>
+      <div class='col-inner'>
+        <div class="menu-search-wrapper">
+          {% include "menu.twig" with {'items': menu.get_items} %}
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

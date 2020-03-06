@@ -70,6 +70,10 @@ function wpdocs_theme_name_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' );
 
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page();
+}
+
 class StarterSite extends Timber\Site {
 	/** Add timber support. */
 	public function __construct() {
@@ -91,6 +95,7 @@ class StarterSite extends Timber\Site {
 		$context['notes'] = 'These values are available everytime you call Timber::context();';
 		$context['menu']  = new Timber\Menu();
 		$context['site']  = $this;
+		$context['options'] = get_fields('option');
 		return $context;
 	}
 
