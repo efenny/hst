@@ -3,7 +3,7 @@
     <div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
       <div class='col-inner'>
         {% if post.post_type == 'education_methods' %}<h5>{{ post.type.label }}</h5>{% endif %}
-        <h1>{{ post.title }}</h1>
+        <h1>{% if post.label %}{{ post.label }}{% else %}{{ post.title }}{% endif %}</h1>
       </div>
     </div>
   </div>
