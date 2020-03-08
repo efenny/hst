@@ -44,3 +44,26 @@
 		<img src="{{ TimberImage(img).src }}" alt="{{ TimberImage(img).alt }}">
 	</div>
 {% endmacro %}
+
+{# Search input for faq and such #}
+{% macro search(placeholder, class) %}
+	<div class="search-filter {{ class }}" >
+		<div class="search-filter-wrapper {{ class }}" >
+			<input class="search-filter-input" type="text" placeholder='{{ placeholder }}' />
+		</div>
+	</div>
+{% endmacro %}
+
+{# method_card #}
+{% macro method_card(post, class) %}
+	<div class="method-card" >
+		<a href="{{ post.link }}" class="method-card-wrapper {{ class }}" >
+			<div class="image">
+				<img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}">
+			</div>
+			<div class="info">
+				<h3>{{ post.title }}</h3>
+			</div>
+		</a>
+	</div>
+{% endmacro %}
