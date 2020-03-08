@@ -1,1 +1,36 @@
-<footer>this is the footer</footer>
+{% import 'partial/ui.twig' as ui %}
+<footer class='footer '>
+  <div class='footer-inner'>
+    <section class='footer-top'>
+      <div class='footer-top-inner'>
+        <div class='col col-'>
+          <div class='col-inner'>
+            {{ ui.image(options.footer.logo, 'logo') }}
+            {{ ui.image(options.footer.cche_logo, 'cche-logo') }}
+          </div>
+        </div>
+        <div class='col col-'>
+          <div class='col-inner'>
+             {% include "menu.twig" with {'items': menu.get_items} %}
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class='footer-bottom'>
+      <div class='footer-bottom-inner'>
+        <div class='col col-'>
+          <div class='col-inner'>
+         
+            {{ ui.p(options.footer.disclaimer_text) }}
+          </div>
+        </div>
+
+        <div class='col col-'>
+          <div class='col-inner'>
+            Copyright © {{"now"|date('Y')}} Canadian Centre for Home Education. All Rights Reserved.
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</footer>

@@ -1,6 +1,6 @@
 {# Buttons #}
-{% macro button(text, url, class) %}
-	<a href="{{ url }}" class="button {{ class }}"><span>{{ text }}</span></a>
+{% macro button(text, url, class, target) %}
+	<a href="{{ url }}" target="{{ target }}" class="button {{ class }}"><span>{{ text }}</span></a>
 {% endmacro %}
 
 {# H1 Heading #}

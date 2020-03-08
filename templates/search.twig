@@ -3,9 +3,10 @@
 
 {% block content %}
   {# see `base.twig:27` for where this block's content will be inserted #}
+  <h2>Search </h2>
   <div class="content-wrapper">
     {% for post in posts %}
-      {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+      <a href="{{ post.link }}">{{ post.title }}</a>
     {% endfor %}
 
     {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
