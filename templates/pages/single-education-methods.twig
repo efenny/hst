@@ -13,9 +13,21 @@
 			</div>
 			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
-					{{ ui.p(post.strengths) }}
-					{{ ui.p(post.points_to_consider) }}
-					{{ ui.p(post.resources) }}
+					<div class="strengths">
+						{{ ui.h3('Strengths') }}
+						{{ ui.p(post.strengths) }}
+					</div>
+
+					<div class="points-to-consider">
+						{{ ui.h3('Points to consider') }}
+						{{ ui.p(post.points_to_consider) }}
+					</div>
+
+					<div class="resources">
+						{{ ui.h3('Resources') }}
+						{{ ui.p(post.resources) }}
+						{{ ui.button("Back to Education Methods",'/' ~ post.type.rewrite.slug, "secondary") }}
+					</div>
 				</div>
 			</div>
 		</div>
