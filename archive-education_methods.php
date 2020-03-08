@@ -14,7 +14,7 @@
  * @since   Timber 0.2
  */
 
-$templates = array('pages/faq.twig', 'archive.twig', 'index.twig' );
+$templates = array('pages/education-methods.twig', 'archive.twig', 'index.twig' );
 $context = Timber::context();
 $context['posts'] = new Timber\PostQuery();
 
