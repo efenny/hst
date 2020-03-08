@@ -1,9 +1,133 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<h3>This is the index page</h3>
+{# splash page #}
+	<section class='splash'>
+		<div class='splash-inner'>
+			<div class='col col-'>
+				<div class='col-inner'>
+					
+				</div>
+			</div>
+			<div class='col col-'>
+				<div class='col-inner'>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{# latest news and send me info #}
+	<section class='row'>
+		<div class='row-inner'>
+			<div class='col x-lrg-col-4 lrg-col-5 med-col-10 sml-col-10'>
+				<div class='col-inner'>
+					
+				</div>
+			</div>
+			<div class='col x-lrg-col-8 lrg-col-7 med-col-10 sml-col-10'>
+				<div class='col-inner'>
+						{% include "partial/stay-informed-form.twig" %}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{# what is homeschooling #}
+	<section class='row'>
+		<div class='row-inner'>
+			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+				<div class='col-inner'>
+					video
+				</div>
+			</div>
+			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+				<div class='col-inner'>
+					side tabs
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{# You’ve Decided to Homeschool… Now What? #}
+	<section class='row '>
+		<div class='row-inner'>
+			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+				<div class='col-inner'>
+					text and buttons
+				</div>
+			</div>
+			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+				<div class='col-inner'>
+					image
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{# 5 Top Homeschool Questions #}
+	<section class='row'>
+		<div class='row-inner'>
+			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+				<div class='col-inner'>
+					image
+				</div>
+			</div>
+			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+				<div class='col-inner'>
+					title
+					accordions
+					buttons
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{# Education Methods #}
+	<section class='row'>
+		<div class='row-inner'>
+			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+				<div class='col-inner'>
+					title
+					text
+					button
+				</div>
+			</div>
+			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+				<div class='col-inner'>
+					bg image
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{# Resources #}
+	<section class='row'>
+		<div class='row-inner'>
+			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+				<div class='col-inner'>
+					title
+					text
+					cards
+					button
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{# Stories row #}
+
+	<section class='row'>
+		<div class='row-inner'>
+			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+				<div class='col-inner'>
+					posts
+				</div>
+			</div>
+		</div>
+	</section>
 
 	{% include "partial/row-stay-informed.twig" %}
 	
-	{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+
 {% endblock %}
