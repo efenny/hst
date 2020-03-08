@@ -1,0 +1,22 @@
+{% extends "base.twig" %}
+{% import 'partial/ui.twig' as ui %}
+
+{% block content %}
+	{% include "partial/row-heading.twig" with {post: page} %}
+  <section class='row'>
+    <div class='row-inner'>
+      <div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+        <div class='col-inner'>
+          image
+        </div>
+      </div>
+      <div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+        <div class='col-inner'>
+          tabs and content
+        </div>
+      </div>
+    </div>
+  </section>
+  {% include "partial/row-still-have-questions.twig" %}
+  {% include "partial/row-stay-informed.twig" %}
+{% endblock %}  
