@@ -67,3 +67,19 @@
 		</a>
 	</div>
 {% endmacro %}
+
+{# post_card #}
+{% macro post_card(post, class) %}
+	<div class="post-card" >
+		<a href="{{ post.link }}" class="post-card-wrapper {{ class }}" >
+			<div class="image">
+				<img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}">
+			</div>
+			<div class="info">
+				<h3>{{ post.title }}</h3>
+				<h4>{{ post.sub_title }}</h4>
+				<a href="{{ post.external_link }}" target="_blank" class="button external"><span>Read More</span></a>
+			</div>
+		</a>
+	</div>
+{% endmacro %}
