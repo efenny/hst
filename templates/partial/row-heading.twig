@@ -2,7 +2,7 @@
   <div class='row-inner'>
     <div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
       <div class='col-inner'>
-        <h3>{{ post.post_type }}</h3>
+        {% if post.post_type == 'education_methods' %}<h5>{{ post.get_post_type.label }}</h5>{% endif %}
         <h1>{{ post.title }}</h1>
       </div>
     </div>
