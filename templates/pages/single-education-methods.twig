@@ -1,4 +1,24 @@
 
+{% import 'partial/ui.twig' as ui %}
+
 {% block content %}
-	<h1>{{ page.title }}</h1>
+	{% include "partial/row-heading.twig" %}
+	<section class='row'>
+		<div class='row-inner'>
+			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+				<div class='col-inner'>
+					{{ ui.p(post.introduction) }}
+					{{ ui.image(post.inside_image) }}
+				</div>
+			</div>
+			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+				<div class='col-inner'>
+					{{ ui.p(post.strengths) }}
+					{{ ui.p(post.points_to_consider) }}
+					{{ ui.p(post.resources) }}
+				</div>
+			</div>
+		</div>
+	</section>
+	{% include "partial/row-stay-informed.twig" %}
 {% endblock %}  
