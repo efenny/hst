@@ -1,164 +1,161 @@
 // Row and Columns Style Sheet
 body {
-    main {
-        > .content {
-            margin-top: 100px;
-        }
+  main {
+    > .content {
+      margin-top: 100px;
     }
+  }
 }
 
 // text wrapper
 .text-wrapper {
-    &.med {
-        text-align: center;
+  &.med {
+    text-align: center;
 
-        p {
-            max-width: 50%;
-            display: inline-block;
+    p {
+      max-width: 50%;
+      display: inline-block;
 
-            @include breakpoint($tablet-break) {
-                max-width: 100%;
-            }
-        }
+      @include breakpoint($tablet-break) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  h2 {
+    padding-bottom: 2rem;
+
+    @include breakpoint($tablet-break) {
+      padding-bottom: 1.75rem;
     }
 
-    h2 {
-        padding-bottom: 2rem;
-
-        @include breakpoint($tablet-break) {
-            padding-bottom: 1.75rem;
-        }
-
-
-        @include breakpoint($mobile-break) {
-            padding-bottom: 1.5rem;
-        }
+    @include breakpoint($mobile-break) {
+      padding-bottom: 1.5rem;
     }
+  }
 
-    ul {
-        padding-left: 20px;
-        margin: 1.5rem 0;
+  ul {
+    padding-left: 20px;
+    margin: 1.5rem 0;
 
-        li {
-            // list-style-position: inside;
-            // list-style-type: disc;
-            margin-bottom: 1.5rem;
+    li {
+      // list-style-position: inside;
+      // list-style-type: disc;
+      margin-bottom: 1.5rem;
 
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
+  }
 }
 
 // image wrapper
 .img-wrapper {
+  line-height: 0;
+
+  img {
+    width: 100%;
     line-height: 0;
+  }
 
+  &.box-shadow {
     img {
-        width: 100%;
-        line-height: 0;
-    }
+      @include box-shadow;
 
-    &.box-shadow {
-        img {
-            @include box-shadow;
-
-            // box-shadow: none !important;
-       
-        }
+      // box-shadow: none !important;
     }
+  }
 }
 
 // rows
 .row {
-    background-size: cover;
-    background-position: center;
-    position: relative;
+  background-size: cover;
+  background-position: center;
+  position: relative;
 
-    @include side-gutters;
+  @include side-gutters;
 
-    &.no-gutters {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
+  &.no-gutters {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 
-    @include side-gutters-lrg;
+  @include side-gutters-lrg;
 
-    &.x-lrg-gutters {
-        @include side-gutters-x-lrg;
-    }
+  &.x-lrg-gutters {
+    @include side-gutters-x-lrg;
+  }
 
+  .row-inner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  // padding
+  @include paddings;
+
+  &.gray {
+    background-color: $gray;
+  }
+
+  &.white {
+    background-color: $white;
+  }
+
+  // content alignment
+
+  &.text-center,
+  &.center-text {
+    text-align: center;
+  }
+
+  &.center {
     .row-inner {
-        display: flex;
-        flex-wrap: wrap;
+      justify-content: center;
     }
+  }
 
-    // padding
-    @include paddings;
-
-    &.gray {
-        background-color: $gray;
+  &.align-center {
+    .row-inner {
+      align-items: center;
     }
+  }
 
-    &.white {
-        background-color: $white;
+  &.align-end {
+    .row-inner {
+      align-items: end;
     }
-
-    // content alignment
-
-    &.text-center,
-    &.center-text {
-        text-align: center;
-    }
-
-    &.center {
-        .row-inner {
-            justify-content: center;
-        }
-    }
-
-    &.align-center {
-        .row-inner {
-            align-items: center;
-        }
-    }
-
-    &.align-end {
-        .row-inner {
-            align-items: end;
-        }
-    }
+  }
 }
 
 // columns
 .col {
-    background-size: cover;
-    background-position: center;
+  background-size: cover;
+  background-position: center;
 
-    @include breakpoint($tablet-break) {
-        width: 100% !important;
+  @include breakpoint($tablet-break) {
+    width: 100% !important;
+  }
+
+  @include paddings;
+
+  &.text {
+    @include text-width;
+  }
+
+  &.text-center,
+  &.center-text {
+    text-align: center;
+  }
+
+  @mixin width($width) {
+    width: calc(100% / 12 * #{$width});
+  }
+
+  @for $i from 1 through 12 {
+    &.col-#{$i} {
+      @include width($i);
     }
-
-
-    @include paddings;
-
-    &.text {
-        @include text-width;
-    }
-
-    &.text-center,
-    &.center-text {
-        text-align: center;
-    }
-
-    @mixin width($width) {
-        width: calc(100% / 12 * #{$width});
-    }
-
-    @for $i from 1 through 12 {
-        &.col-#{$i} {
-            @include width($i);
-        }
-    }
+  }
 }

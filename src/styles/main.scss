@@ -1,64 +1,26 @@
-@import 'utility/breakpoint';
-@import 'utility/variables';
-@import 'utility/typography';
-@import 'utility/mixins';
-@import 'vendors/aos';
-@import 'vendors/compare';
-@import 'pages/base';
+@import "utility/breakpoint";
+@import "utility/variables";
+@import "utility/typography";
+@import "utility/mixins";
+@import "vendors/aos";
+@import "pages/base";
 
 .home {
-    @import 'pages/home';
+  @import "pages/home";
 }
 
 .page-id-12 {
-    @import 'pages/about';
+  @import "pages/about";
 }
 
 .page-id-14 {
-    @import 'pages/contact';
-}
-
-.page-id-10 {
-    @import 'pages/before-after';
-}
-
-.page-id-8 {
-    @import 'pages/retouching';
-}
-
-.postid-41 {
-    @import 'pages/migrants-website';
-}
-
-.postid-125 {
-    @import 'pages/migrants-marketing';
-}
-
-.postid-643,
-.postid-707 {
-    @import 'pages/switchboard';
-}
-
-.postid-69 {
-    @import 'pages/francis-effect';
-}
-
-.postid-71 {
-    @import 'pages/s-l-magazine';
-}
-
-.postid-67 {
-    @import 'pages/blue-ocean';
-}
-
-.postid-73 {
-    @import 'pages/franciscan-frairs';
+  @import "pages/contact";
 }
 
 .post-template-single-gallery {
-    @import 'pages/single-gallery';
+  @import "pages/single-gallery";
 }
 
 @media print {
-    @import 'utility/print';
+  @import "utility/print";
 }
