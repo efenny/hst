@@ -8,7 +8,13 @@
     <div class='row-inner'>
       <div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
         <div class='col-inner'>
-          tabs and accordions
+          {% for faq_term in faq_terms|keys %}
+            <li>{{ faq_terms[faq_term] }}</li>
+            {% set current_name_str = faq_term|slice(0,2) ~ '_loop'%}
+            {% for post in attribute(_context, current_name_str) %}
+              <h1>{{ post.title }}</h1>
+            {% endfor %}
+          {% endfor %}           
         </div>
       </div>
       <div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
