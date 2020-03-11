@@ -1,95 +1,77 @@
 // Typography Style Sheet
 html {
-    font-size: 18px;
-    margin: 0;
-    padding: 0;
-    text-rendering: optimizeLegibility;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
 
-    @include breakpoint($tablet-break) {
-        font-size: 16px;
-    }
+  @include breakpoint($tablet-break) {
+    font-size: 16px;
+  }
 
-
-    @include breakpoint($mobile-break) {
-        font-size: 14px;
-    }
+  @include breakpoint($mobile-break) {
+    font-size: 14px;
+  }
 }
 
 body {
-    font: $body-font;
-    font-size: 100%;
-    color: $color-p;
-    margin: 0;
-    padding: 0;
-    width: calc(100vw - (100vw - 100%));
+  font: $body-font;
+  font-size: 100%;
+  color: var(--p);
+  margin: 0;
+  padding: 0;
+  width: calc(100vw - (100vw - 100%));
+  background: var(--white);
 
-    // overflow: hidden;
-
-    // position: relative;
-
-    * {
-        box-sizing: border-box;
-    }
-
-    &.visited,
-    &.first-visit {
-        #main {
-            opacity: 1;
-        }
-    }
-
-    #main {
-        opacity: 0;
-        transition: $transition;
-    }
+  // overflow: hidden;
+  // position: relative;
+  * {
+    box-sizing: border-box;
+  }
 }
 
 video {
-    width: 100%;
+  width: 100%;
 }
 
 h1 {
-    @include breakpoint($tablet-break) {
-        font-size: 3.5rem;
-    }
+  @include breakpoint($tablet-break) {
+    font-size: 3.5rem;
+  }
 
-
-    @include breakpoint($mobile-break) {
-        font-size: 2.5rem;
-    }
+  @include breakpoint($mobile-break) {
+    font-size: 2.5rem;
+  }
 }
 
 h2 {
-    @include breakpoint($tablet-break) {
-        font-size: 2rem;
-    }
+  @include breakpoint($tablet-break) {
+    font-size: 2rem;
+  }
 
-
-    @include breakpoint($mobile-break) {
-        font-size: 1.8rem;
-    }
+  @include breakpoint($mobile-break) {
+    font-size: 1.8rem;
+  }
 }
 
 h3 {
-    @include breakpoint($tablet-break) {
-        font-size: 1.125rem;
-    }
+  @include breakpoint($tablet-break) {
+    font-size: 1.125rem;
+  }
 
-
-    @include breakpoint($mobile-break) {
-        font-size: 1.15rem;
-    }
+  @include breakpoint($mobile-break) {
+    font-size: 1.15rem;
+  }
 }
 
 h4 {
-    @include breakpoint($tablet-break) {
-        font-size: 1.25rem;
-    }
+  @include breakpoint($tablet-break) {
+    font-size: 1.25rem;
+  }
 
-
-    @include breakpoint($mobile-break) {
-        font-size: 1.5rem;
-    }
+  @include breakpoint($mobile-break) {
+    font-size: 1.5rem;
+  }
 }
 
 h1,
@@ -99,10 +81,10 @@ h4,
 h5,
 h6,
 a {
-    color: $color1;
-    -webkit-font-smoothing: antialiased;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    -webkit-font-smoothing: subpixel-antialiased;
-    text-decoration: none;
+  color: $color1;
+  -webkit-font-smoothing: antialiased;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-decoration: none;
 }

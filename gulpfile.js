@@ -5,6 +5,7 @@ var gulp = require("gulp"),
 sourcemaps = require("gulp-sourcemaps");
 babel = require("gulp-babel");
 postcss = require("gulp-postcss");
+postcssScss = require("postcss-scss");
 autoprefixer = require("autoprefixer");
 flexibility = require("postcss-flexibility");
 
@@ -15,20 +16,20 @@ var scssSource = ["src/styles/main.scss"],
 
 gulp.task("sass", function() {
   return gulp
-    .src(scssSource)
+    .src(scssWatch)
     .pipe(sourcemaps.init())
-    .pipe(
-      postcss([
-        autoprefixer({
-          cascade: false
-        })
-      ])
-    )
-    .pipe(postcss([flexibility]))
     .pipe(
       sass({
         outputStyle: "compressed"
       })
+    )
+    .pipe(postcss([flexibility]))
+    .pipe(
+      postcss([
+        autoprefixer({
+          cascade: true
+        })
+      ])
     )
     .pipe(sass().on("error", sass.logError))
     .pipe(sourcemaps.write())

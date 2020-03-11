@@ -1,24 +1,39 @@
 // Variables Style Sheet
 /* Colours */
-$color1: #000000;
-$color-hover: #000000;
-$color-active: #000000;
 
-$color-p: #000000;
-$text-gray: #A4A3A6;
-$white: #FFFFFF;
-$gray: #E5E5E5;
+$color1: #00b396;
+$color2: #005387;
+$color3: #f6f6f6;
+$color-hover: #005387;
+$color-active: #005387;
+
+// for dark mode
+$darkModeBlack: #0b0b0b;
+$darkModeWhite: #f6f6f6;
+$darkModeGray: #181818;
+$darkModeGreen: #008c76;
+$darkModeBlue: #006eb2;
+
+$color-p: #202020;
+$text-gray: #a4a3a6;
+$white: #ffffff;
+$gray: #e5e5e5;
 $black: #000000;
 $shadow: rgba(0, 0, 0, 0.16);
 
-/* Spacing / Padding */
+:root {
+  --green: #{$color1};
+  --blue: #{$color2};
+  --white: #{$white};
+  --gray: #{$color3};
+  --p: #{$color-p};
+}
 
+/* Spacing / Padding */
 $col: 100% / 12;
 $col-vw: 100vw / 12;
 
-$standard: 200px;
-
-$p-space: 3rem;
+$standard: 120px;
 
 //transitions
 $transition: 0.45s cubic-bezier(0.23, 0.55, 0.49, 0.8);
