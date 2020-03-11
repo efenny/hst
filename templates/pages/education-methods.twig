@@ -8,7 +8,12 @@
     <div class='row-inner'>
       <div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
         <div class='col-inner'>
-        posts
+          {{ ui.search('Search method titles...', faq_term ~ '-search') }}
+           <div class="search-wrapper">
+            {% for method in education_methods %}
+              {{ ui.method_card(method, method.slug) }}
+            {% endfor %}
+           </div>
         </div>
       </div>
     </div>

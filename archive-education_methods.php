@@ -18,4 +18,11 @@ $templates = array('pages/education-methods.twig', 'archive.twig', 'index.twig' 
 $context = Timber::context();
 $context['posts'] = new Timber\PostQuery();
 
+$args = array(
+  'posts_per_page' => -1,
+  'post_type' => 'education_methods',
+);
+
+$context['education_methods'] = new Timber\PostQuery($args);
+
 Timber::render( $templates, $context );

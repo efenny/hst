@@ -1,0 +1,16 @@
+<div class="tab-nav">
+  <ul class="tab-nav-inner">
+    {% for tab_nav_item in tab_nav_array|keys %}
+      <li>
+        <a href="#{{ tab_nav_item }}">{{ tab_nav_array[tab_nav_item] }}</a>
+      </li>
+    {% endfor %}    
+  </ul>
+</div>
+
+<div class="tab-bodies">
+    {% for tab_nav_item in tab_nav_array|keys %}
+      <div class="tab-body" id="{{ tab_nav_item }}">
+      </div>
+    {% endfor %}
+</div>

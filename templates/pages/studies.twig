@@ -1,0 +1,46 @@
+{% extends "base.twig" %}
+{% import 'partial/ui.twig' as ui %}
+
+{% block content %}
+{% include "partial/row-heading.twig" with {post: page} %}
+<section class='row questions'>
+  <div class='row-inner'>
+    <div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+      <div class='col-inner'>
+        {{ page.questions_text }}
+      </div>
+    </div>
+    <div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+      <div class='col-inner'>
+        {{ ui.image(page.questions_image) }}
+      </div>
+    </div>
+  </div>
+</section>
+<section class='row scholarships'>
+  <div class='row-inner'>
+    <div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+      <div class='col-inner'>
+        {{ page.scholarships_text }}
+        {{ ui.button(page.scholarships_button.title, page.scholarships_button.url, 'top external', page.donations_button.target) }}
+      </div>
+    </div>
+  </div>
+</section>
+<section class='row donation'>
+  <div class='row-inner'>
+    <div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+      <div class='col-inner'>
+        {{ ui.image(page.donations_image) }}
+      </div>
+    </div>
+    <div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+      <div class='col-inner'>
+        {{ page.donations_text }}
+        {{ ui.button(page.donations_button.title, page.donations_button.url, 'top external', page.donations_button.target) }}
+      </div>
+    </div>
+  </div>
+</section>
+	{% include "partial/row-stay-informed.twig" %}
+{% endblock %}  
