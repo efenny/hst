@@ -19,7 +19,9 @@
     background: var(--highlight-green);
   }
 
-  &.secondary {
+  &.secondary,
+  &.download,
+  &.redirect {
     padding: 0;
     background: transparent;
     box-shadow: none;
