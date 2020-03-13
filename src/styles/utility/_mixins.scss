@@ -7,13 +7,67 @@ MEDIA QUERY (MQ)
 /*************************
 MEDIA QUERY (MQ)
 *************************/
-@mixin box-shadow {
-  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.16);
+
+@mixin box-shadow-hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+@mixin box-shadow-light-hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.039);
   transition: $transition;
 
   &:hover {
-    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
+  }
+}
+
+@mixin box-shadow-dark-hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  transition: $transition;
+
+  &:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@mixin font-size($desktop, $laptop, $tablet, $mobile) {
+  font-size: $desktop;
+
+  @include breakpoint($laptop-break) {
+    font-size: $laptop;
   }
 
-  // box-shadow: none !important;
+  @include breakpoint($tablet-break) {
+    font-size: $tablet;
+  }
+
+  @include breakpoint($mobile-break) {
+    font-size: $mobile;
+  }
+}
+
+@mixin line-height($desktop, $laptop, $tablet, $mobile) {
+  line-height: $desktop;
+
+  @include breakpoint($laptop-break) {
+    line-height: $laptop;
+  }
+
+  @include breakpoint($tablet-break) {
+    line-height: $tablet;
+  }
+
+  @include breakpoint($mobile-break) {
+    line-height: $mobile;
+  }
+}
+
+@mixin bg-cover {
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin bg-contain {
+  background-size: contain;
+  background-position: center;
 }

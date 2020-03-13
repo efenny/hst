@@ -3,7 +3,7 @@
 /*********************
 FONT FACE
 *********************/
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 // font stacks
 $sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -12,12 +12,12 @@ $serif: "PT Serif", "Georgia", Cambria, Times New Roman, Times, serif;
 
 // theme fonts
 $body-font: 400 1rem / 1.6em $sans-serif-2;
-$h1: 400 4.5rem / 1.2em $sans-serif;
-$h2: 400 2.5rem / 1.4em $sans-serif;
-$h3: 400 1.5rem / 1.4em $sans-serif;
-$h4: 400 1.25rem / 1.4em $sans-serif;
-$h5: 400 1rem / 1.6em $sans-serif;
-$h6: 400 1rem / 1.6em $sans-serif;
+$h1: 700 2rem / 1.2em $sans-serif;
+$h2: 700 1.5rem / 1.4em $sans-serif;
+$h3: 700 1.25rem / 1.4em $sans-serif;
+$h4: 600 1.125rem / 1.4em $sans-serif;
+$h5: 400 1.125rem / 1.6em $sans-serif;
+$h6: 400 1.125rem / 1.6em $sans-serif;
 $menu: 400 1rem / 1em $sans-serif;
 
 // Setting universal font styles
@@ -26,6 +26,7 @@ h1,
 .h1 {
   margin: 0;
   font: $h1;
+  letter-spacing: 1.25px;
 }
 
 h2,
@@ -33,12 +34,14 @@ h2,
   margin: 0;
   font: $h2;
   color: $color1;
+  letter-spacing: 0.5px;
 }
 
 h3,
 .h3 {
   margin: 0;
   font: $h3;
+  letter-spacing: 0.25px;
 }
 
 h4,
@@ -51,7 +54,6 @@ h5,
 .h5 {
   margin: 0;
   font: $h5;
-  text-decoration: underline;
 }
 
 h6,

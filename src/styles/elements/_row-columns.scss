@@ -1,4 +1,5 @@
 @mixin paddings {
+  // left
   &.x-lrg-pad-left-0-5 {
     padding-left: $col-vw / 2;
   }
@@ -129,7 +130,9 @@
 // Row and Columns Style Sheet
 .row {
   width: 100%;
+  display: flex;
   @include paddings;
+
   .row-inner {
     display: flex;
     flex-wrap: wrap;

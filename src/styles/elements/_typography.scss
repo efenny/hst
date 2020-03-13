@@ -1,13 +1,9 @@
 // Typography Style Sheet
 html {
-  font-size: 18px;
+  font-size: 16px;
   margin: 0;
   padding: 0;
   text-rendering: optimizeLegibility;
-
-  @include breakpoint($tablet-break) {
-    font-size: 16px;
-  }
 
   @include breakpoint($mobile-break) {
     font-size: 14px;
@@ -34,54 +30,21 @@ video {
   width: 100%;
 }
 
-h1 {
-  @include breakpoint($tablet-break) {
-    font-size: 3.5rem;
-  }
-
-  @include breakpoint($mobile-break) {
-    font-size: 2.5rem;
-  }
-}
-
-h2 {
-  @include breakpoint($tablet-break) {
-    font-size: 2rem;
-  }
-
-  @include breakpoint($mobile-break) {
-    font-size: 1.8rem;
-  }
-}
-
-h3 {
-  @include breakpoint($tablet-break) {
-    font-size: 1.125rem;
-  }
-
-  @include breakpoint($mobile-break) {
-    font-size: 1.15rem;
-  }
-}
-
-h4 {
-  @include breakpoint($tablet-break) {
-    font-size: 1.25rem;
-  }
-
-  @include breakpoint($mobile-break) {
-    font-size: 1.5rem;
-  }
-}
-
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
+h6 {
+  color: var(--blue);
+
+  &.white {
+    color: var(--white);
+  }
+}
+
 a {
-  color: $color1;
+  color: $color-p;
   -webkit-font-smoothing: antialiased;
   transform: translateZ(0);
   backface-visibility: hidden;
