@@ -98,24 +98,48 @@
 
   &.top-pad-1 {
     padding-top: $col-vw;
+
+    @include breakpoint($mobile-break) {
+      padding-top: 3rem;
+    }
   }
   &.bottom-pad-1 {
     padding-bottom: $col-vw;
+
+    @include breakpoint($mobile-break) {
+      padding-bottom: 3rem;
+    }
   }
 
   &.top-pad-0-5 {
     padding-top: $col-vw/2;
+
+    @include breakpoint($mobile-break) {
+      padding-top: 3rem;
+    }
   }
   &.bottom-pad-0-5 {
     padding-bottom: $col-vw/2;
+
+    @include breakpoint($mobile-break) {
+      padding-bottom: 3rem;
+    }
   }
 
   &.top-margin-1 {
     margin-top: $col-vw;
+
+    @include breakpoint($mobile-break) {
+      margin-top: 3rem;
+    }
   }
 
   &.bottom-margin-1 {
     margin-bottom: $col-vw;
+
+    @include breakpoint($mobile-break) {
+      margin-bottom: 3rem;
+    }
   }
 
   &.top-margin-0-5 {
@@ -136,6 +160,10 @@
   .row-inner {
     display: flex;
     flex-wrap: wrap;
+
+    &.center {
+      align-items: center;
+    }
   }
 }
 // columns
