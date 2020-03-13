@@ -1,5 +1,132 @@
-// Row and Columns Style Sheet
+@mixin paddings {
+  &.x-lrg-pad-left-0-5 {
+    padding-left: $col-vw / 2;
+  }
 
+  &.x-lrg-pad-left-1 {
+    padding-left: $col-vw;
+  }
+
+  &.lrg-pad-left-0-5 {
+    @include breakpoint($laptop-break) {
+      padding-left: $col-vw / 2;
+    }
+  }
+
+  &.lrg-pad-left-1 {
+    @include breakpoint($laptop-break) {
+      padding-left: $col-vw;
+    }
+  }
+
+  &.med-pad-left-0-5 {
+    @include breakpoint($tablet-break) {
+      padding-left: $col-vw / 2;
+    }
+  }
+
+  &.med-pad-left-1 {
+    @include breakpoint($tablet-break) {
+      padding-left: $col-vw;
+    }
+  }
+
+  &.sml-pad-left-0-5 {
+    @include breakpoint($mobile-break) {
+      padding-left: $col-vw / 2;
+    }
+  }
+
+  &.sml-pad-left-1 {
+    @include breakpoint($mobile-break) {
+      padding-left: $col-vw;
+    }
+  }
+
+  // right
+  &.x-lrg-pad-right-0-5 {
+    padding-right: $col-vw / 2;
+  }
+
+  &.x-lrg-pad-right-1 {
+    padding-right: $col-vw;
+  }
+
+  &.lrg-pad-right-0-5 {
+    @include breakpoint($laptop-break) {
+      padding-right: $col-vw / 2;
+    }
+  }
+
+  &.lrg-pad-right-1 {
+    @include breakpoint($laptop-break) {
+      padding-right: $col-vw;
+    }
+  }
+
+  &.med-pad-right-0-5 {
+    @include breakpoint($tablet-break) {
+      padding-right: $col-vw / 2;
+    }
+  }
+
+  &.med-pad-right-1 {
+    @include breakpoint($tablet-break) {
+      padding-right: $col-vw;
+    }
+  }
+
+  &.sml-pad-right-0-5 {
+    @include breakpoint($mobile-break) {
+      padding-right: $col-vw / 2;
+    }
+  }
+
+  &.sml-pad-right-1 {
+    @include breakpoint($mobile-break) {
+      padding-right: $col-vw;
+    }
+  }
+
+  &.top-pad-1 {
+    padding-top: $col-vw;
+  }
+  &.bottom-pad-1 {
+    padding-bottom: $col-vw;
+  }
+
+  &.top-pad-0-5 {
+    padding-top: $col-vw/2;
+  }
+  &.bottom-pad-0-5 {
+    padding-bottom: $col-vw/2;
+  }
+
+  &.top-margin-1 {
+    margin-top: $col-vw;
+  }
+
+  &.bottom-margin-1 {
+    margin-bottom: $col-vw;
+  }
+
+  &.top-margin-0-5 {
+    margin-top: $col-vw/2;
+  }
+
+  &.bottom-margin-0-5 {
+    margin-bottom: $col-vw/2;
+  }
+}
+
+// Row and Columns Style Sheet
+.row {
+  @include paddings;
+  .row-inner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
 // columns
 .col {
   background-size: cover;
@@ -14,13 +141,37 @@
     text-align: center;
   }
 
+  @include paddings;
+
+  // widths
   @mixin width($width) {
-    width: calc(100% / 12 * #{$width});
+    width: $col-vw * $width;
   }
 
   @for $i from 1 through 12 {
-    &.col-#{$i} {
+    &.x-lrg-col-#{$i} {
       @include width($i);
     }
+
+    &.lrg-col-#{$i} {
+      @include breakpoint($laptop-break) {
+        @include width($i);
+      }
+    }
+
+    &.med-col-#{$i} {
+      @include breakpoint($tablet-break) {
+        @include width($i);
+      }
+    }
+
+    &.sml-col-#{$i} {
+      @include breakpoint($mobile-break) {
+        @include width($i);
+      }
+    }
   }
+
+  // paddings
+  // left
 }
