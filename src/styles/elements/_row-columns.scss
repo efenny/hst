@@ -7,6 +7,10 @@
     padding-left: $col-vw;
   }
 
+  &.x-lrg-pad-left-2 {
+    padding-left: $col-vw * 2;
+  }
+
   &.lrg-pad-left-0-5 {
     @include breakpoint($laptop-break) {
       padding-left: $col-vw / 2;
@@ -50,6 +54,9 @@
 
   &.x-lrg-pad-right-1 {
     padding-right: $col-vw;
+  }
+  &.x-lrg-pad-right-2 {
+    padding-right: $col-vw * 2;
   }
 
   &.lrg-pad-right-0-5 {
@@ -121,6 +128,7 @@
 
 // Row and Columns Style Sheet
 .row {
+  width: 100%;
   @include paddings;
   .row-inner {
     display: flex;
@@ -171,7 +179,4 @@
       }
     }
   }
-
-  // paddings
-  // left
 }
