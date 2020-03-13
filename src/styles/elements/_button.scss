@@ -1,2 +1,42 @@
 // Button Style Sheet
-.button {}
+// Primary
+.button {
+  font-size: 1rem;
+  line-height: 1.25em;
+  padding: 0.625em 1.5em;
+  background: var(--green);
+  display: inline-block;
+  color: var(--white);
+  font-family: $sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  border-radius: 5px;
+  @include box-shadow-dark-hover;
+  margin-top: 2rem;
+
+  &:hover {
+    background: var(--highlight-green);
+  }
+
+  &.secondary {
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    color: var(--p);
+    text-transform: none;
+    letter-spacing: initial;
+
+    span {
+      margin-right: 0.75rem;
+    }
+  }
+}
+
+:root {
+  &[data-theme="dark"] {
+    .button {
+      color: $darkModeWhite;
+    }
+  }
+}

@@ -4,15 +4,17 @@
 $color1: #00b396;
 $color2: #005387;
 $color3: #f6f6f6;
+$color4: #00c5a5; // light mode hightlight
+$color5: #009c83; // dark mode hightlight
 $color-hover: #005387;
 $color-active: #005387;
 
 // for dark mode
 $darkModeBlack: #0b0b0b;
-$darkModeWhite: #f6f6f6;
+$darkModeWhite: #f2f2f2;
 $darkModeGray: #181818;
-$darkModeGreen: #008c76;
-$darkModeBlue: #006eb2;
+$darkModeGreen: #007966;
+$darkModeBlue: #0080d0;
 
 $color-p: #202020;
 $text-gray: #a4a3a6;
@@ -23,6 +25,7 @@ $shadow: rgba(0, 0, 0, 0.16);
 
 :root {
   --green: #{$color1};
+  --highlight-green: #{$color4};
   --blue: #{$color2};
   --white: #{$white};
   --gray: #{$color3};
