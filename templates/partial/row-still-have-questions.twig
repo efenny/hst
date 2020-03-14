@@ -1,8 +1,12 @@
+{% import 'partial/ui.twig' as ui %}
+
+
 <section class='row'>
   <div class='row-inner'>
-    <div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+    <div class='col x-lrg-col-6 lrg-col-8 med-col-10 sml-col-10'>
       <div class='col-inner'>
-        Still have questions?
+        {{ ui.p(options.still_have_questions.text) }}
+        {{ ui.button(options.still_have_questions.button) }}
       </div>
     </div>
   </div>
