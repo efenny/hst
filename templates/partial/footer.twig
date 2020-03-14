@@ -1,7 +1,7 @@
 {% import 'partial/ui.twig' as ui %}
 <footer class='footer '>
   <div class='footer-inner'>
-    <section class='footer-top'>
+    <section class='row footer-top top-pad-1 bottom-pad-1 x-lrg-pad-left-1 x-lrg-pad-right-1  sml-pad-left-0-5 sml-pad-right-0-5'>
       <div class='footer-top-inner'>
         <div class='col col-'>
           <div class='col-inner'>
@@ -23,18 +23,18 @@
         </div>
       </div>
     </section>
-    <section class='footer-bottom'>
+    <section class='row footer-bottom x-lrg-pad-left-1 x-lrg-pad-right-1  sml-pad-left-0-5 sml-pad-right-0-5'>
       <div class='footer-bottom-inner'>
-        <div class='col col-'>
+        <div class='col col-left x-lrg-col-5 lrg-col-5 med-col-10 sml-col-11'>
           <div class='col-inner'>
          
             {{ ui.p(options.footer.disclaimer_text) }}
           </div>
         </div>
 
-        <div class='col col-'>
+        <div class='col col-right x-lrg-col-5 lrg-col-5 med-col-10 sml-col-11'>
           <div class='col-inner'>
-            Copyright © {{"now"|date('Y')}} Canadian Centre for Home Education. All Rights Reserved.
+            <p>Copyright © {{"now"|date('Y')}} <a href="https://cche.ca/en/" target="_blank">Canadian Centre for Home Education</a>. All Rights Reserved.</p>
           </div>
         </div>
       </div>

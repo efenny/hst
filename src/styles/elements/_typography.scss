@@ -44,10 +44,11 @@ h6 {
 }
 
 a {
-  color: $color-p;
+  color: $color2;
   -webkit-font-smoothing: antialiased;
   transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
   text-decoration: none;
+  transition: $transition;
 }

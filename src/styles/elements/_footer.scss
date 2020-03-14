@@ -3,4 +3,60 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  .footer-inner {
+    width: 100%;
+  }
+
+  p {
+    font-size: 0.7rem;
+    line-height: 1.5em;
+    opacity: 0.8;
+
+    a {
+      color: $white;
+
+      &:hover {
+        color: var(--green);
+      }
+    }
+  }
+
+  .footer-top {
+    background: var(--gray);
+  }
+
+  .footer-bottom {
+    border-top: 4px solid var(--green);
+    background: $color-p;
+    color: var(--white);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    .footer-bottom-inner {
+      display: flex;
+      flex-wrap: wrap;
+
+      .col-right {
+        text-align: right;
+
+        @include breakpoint($tablet-break) {
+          padding-top: 1.5rem;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+// darkmode
+:root {
+  &[data-theme="dark"] {
+    footer {
+      .footer-bottom {
+        background: $darkModeBlack;
+        color: $darkModeWhite;
+      }
+    }
+  }
 }

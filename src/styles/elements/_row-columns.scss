@@ -171,9 +171,9 @@
   background-size: cover;
   background-position: center;
 
-  @include breakpoint($tablet-break) {
-    width: 100% !important;
-  }
+  // @include breakpoint($tablet-break) {
+  //   width: 100%;
+  // }
 
   &.text-center,
   &.center-text {
