@@ -29,8 +29,17 @@
     text-transform: none;
     letter-spacing: initial;
 
-    span {
-      margin-right: 0.75rem;
+    svg {
+      margin-left: 0.5rem;
+      transition: $transition;
+    }
+
+    &.secondary {
+      &:hover {
+        svg {
+          transform: translateX(0.5rem);
+        }
+      }
     }
   }
 }

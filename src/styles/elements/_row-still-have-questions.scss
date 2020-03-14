@@ -1,0 +1,17 @@
+.still-have-questions {
+  .row-inner {
+    justify-content: center;
+    width: 100%;
+  }
+  .col {
+    @include box-shadow;
+
+    .col-inner {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
