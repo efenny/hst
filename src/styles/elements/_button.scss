@@ -20,8 +20,13 @@
   }
 
   &.secondary,
+  &.secondray,
   &.download,
-  &.redirect {
+  &.downlaod,
+  &.pdf,
+  &.document,
+  &.redirect,
+  &.external {
     padding: 0;
     background: transparent;
     box-shadow: none;
@@ -33,13 +38,47 @@
       margin-left: 0.5rem;
       transition: $transition;
     }
+  }
 
-    &.secondary {
-      &:hover {
-        svg {
-          transform: translateX(0.5rem);
-        }
+  &.secondary,
+  &.secondray {
+    &:hover {
+      svg {
+        transform: translateX(0.5rem);
       }
+    }
+  }
+
+  &.download,
+  &.downlaod,
+  &.pdf,
+  &.document {
+    svg .arrow {
+      transition: $transition;
+    }
+    // CONVERT TO CSS ANIMATION
+    &:hover {
+      svg .arrow {
+        transform: translateY(0.188rem);
+      }
+    }
+  }
+
+  &.redirect,
+  &.external {
+    svg .arrow {
+      transition: $transition;
+    }
+    // CONVERT TO CSS ANIMATION
+    &:hover {
+      svg .arrow {
+        transform: translate(-0.188rem, 0.188rem);
+      }
+    }
+
+    svg {
+      width: 0.813rem;
+      height: auto;
     }
   }
 }
