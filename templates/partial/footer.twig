@@ -3,7 +3,7 @@
   <div class='footer-inner'>
     <section class='row footer-top top-pad-1 bottom-pad-1 x-lrg-pad-left-1 x-lrg-pad-right-1  sml-pad-left-0-5 sml-pad-right-0-5'>
       <div class='footer-top-inner'>
-        <div class='col col-'>
+        <div class='col x-lrg-col-5 lrg-col-3 med-col-10 sml-col-11'>
           <div class='col-inner'>
             {{ ui.image(options.footer.logo, 'logo') }}
             {{ ui.image(options.footer.cche_logo, 'cche-logo') }}
@@ -11,12 +11,13 @@
                 <label class="theme-switch" for="checkbox">
                     <input type="checkbox" id="checkbox" />
                     <div class="slider round"></div>
+                    <em>Dark Mode</em>
               </label>
-              <em>Enable Dark Mode!</em>
+             
             </div>
           </div>
         </div>
-        <div class='col col-'>
+        <div class='col x-lrg-col-5 lrg-col-7 med-col-10 sml-col-11'>
           <div class='col-inner'>
              {% include "menu.twig" with {'items': menu.get_items} %}
           </div>
@@ -27,14 +28,13 @@
       <div class='footer-bottom-inner'>
         <div class='col col-left x-lrg-col-5 lrg-col-5 med-col-10 sml-col-11'>
           <div class='col-inner'>
-         
             {{ ui.p(options.footer.disclaimer_text) }}
           </div>
         </div>
 
         <div class='col col-right x-lrg-col-5 lrg-col-5 med-col-10 sml-col-11'>
           <div class='col-inner'>
-            <p>Copyright © {{"now"|date('Y')}} <a href="https://cche.ca/en/" target="_blank">Canadian Centre for Home Education</a>. All Rights Reserved.</p>
+            <p>Copyright © {{"now"|date('Y')}} <a href="https://cche.ca/en/" target="_blank">Canadian Centre for Home Education</a>. <br>All Rights Reserved.</p>
           </div>
         </div>
       </div>

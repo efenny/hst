@@ -24,6 +24,81 @@ footer {
 
   .footer-top {
     background: var(--gray);
+
+    .footer-top-inner {
+      display: flex;
+
+      @include breakpoint($tablet-break) {
+        flex-wrap: wrap;
+      }
+    }
+
+    .col {
+      &:first-child {
+        @include breakpoint($tablet-break) {
+          margin-bottom: $col-vw;
+        }
+
+        @include breakpoint($mobile-break) {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+  }
+
+  nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        margin-bottom: 1rem;
+        list-style: none;
+
+        &.current-menu-item {
+          > a {
+            &::before {
+              transform: scaleX(1);
+            }
+          }
+        }
+        a {
+          font-size: 1.125em;
+          line-height: 1.5;
+          padding-bottom: 3px;
+          color: var(--p);
+          font-weight: 700;
+          display: inline-block;
+          position: relative;
+
+          &::before {
+            content: "";
+            width: 100%;
+            height: 2px;
+            background: var(--blue);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: $transition;
+          }
+
+          &:hover {
+            &::before {
+              transform: scaleX(1);
+            }
+          }
+        }
+
+        nav {
+          margin-top: 1rem;
+
+          a {
+            font-weight: 400;
+          }
+        }
+      }
+    }
   }
 
   .footer-bottom {
@@ -50,13 +125,11 @@ footer {
 }
 
 // darkmode
-:root {
-  &[data-theme="dark"] {
-    footer {
-      .footer-bottom {
-        background: $darkModeBlack;
-        color: $darkModeWhite;
-      }
+@include dark-mode {
+  footer {
+    .footer-bottom {
+      background: $darkModeBlack;
+      color: $darkModeWhite;
     }
   }
 }

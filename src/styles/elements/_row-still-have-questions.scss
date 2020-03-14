@@ -15,3 +15,12 @@
     }
   }
 }
+
+// darkmode
+@include dark-mode {
+  .still-have-questions {
+    .col {
+      background: $darkModeGray;
+    }
+  }
+}

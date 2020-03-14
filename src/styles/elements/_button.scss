@@ -36,7 +36,6 @@
 
     svg {
       margin-left: 0.5rem;
-      transition: $transition;
     }
   }
 
@@ -83,10 +82,8 @@
   }
 }
 
-:root {
-  &[data-theme="dark"] {
-    .button {
-      color: $darkModeWhite;
-    }
+@include dark-mode {
+  .button {
+    color: $darkModeWhite;
   }
 }

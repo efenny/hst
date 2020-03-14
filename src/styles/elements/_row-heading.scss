@@ -45,15 +45,13 @@
 }
 
 // darkmode
-:root {
-  &[data-theme="dark"] {
-    .row.heading {
-      h5 {
-        color: $darkModeWhite;
-      }
-      h1 {
-        color: $darkModeWhite;
-      }
+@include dark-mode {
+  .row.heading {
+    h5 {
+      color: $darkModeWhite;
+    }
+    h1 {
+      color: $darkModeWhite;
     }
   }
 }
