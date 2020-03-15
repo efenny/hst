@@ -100,6 +100,12 @@ footer {
               transform: scaleX(1);
             }
           }
+
+          svg {
+            width: 0.7em;
+            height: auto;
+            margin-left: 0.5rem;
+          }
         }
 
         nav {

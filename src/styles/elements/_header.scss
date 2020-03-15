@@ -1,3 +1,216 @@
 header {
-  background: $white;
+  background: var(--white);
+  position: fixed;
+  height: 100px;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+
+  &::after {
+    content: "";
+    width: 50%;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background: var(--gray);
+    position: absolute;
+    z-index: 2;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 4;
+
+    .col-logo {
+      img {
+        width: auto;
+        height: 90px;
+      }
+    }
+    .col-menu {
+      .col-inner {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+
+    .menu-search-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+
+  .search-icon-wrapper {
+    position: relative;
+    height: 1.875rem;
+    display: flex;
+    align-items: center;
+
+    .search-icon {
+      color: var(--p);
+      line-height: 1;
+    }
+
+    .searchform {
+      padding-top: 1rem;
+      position: absolute;
+      right: -1.5rem;
+      top: 1.65rem;
+      pointer-events: none;
+      opacity: 0;
+      transition: $transition;
+      z-index: 4;
+
+      > div {
+        background: var(--white);
+        border-radius: 5px;
+        padding: 1rem 1.5rem;
+        @include box-shadow;
+
+        label {
+          display: none;
+        }
+
+        #searchsubmit {
+          margin-top: 1rem;
+          border-radius: 0;
+          border: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+
+      li {
+        list-style: none;
+        margin-right: 2.5rem;
+        position: relative;
+
+        &.current-menu-item,
+        &.current-page-parent {
+          > a {
+            &::before {
+              transform: scaleX(1);
+            }
+          }
+        }
+
+        &.menu-item-has-children {
+          &::after {
+            content: "";
+            width: 14px;
+            height: 14px;
+            border-radius: 2px;
+            background: var(--white);
+            position: absolute;
+            top: 2.2rem;
+            left: 50%;
+            transform: rotate(45deg);
+            z-index: 8;
+            opacity: 0;
+            transition: $transition;
+          }
+        }
+
+        &:hover {
+          &.menu-item-has-children {
+            &::after {
+              opacity: 1;
+            }
+            > nav {
+              opacity: 1;
+              pointer-events: initial;
+            }
+          }
+        }
+        a {
+          font-size: 1.25rem;
+          line-height: 1.5;
+          padding-bottom: 1px;
+          color: var(--p);
+          font-weight: 700;
+          display: inline-block;
+          position: relative;
+          z-index: 6;
+
+          @include breakpoint($laptop-break) {
+            font-size: 1.15rem;
+          }
+
+          @include breakpoint($mobile-break) {
+            padding-bottom: 3px;
+          }
+
+          &::before {
+            content: "";
+            width: 100%;
+            height: 2px;
+            background: var(--blue);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: $transition;
+          }
+
+          &:hover {
+            &::before {
+              transform: scaleX(1);
+            }
+          }
+
+          svg {
+            width: 0.7em;
+            height: auto;
+            margin-left: 0.5rem;
+          }
+        }
+
+        nav {
+          padding-top: 1rem;
+          position: absolute;
+          left: -1.5rem;
+          top: 1.65rem;
+          pointer-events: none;
+          opacity: 0;
+          transition: $transition;
+          z-index: 4;
+          min-width: calc(100% + 3rem);
+
+          ul {
+            background: var(--white);
+            border-radius: 5px;
+            padding: 1rem 1.5rem;
+            @include box-shadow;
+            flex-direction: column;
+
+            li {
+              margin-right: 0;
+              margin-bottom: 0.75rem;
+              white-space: nowrap;
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+          }
+
+          a {
+            font-weight: 600;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
 }

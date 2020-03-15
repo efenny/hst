@@ -1,23 +1,31 @@
 {% import 'partial/ui.twig' as ui %}
 
-<header class='header'>
+<header class='header row x-lrg-pad-left-1 x-lrg-pad-right-1 sml-pad-left-0 sml-pad-right-0'>
   <div class='header-inner'>
-    <div class='col x-lrg-col-5 lrg-col-5 med-col-5 sml-col-5'>
+    <div class='col col-logo x-lrg-col-5 lrg-col-4 med-col-4 sml-col-5 sml-pad-left-0-5 '>
       <div class='col-inner'>
         <a href="{{ site.url }}">
           {{ ui.image(options.logo, 'logo') }}
         </a>    
       </div>
     </div>
-    <div class='col x-lrg-col-5 lrg-col-5 med-col-5 sml-col-5'>
+    <div class='col col-menu x-lrg-col-5 lrg-col-6 med-col-6 sml-col-5 sml-pad-right-0-5'>
       <div class='col-inner'>
         <div class="menu-search-wrapper">
           {% include "menu.twig" with {'items': menu.get_items} %}
+          <div class="search-icon-wrapper">
+            <a href="#search" class="search-icon">
+              <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9309 13.5649C10.5117 14.5743 8.76504 15.0137 7.03713 14.796C5.30922 14.5782 3.72619 13.7192 2.60181 12.3892C1.47742 11.0593 0.893765 9.35539 0.966517 7.61534C1.03927 5.87529 1.76312 4.22608 2.9946 2.9946C4.22608 1.76312 5.87529 1.03927 7.61534 0.966517C9.35539 0.893765 11.0593 1.47742 12.3892 2.60181C13.7192 3.72619 14.5782 5.30922 14.796 7.03713C15.0137 8.76503 14.5743 10.5117 13.5649 11.9309L18.1289 16.4949C18.2353 16.6007 18.3197 16.7265 18.3773 16.8651C18.4349 17.0037 18.4646 17.1523 18.4646 17.3024C18.4646 17.4525 18.4349 17.6011 18.3773 17.7396C18.3197 17.8782 18.2353 18.004 18.1289 18.1099L18.1099 18.1289C17.8956 18.3428 17.6052 18.4629 17.3024 18.4629C16.9996 18.4629 16.7092 18.3428 16.4949 18.1289L11.9309 13.5649ZM7.90388 13.2159C8.95449 13.2159 9.98151 12.9043 10.8551 12.3206C11.7286 11.737 12.4095 10.9073 12.8115 9.93669C13.2136 8.96605 13.3188 7.89798 13.1138 6.86756C12.9088 5.83713 12.4029 4.89062 11.66 4.14772C10.9171 3.40483 9.97063 2.89891 8.9402 2.69394C7.90977 2.48898 6.8417 2.59417 5.87106 2.99623C4.90042 3.39828 4.0708 4.07913 3.48711 4.95269C2.90342 5.82624 2.59187 6.85326 2.59187 7.90387C2.59187 9.31271 3.15153 10.6638 4.14772 11.66C5.14392 12.6562 6.49505 13.2159 7.90388 13.2159Z" fill="currentColor"/>
+              </svg>
+            </a>
+            {% include "partial/search-form.twig" %}
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div class="search">
-    {% include "partial/search-form.twig" %}
+    
   </div>
 </header>

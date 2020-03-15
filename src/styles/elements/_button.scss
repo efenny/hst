@@ -41,6 +41,9 @@
 
   &.secondary,
   &.secondray {
+    svg {
+      transition: $transition;
+    }
     &:hover {
       svg {
         transform: translateX(0.5rem);

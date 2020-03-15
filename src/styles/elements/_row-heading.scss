@@ -4,6 +4,7 @@
   align-items: flex-end;
   @include bg-cover;
   position: relative;
+  margin-top: 100px;
 
   &::after {
     content: "";
