@@ -1,0 +1,7 @@
+<ul class="social-media">
+{% for platform in options.social_media %}
+  <li>
+    <a href="{{ platform.url }}" target="_blank">{{ platform.svg }}</a>
+  </li>
+{% endfor %}
+</ul>

@@ -1,4 +1,5 @@
 {% import 'partial/ui.twig' as ui %}
+
 <footer class='footer '>
   <div class='footer-inner'>
     <section class='row footer-top top-pad-1 bottom-pad-1 x-lrg-pad-left-1 x-lrg-pad-right-1  sml-pad-left-0-5 sml-pad-right-0-5'>
@@ -20,6 +21,7 @@
         <div class='col x-lrg-col-5 lrg-col-7 med-col-10 sml-col-11'>
           <div class='col-inner'>
              {% include "menu.twig" with {'items': menu.get_items} %}
+             {% include 'partial/social-media.twig' %}
           </div>
         </div>
       </div>

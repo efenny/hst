@@ -33,6 +33,14 @@ footer {
       }
     }
 
+    .logo {
+      margin-bottom: 2.5rem;
+
+      @include breakpoint($tablet-break) {
+        margin-bottom: 1rem;
+      }
+    }
+
     .col {
       &:first-child {
         @include breakpoint($tablet-break) {
@@ -64,11 +72,15 @@ footer {
         a {
           font-size: 1.125em;
           line-height: 1.5;
-          padding-bottom: 3px;
+          padding-bottom: 1px;
           color: var(--p);
           font-weight: 700;
           display: inline-block;
           position: relative;
+
+          @include breakpoint($mobile-break) {
+            padding-bottom: 3px;
+          }
 
           &::before {
             content: "";
