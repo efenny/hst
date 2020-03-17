@@ -42,6 +42,10 @@ footer {
     }
 
     .col {
+      @include breakpoint($mobile-break) {
+        text-align: center;
+      }
+
       &:first-child {
         @include breakpoint($tablet-break) {
           margin-bottom: $col-vw;
@@ -49,6 +53,56 @@ footer {
 
         @include breakpoint($mobile-break) {
           margin-bottom: 3rem;
+        }
+      }
+
+      .col-inner {
+        > .main-menu {
+          > ul {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: 18.5rem;
+
+            @include breakpoint($mobile-break) {
+              height: auto;
+            }
+
+            > li {
+              &:nth-child(2) {
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .social-media {
+    li {
+      margin-right: 0.75rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+      a {
+        padding-bottom: 0;
+
+        &:hover {
+          color: var(--blue);
+        }
+        &::before {
+          display: none;
+        }
+
+        svg {
+          height: 1.25rem;
+          width: auto;
+          margin-left: 0;
+          path {
+            fill: currentColor;
+          }
         }
       }
     }
@@ -110,6 +164,11 @@ footer {
 
         nav {
           margin-top: 1rem;
+          li {
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
 
           a {
             font-weight: 400;
