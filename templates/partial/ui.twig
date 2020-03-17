@@ -68,6 +68,49 @@
 	</div>
 {% endmacro %}
 
+{% macro accordion(title, content) %}
+	<div class="accordion">
+		<div class="accordion-inner">
+				<button class="title">
+						<div class="title-inner">
+								<h5>{{ title }}</h5>
+								<div class="icon">
+								</div>
+						</div>
+				</button>
+				<div class="body">
+						<div class="body-inner">
+								{{ content|wpautop }}
+						</div>
+				</div>
+		</div>
+	</div>
+{% endmacro %}
+
+
+{% macro side_tab(array) %}
+	<div class="side-tab">
+		<div class="side-tab-inner">
+				<div class="side-tab-nav">
+						<div class="side-tab-inner">
+								{% for item in array %}
+									<button id="{{ item.title|slugify }}">{{ item.title }}</button>
+								{% endfor %}
+						</div>
+				</div>
+				<div class="side-tab-bodies">
+						{% for item in array %}
+							<div class="side-tab-body" id="{{ item.title|slugify }}">
+								<div class="side-tab-body-inner" >
+									{{ item.text|wpautop }}
+								</div>
+							</div>
+						{% endfor %}
+				</div>
+		</div>
+	</div>
+{% endmacro %} 
+
 {# Search input for faq and such #}
 {% macro search(placeholder, class) %}
 	<div class="search-filter {{ class }}" >
@@ -86,22 +129,6 @@
 			</div>
 			<div class="info">
 				<h3>{{ post.title }}</h3>
-			</div>
-		</a>
-	</div>
-{% endmacro %}
-
-{# post_card #}
-{% macro post_card(post, class) %}
-	<div class="post-card" >
-		<a href="{{ post.link }}" class="post-card-wrapper {{ class }}" >
-			<div class="image">
-				<img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}">
-			</div>
-			<div class="info">
-				<h3>{{ post.title }}</h3>
-				<h4>{{ post.sub_title }}</h4>
-				<a href="{{ post.external_link }}" target="_blank" class="button external"><span>Read More</span></a>
 			</div>
 		</a>
 	</div>

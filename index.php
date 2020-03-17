@@ -15,6 +15,16 @@
 
 $context          = Timber::context();
 $context['posts'] = new Timber\PostQuery();
+
+$args = array(
+	'posts_per_page' => 5,
+	'post_type' => 'post',
+	'category_name' => 'stories'
+);
+
+$context['stories'] = new Timber\PostQuery($args);
+
+
 $templates        = array( 'index.twig' );
 if ( is_home() ) {
 	array_unshift( $templates, 'front-page.twig', 'home.twig' );

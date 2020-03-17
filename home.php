@@ -10,5 +10,11 @@
  */
 
 $context = Timber::context();
+$args = array(
+	'posts_per_page' => 5,
+	'post_type' => 'post',
+	'category_name' => 'stories'
+);
 
+$context['stories'] = new Timber\PostQuery($args);
 Timber::render( 'index.twig', $context );

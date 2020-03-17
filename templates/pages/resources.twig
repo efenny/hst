@@ -7,12 +7,12 @@
     <div class='row-inner'>
       <div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
         <div class='col-inner'>
-          image
+          {{ ui.image(page.image) }}
         </div>
       </div>
       <div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
         <div class='col-inner'>
-          tabs and content
+          {{ ui.side_tab(page.get_field('tabs')) }}
         </div>
       </div>
     </div>
