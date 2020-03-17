@@ -1,17 +1,17 @@
 {% extends "base.twig" %}
+{% import 'partial/ui.twig' as ui %}
 
 {% block content %}
 {# splash page #}
-	<section class='splash'>
+	<section class='splash row heading'>
 		<div class='splash-inner'>
 			<div class='col col-'>
 				<div class='col-inner'>
-					
-				</div>
-			</div>
-			<div class='col col-'>
-				<div class='col-inner'>
-					
+					<h3>{{ page.landing_area_subitle }}</h3>
+					<h1>{{ page.landing_area_title }}</h1>
+					<h5>{{ page.landing_area_text }}</h5>
+					{{ ui.button(page.landing_area_main_button, 'top') }}
+					{{ ui.button(page.landing_area_secondary_button, 'secondary') }}
 				</div>
 			</div>
 		</div>
@@ -54,7 +54,13 @@
 		<div class='row-inner'>
 			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
-					text and buttons
+					{{ ui.p(page.now_what_text) }}
+					<div class="download-wrapper" >
+						{% for item in page.get_field('now_what').downloads %}
+							{{ ui.button(item.button, 'download') }}
+						{% endfor %}
+					</div>
+					{{ ui.button(page.now_what_main_button) }}
 				</div>
 			</div>
 			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
@@ -75,9 +81,9 @@
 			</div>
 			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
-					title
+					{{ ui.h2(page.top_homeschool_questions_title) }}
 					accordions
-					buttons
+					{{ ui.button(page.top_homeschool_questions_main_button) }}
 				</div>
 			</div>
 		</div>
@@ -88,9 +94,9 @@
 		<div class='row-inner'>
 			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
-					title
-					text
-					button
+					{{ ui.p(page.education_methods_text) }}
+					{{ ui.button(page.education_methods_main_button) }}
+					
 				</div>
 			</div>
 			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
@@ -106,10 +112,20 @@
 		<div class='row-inner'>
 			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
-					title
-					text
-					cards
-					button
+					{{ ui.p(page.resources_text) }}
+
+					<div class="cards">
+						{% for item in page.get_field('resources').cards %}
+								<div class="card">
+									<a href="{{ item.link.url }}" class="card-inner">
+										<div class="card">{{ item.icon_svg }}</div>
+										<h3>{{ item.link.title }}</h3>
+									</a>
+								</div>
+						{% endfor %}
+					</div>
+					
+					{{ ui.button(page.resources_secondary_button, 'secondary') }}
 				</div>
 			</div>
 		</div>
