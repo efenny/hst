@@ -24,6 +24,12 @@
     }
   }
 
+  &.lrg-pad-left-0 {
+    @include breakpoint($laptop-break) {
+      padding-left: 0;
+    }
+  }
+
   &.med-pad-left-0-5 {
     @include breakpoint($tablet-break) {
       padding-left: $col-vw / 2;
@@ -33,6 +39,11 @@
   &.med-pad-left-1 {
     @include breakpoint($tablet-break) {
       padding-left: $col-vw;
+    }
+  }
+  &.med-pad-left-0 {
+    @include breakpoint($tablet-break) {
+      padding-left: 0;
     }
   }
 
@@ -45,6 +56,12 @@
   &.sml-pad-left-1 {
     @include breakpoint($mobile-break) {
       padding-left: $col-vw;
+    }
+  }
+
+  &.sml-pad-left-0 {
+    @include breakpoint($mobile-break) {
+      padding-left: 0;
     }
   }
 
@@ -72,6 +89,12 @@
     }
   }
 
+  &.lrg-pad-right-0 {
+    @include breakpoint($laptop-break) {
+      padding-right: 0;
+    }
+  }
+
   &.med-pad-right-0-5 {
     @include breakpoint($tablet-break) {
       padding-right: $col-vw / 2;
@@ -84,6 +107,12 @@
     }
   }
 
+  &.med-pad-right-0 {
+    @include breakpoint($tablet-break) {
+      padding-right: 0;
+    }
+  }
+
   &.sml-pad-right-0-5 {
     @include breakpoint($mobile-break) {
       padding-right: $col-vw / 2;
@@ -93,6 +122,12 @@
   &.sml-pad-right-1 {
     @include breakpoint($mobile-break) {
       padding-right: $col-vw;
+    }
+  }
+
+  &.sml-pad-right-0 {
+    @include breakpoint($mobile-break) {
+      padding-right: 0;
     }
   }
 

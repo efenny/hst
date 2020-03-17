@@ -95,9 +95,9 @@ header {
       justify-content: flex-end;
 
       @include breakpoint($tablet-break) {
-        // opacity: 0;
-        // pointer-events: none;
-        // visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
         width: 100vw;
         height: calc(100vh - 70px);
         position: fixed;
