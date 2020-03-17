@@ -1,20 +1,51 @@
 header {
-  background: var(--white);
+  background: var(--gray);
   position: fixed;
   height: 100px;
   top: 0;
   left: 0;
   z-index: 10000;
 
+  &.row {
+    @include breakpoint($tablet-break) {
+      height: 70px;
+    }
+
+    @include breakpoint($mobile-break) {
+      padding-left: $col-vw / 2 !important;
+      padding-right: $col-vw / 2 !important;
+    }
+  }
+
   &::after {
     content: "";
     width: 50%;
-    right: 0;
+    left: 0;
     top: 0;
     height: 100%;
-    background: var(--gray);
+    background: var(--white);
     position: absolute;
     z-index: 2;
+
+    @include breakpoint($laptop-break) {
+      width: $col-vw * 4;
+    }
+  }
+
+  &::before {
+    content: "";
+    width: $col-vw;
+    left: calc(50% - #{$col-vw/2});
+    top: 0;
+    height: 100%;
+    background: var(--white);
+    position: absolute;
+    transform: skewX(-10deg);
+    z-index: 2;
+
+    @include breakpoint($laptop-break) {
+      left: $col-vw * 3.5;
+    }
   }
 
   .header-inner {
@@ -24,15 +55,37 @@ header {
     z-index: 4;
 
     .col-logo {
+      @include breakpoint($laptop-break) {
+        width: $col-vw * 4;
+      }
       img {
         width: auto;
         height: 90px;
+
+        @include breakpoint($tablet-break) {
+          height: 60px;
+        }
       }
     }
     .col-menu {
+      @include breakpoint($laptop-break) {
+        width: $col-vw * 6;
+      }
+
+      @include breakpoint($mobile-break) {
+        width: $col-vw * 7;
+      }
       .col-inner {
         display: flex;
         justify-content: flex-end;
+      }
+    }
+    .mobile-menu-button {
+      display: none;
+
+      @include breakpoint($tablet-break) {
+        display: flex;
+        align-items: center;
       }
     }
 
@@ -40,6 +93,75 @@ header {
       display: flex;
       align-items: center;
       justify-content: flex-end;
+
+      @include breakpoint($tablet-break) {
+        // opacity: 0;
+        // pointer-events: none;
+        // visibility: hidden;
+        width: 100vw;
+        height: calc(100vh - 70px);
+        position: fixed;
+        left: 0;
+        top: 70px;
+        background: var(--white);
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: $col-vw $col-vw;
+        transition: $transition;
+        justify-content: space-between;
+
+        &.active {
+          opacity: 1;
+          pointer-events: initial;
+          visibility: visible;
+        }
+      }
+
+      @include breakpoint($mobile-break) {
+        padding: $col-vw $col-vw/2;
+      }
+    }
+  }
+
+  .search-media {
+    @include breakpoint($tablet-break) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .social-media {
+      display: none;
+      margin: 0;
+      padding: 0;
+      margin-top: 1rem;
+
+      @include breakpoint($tablet-break) {
+        display: flex;
+      }
+
+      li {
+        list-style: none;
+        margin-right: 0.5rem;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        a {
+          color: var(--p);
+
+          &:hover {
+            color: var(--blue);
+          }
+        }
+
+        svg {
+          path {
+            fill: currentColor;
+          }
+        }
+      }
     }
   }
 
@@ -90,10 +212,26 @@ header {
       padding: 0;
       display: flex;
 
+      @include breakpoint($tablet-break) {
+        flex-direction: column;
+      }
+
       li {
         list-style: none;
         margin-right: 2.5rem;
         position: relative;
+
+        @include breakpoint($laptop-break) {
+          margin-right: 2rem;
+        }
+
+        @include breakpoint($tablet-break) {
+          margin-bottom: 1rem;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
 
         &.current-menu-item,
         &.current-page-parent {
@@ -146,6 +284,10 @@ header {
             font-size: 1.15rem;
           }
 
+          @include breakpoint($tablet-break) {
+            font-size: 1.45rem;
+          }
+
           @include breakpoint($mobile-break) {
             padding-bottom: 3px;
           }
@@ -187,12 +329,27 @@ header {
           z-index: 4;
           min-width: calc(100% + 3rem);
 
+          @include breakpoint($tablet-break) {
+            position: relative;
+            left: initial;
+            top: initial;
+            pointer-events: initial;
+            opacity: 1;
+            margin-bottom: 1rem;
+          }
+
           ul {
             background: var(--white);
             border-radius: 5px;
             padding: 1rem 1.5rem;
             @include box-shadow;
             flex-direction: column;
+
+            @include breakpoint($tablet-break) {
+              box-shadow: none;
+              background: transparent;
+              padding: 0;
+            }
 
             li {
               margin-right: 0;
@@ -208,6 +365,10 @@ header {
           a {
             font-weight: 600;
             font-size: 1rem;
+
+            @include breakpoint($tablet-break) {
+              font-size: 1.15rem;
+            }
           }
         }
       }

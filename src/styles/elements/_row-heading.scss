@@ -6,6 +6,10 @@
   position: relative;
   margin-top: 100px;
 
+  @include breakpoint($tablet-break) {
+    margin-top: 70px;
+  }
+
   &::after {
     content: "";
     width: 100%;

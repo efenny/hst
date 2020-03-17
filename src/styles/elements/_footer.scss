@@ -47,12 +47,29 @@ footer {
       }
 
       &:first-child {
+        @include breakpoint($laptop-break) {
+          width: $col-vw * 3;
+        }
         @include breakpoint($tablet-break) {
           margin-bottom: $col-vw;
+          width: $col-vw * 10;
         }
 
         @include breakpoint($mobile-break) {
           margin-bottom: 3rem;
+          width: $col-vw * 11;
+        }
+      }
+
+      &:last-child {
+        @include breakpoint($laptop-break) {
+          width: $col-vw * 7;
+        }
+        @include breakpoint($tablet-break) {
+          width: $col-vw * 10;
+        }
+        @include breakpoint($mobile-break) {
+          width: $col-vw * 11;
         }
       }
 
