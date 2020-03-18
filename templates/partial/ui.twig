@@ -75,6 +75,9 @@
 						<div class="title-inner">
 								<h5>{{ title }}</h5>
 								<div class="icon">
+									<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M6 1V11M1 6H11"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
 								</div>
 						</div>
 				</button>
@@ -92,7 +95,7 @@
 	<div class="side-tab">
 		<div class="side-tab-inner">
 				<div class="side-tab-nav">
-						<div class="side-tab-inner">
+						<div class="side-tab-nav-inner">
 								{% for item in array %}
 									<button id="{{ item.title|slugify }}">{{ item.title }}</button>
 								{% endfor %}

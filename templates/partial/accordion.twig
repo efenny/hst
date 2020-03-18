@@ -2,7 +2,11 @@
   <div class="accordion-wrapper">
     <div class="accordion-title">
       <h3 class="title">{{ accordion_title }}</h3>
-      <div class="open-close">x</div>
+      <div class="open-close">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 1V11M1 6H11"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
     </div>
     <div class="accordion-body">
       {{ accordion_content }}
