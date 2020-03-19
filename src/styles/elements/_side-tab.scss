@@ -8,7 +8,26 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        padding-right: 2rem;
+        padding-right: 1.5rem;
+
+        .extra-button {
+          width: 100%;
+          position: relative;
+
+          &::before {
+            content: "";
+            width: calc(100% - 1.25rem);
+            height: 2px;
+            background: var(--gray);
+            position: absolute;
+            right: 0;
+            top: 0.75rem;
+          }
+
+          .button.secondary {
+            margin-left: 1.25rem;
+          }
+        }
 
         button {
           white-space: nowrap;
@@ -18,12 +37,17 @@
           border: none;
           font-size: 1rem;
           line-height: 1rem;
-          padding: 0.75rem 1.25rem;
+          padding: 0.65rem 1.15rem;
           font-family: $sans-serif;
           font-weight: 700;
           cursor: pointer;
           margin-bottom: 0.5rem;
           transition: $transition;
+          outline: none;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
 
           &:hover {
             color: var(--blue);
@@ -42,7 +66,7 @@
     .side-tab-bodies {
       .side-tab-body {
         background: var(--white);
-        padding: 2rem 1rem;
+        padding: 2rem 1.5rem;
         border-radius: 10px;
         @include box-shadow;
 

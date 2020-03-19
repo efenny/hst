@@ -31,6 +31,7 @@ var $ = jQuery.noConflict();
 $(document).ready(function() {
   console.log("Let's hope this all works");
   accordionsInit();
+  side_tabs(".side-tab-nav button", ".side-tab");
 });
 
 function accordionsInit() {
@@ -48,4 +49,32 @@ function accordionsInit() {
     });
   }
   accordionFunc(".accordion");
+}
+
+function side_tabs(ele, tabBodyWrapper) {
+  if (!tabBodyWrapper) {
+    var bodyEle = ".tabs";
+  } else {
+    var bodyEle = tabBodyWrapper;
+  }
+  var Button = $(ele);
+  $(Button).click(function(e) {
+    e.preventDefault();
+    var Href = $(this).attr("id");
+    console.log(Href);
+    $(Button).each(function() {
+      $(this).removeClass("active");
+    });
+    $(this).addClass("active");
+    $(this)
+      .closest(bodyEle)
+      .find(".side-tab-body")
+      .each(function() {
+        $(this).removeClass("active");
+      });
+    $(".side-tab-body#" + Href).addClass("active");
+  });
+  $(Button)
+    .first()
+    .click();
 }
