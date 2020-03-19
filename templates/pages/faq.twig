@@ -24,7 +24,7 @@
                   {% set current_name_str = faq_term|slice(0,2) ~ '_loop'%}
                   <div class="search-wrapper">
                     {% for post in attribute(_context, current_name_str) %}
-                      {% include 'partial/accordion.twig' with { accordion_title: post.title, accordion_content: post.content} %} 
+                      {{ ui.accordion(post.title, post.content) }}
                     {% endfor %}
                   </div>
                 </div>

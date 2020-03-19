@@ -29,6 +29,13 @@
           }
         }
 
+        .button-wrapper {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+        }
+
         button {
           white-space: nowrap;
           color: var(--p);
@@ -56,6 +63,7 @@
           &.active {
             color: var(--white);
             background: var(--blue);
+            @include box-shadow;
             &:hover {
               color: var(--white);
             }
@@ -64,6 +72,7 @@
       }
     }
     .side-tab-bodies {
+      width: 100%;
       .side-tab-body {
         background: var(--white);
         padding: 2rem 1.5rem;

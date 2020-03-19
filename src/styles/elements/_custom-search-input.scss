@@ -1,0 +1,31 @@
+.search-filter-wrapper {
+  margin-bottom: 1rem;
+  display: inline-block;
+  position: relative;
+  .search-filter-input {
+    padding: 0.5rem 0.75rem;
+    padding-right: 2.75rem;
+
+    @include box-shadow-dark-hover;
+    outline: none;
+    background: none;
+    background: var(--gray);
+    border: none;
+    border-image: none;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    line-height: 1;
+    font-family: $sans-serif;
+  }
+
+  svg {
+    color: var(--blue);
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.75rem;
+    height: auto;
+    pointer-events: none;
+  }
+}
