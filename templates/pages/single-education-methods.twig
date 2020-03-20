@@ -8,7 +8,9 @@
 			<div class='col first x-lrg-col-4 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
 					{{ ui.p(post.introduction) }}
-					{{ ui.image(post.inside_image) }}
+					{% if post.inside_image %}
+						{{ ui.image(post.inside_image) }}
+					{% endif %}
 				</div>
 			</div>
 			<div class='col second x-lrg-col-4 lrg-col-5 med-col-10 sml-col-10'>
