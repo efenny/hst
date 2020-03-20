@@ -97,3 +97,25 @@ p {
   background: $color1;
   color: $white;
 }
+
+.text-wrapper {
+  ul {
+    padding: 0;
+    li {
+      margin-bottom: 0.25em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      list-style: none;
+      &::before {
+        content: "\2022";
+        font-weight: 300;
+        display: inline-block;
+        margin-right: 0.5em;
+        color: var(--blue);
+      }
+    }
+  }
+}
