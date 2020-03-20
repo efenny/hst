@@ -1,0 +1,206 @@
+.page-template-getting-started {
+  .understand-provincial-requirements {
+    @include breakpoint($tablet-break) {
+      padding-top: $col-vw;
+    }
+    .text {
+      @include breakpoint($laptop-break) {
+        padding-left: 0;
+      }
+      @include breakpoint($tablet-break) {
+        padding-left: $col-vw;
+        padding-right: $col-vw;
+        margin-bottom: $col-vw;
+      }
+
+      @include breakpoint($mobile-break) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    .image {
+      padding-right: 0;
+    }
+  }
+  .establish-your-goals {
+    background: var(--gray);
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: $col-vw * 5;
+      height: 100%;
+      background: var(--white);
+      position: absolute;
+      left: -$col-vw;
+      top: 0;
+      transform: skewX(-10deg);
+
+      @include breakpoint($tablet-break) {
+        width: $col-vw * 1;
+      }
+
+      @include breakpoint($mobile-break) {
+        display: none;
+      }
+    }
+
+    .row-inner {
+      position: relative;
+      z-index: 2;
+
+      @include breakpoint($tablet-break) {
+        flex-direction: column-reverse;
+      }
+
+      .text {
+        @include breakpoint($laptop-break) {
+          padding-right: 0;
+        }
+
+        @include breakpoint($tablet-break) {
+          padding-left: $col-vw * 2;
+          margin-bottom: $col-vw;
+        }
+
+        @include breakpoint($mobile-break) {
+          padding-left: $col-vw;
+        }
+      }
+    }
+  }
+
+  .connect-with-other-homeschoolers {
+    .text {
+      padding-bottom: $col-vw/2;
+
+      @include breakpoint($laptop-break) {
+        padding-left: 0;
+      }
+
+      @include breakpoint($tablet-break) {
+        padding-bottom: $col-vw;
+        padding-left: $col-vw;
+        padding-right: $col-vw;
+      }
+
+      @include breakpoint($mobile-break) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    .image {
+      @include breakpoint($tablet-break) {
+        padding-right: 0;
+
+        .img-wrapper {
+          width: $col-vw * 11;
+        }
+      }
+    }
+  }
+
+  .choose-your-curriculum {
+    @include breakpoint($tablet-break) {
+      padding-bottom: $col-vw;
+    }
+    .row-inner {
+      @include breakpoint($tablet-break) {
+        flex-direction: column-reverse;
+      }
+    }
+    .text {
+      padding-right: 0;
+      padding-top: 0;
+
+      @include breakpoint($tablet-break) {
+        padding-left: $col-vw * 2;
+        margin-top: $col-vw;
+        margin-bottom: $col-vw;
+      }
+
+      @include breakpoint($mobile-break) {
+        padding-left: $col-vw;
+      }
+    }
+  }
+
+  .enjoy-the-journey {
+    @include breakpoint($tablet-break) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .text {
+      position: relative;
+      z-index: 4;
+      @include breakpoint($tablet-break) {
+        padding-left: $col-vw;
+        padding-right: $col-vw;
+        width: 100%;
+      }
+
+      @include breakpoint($mobile-break) {
+        padding-left: $col-vw/2;
+        padding-right: $col-vw/2;
+      }
+      .col-inner {
+        padding: $col-vw / 2 $col-vw;
+        @include box-shadow;
+        background: var(--white);
+        text-align: center;
+
+        @include breakpoint($mobile-break) {
+          padding: $col-vw $col-vw/2;
+        }
+      }
+    }
+
+    .image {
+      position: relative;
+      z-index: 2;
+      margin-top: -$col-vw/2;
+
+      @include breakpoint($tablet-break) {
+        width: 100%;
+      }
+
+      &::before {
+        content: "";
+        width: $col-vw * 9.75;
+        height: $col-vw;
+        position: absolute;
+        left: -$col-vw * 2;
+        top: -$col-vw / 4;
+        background: var(--blue);
+        z-index: 1;
+        @include breakpoint($tablet-break) {
+          width: $col-vw * 11.5;
+          top: -$col-vw / 2;
+          left: 0;
+        }
+
+        @include breakpoint($mobile-break) {
+          width: $col-vw * 11.75;
+        }
+      }
+      .col-inner {
+        position: relative;
+        z-index: 2;
+      }
+    }
+  }
+}
+
+@include dark-mode {
+  .enjoy-the-journey {
+    .text {
+      .col-inner {
+        background: var(--gray);
+      }
+    }
+  }
+}

@@ -41,6 +41,10 @@
   .col {
     padding-bottom: 3rem;
     padding-top: 6rem;
+
+    @include breakpoint($tablet-break) {
+      padding-bottom: $col-vw;
+    }
   }
 
   h5 {
