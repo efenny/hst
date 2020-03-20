@@ -6,7 +6,7 @@
     padding: 0.5rem 0.75rem;
     padding-right: 2.75rem;
 
-    @include box-shadow-dark-hover;
+    @include box-shadow-light-hover;
     outline: none;
     background: none;
     background: var(--gray);
@@ -16,6 +16,10 @@
     font-size: 0.85rem;
     line-height: 1;
     font-family: $sans-serif;
+
+    &:focus {
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
+    }
   }
 
   svg {

@@ -7,30 +7,33 @@
     <div class='row-inner'>
       <div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
         <div class='col-inner'>
-          <div class="tab-nav">
-            <ul class="tab-nav-inner">
-              {% for faq_term in faq_terms|keys %}
-                <li>
-                  <a href="#{{ faq_term }}">{{ faq_terms[faq_term] }}</a>
-                </li>
-              {% endfor %}    
-            </ul>
-          </div>
+          <div class="tabs">
+            <div class="tab-inner">
+              <div class="tab-nav">
+                <ul class="tab-nav-inner">
+                  {% for faq_term in faq_terms|keys %}
+                    <li>
+                      <button id="{{ faq_term }}">{{ faq_terms[faq_term] }}</button>
+                    </li>
+                  {% endfor %}    
+                </ul>
+              </div>
 
-          <div class="tab-bodies">
-              {% for faq_term in faq_terms|keys %}
-                <div class="tab-body" id="{{ faq_term }}">
-                  {{ ui.search('Search question titles...', faq_term ~ '-search') }}
-                  {% set current_name_str = faq_term|slice(0,2) ~ '_loop'%}
-                  <div class="search-wrapper">
-                    {% for post in attribute(_context, current_name_str) %}
-                      {{ ui.accordion(post.title, post.content) }}
-                    {% endfor %}
-                  </div>
-                </div>
-              {% endfor %}
+              <div class="tab-bodies">
+                  {% for faq_term in faq_terms|keys %}
+                    <div class="tab-body search-wrapper" id="{{ faq_term }}">
+                      {{ ui.search('Search question titles...', faq_term ~ '-search') }}
+                      {% set current_name_str = faq_term|slice(0,2) ~ '_loop'%}
+                      <div class="accordion-wrapper">
+                        {% for post in attribute(_context, current_name_str) %}
+                          {{ ui.accordion(post.title, post.content) }}
+                        {% endfor %}
+                      </div>
+                    </div>
+                  {% endfor %}
+              </div>
+            </div>
           </div>
-
         </div>
       </div>
       <div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
