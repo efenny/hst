@@ -79,3 +79,44 @@ MEDIA QUERY (MQ)
   background-size: contain;
   background-position: center;
 }
+
+@function row-item-width($columns, $gutter) {
+  @return calc(#{100% / $columns} - #{($gutter * ($columns - 1)) / $columns});
+}
+
+@mixin row-item-grid($columns, $gutter-col, $gutter-row: null) {
+  width: row-item-width($columns, $gutter-col);
+  margin-right: 0;
+
+  // add a right margin to create the gutter
+  @for $i from 1 through $columns - 1 {
+    &:nth-child(#{$columns}n + #{$i}) {
+      margin-right: $gutter-col;
+    }
+  }
+
+  // Check if the gutter row gap arguement has been passed
+  @if ($gutter-row) {
+    &:nth-child(n) {
+      margin-bottom: $gutter-row;
+    }
+  } @else {
+    // if not then jusdt default to the gutter column gap
+    $gutter-row: $gutter-col;
+    &:nth-child(n) {
+      margin-bottom: $gutter-row;
+    }
+  }
+
+  // remove the bottom margin from the bottom row
+  @for $j from 1 through $columns {
+    &:nth-last-child(#{$j}) {
+      margin-bottom: 0;
+    }
+  }
+
+  // remove right margin from elements that don't need it
+  &:nth-child(#{$columns}n + #{$columns}) {
+    margin-right: 0;
+  }
+}

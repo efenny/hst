@@ -40,6 +40,13 @@ $(document).ready(function() {
     ".search-wrapper",
     ".accordion"
   );
+
+  search_keys(
+    ".post-type-archive-education_methods .search-filter-input",
+    ".search-wrapper",
+    ".method-card"
+  );
+  console.log("dank");
 });
 
 // general accordions
@@ -156,13 +163,10 @@ function search_keys(input, itemsWrapper, eleSearched) {
         .find(".no-items-found")
         .remove();
     }
-
-    $(this)
-      .closest(itemsWrapper)
-      .find(".results .total-viewing")
-      .html(searchedItems.length);
   }
+
   $(input).on("keyup", handleKeyUp);
+
   $(input).each(function() {
     handleKeyUp.call($(this));
   });

@@ -5,6 +5,7 @@
   }
   .col {
     @include box-shadow;
+    background: var(--white);
 
     .col-inner {
       text-align: center;

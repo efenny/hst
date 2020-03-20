@@ -1,0 +1,121 @@
+.post-type-archive-education_methods {
+  .card-row {
+    background: var(--gray);
+    padding: $col-vw / 2 $col-vw * 2;
+
+    @include breakpoint($laptop-break) {
+      padding: $col-vw / 2 $col-vw;
+    }
+
+    @include breakpoint($mobile-break) {
+      padding: $col-vw;
+    }
+
+    .col {
+      width: 100%;
+    }
+
+    .search-filter {
+      input {
+        background: var(--white);
+      }
+    }
+  }
+  .method-wrappers {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .method-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    @include box-shadow-dark-hover;
+
+    @include row-item-grid(3, $col-vw / 4);
+
+    @include breakpoint($tablet-break) {
+      border-radius: 5px;
+      @include row-item-grid(2, $col-vw / 4);
+    }
+
+    @include breakpoint($mobile-break) {
+      @include row-item-grid(1, $col-vw / 2);
+    }
+
+    .image {
+      img {
+        width: 100%;
+        height: $col-vw * 1.25;
+        object-fit: cover;
+
+        @include breakpoint($tablet-break) {
+          height: $col-vw * 1.75;
+        }
+
+        @include breakpoint($mobile-break) {
+          height: $col-vw * 3.25;
+        }
+      }
+    }
+
+    .info {
+      padding: 0.75rem 1rem;
+    }
+  }
+
+  .still-have-questions {
+    padding-top: $col-vw / 4;
+    position: relative;
+
+    @include breakpoint($tablet-break) {
+      padding-top: $col-vw / 2;
+    }
+
+    &::before {
+      content: "";
+      width: $col-vw * 8.75;
+      height: $col-vw;
+      right: 0;
+      top: 0;
+      background: var(--green);
+      position: absolute;
+      z-index: 2;
+
+      @include breakpoint($laptop-break) {
+        width: $col-vw * 9.75;
+      }
+
+      @include breakpoint($tablet-break) {
+        width: $col-vw * 10.75;
+        height: $col-vw * 1.25;
+      }
+
+      @include breakpoint($mobile-break) {
+        width: $col-vw * 10.5;
+      }
+    }
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: $col-vw * 0.75;
+      right: 0;
+      top: 0;
+      background: var(--gray);
+      position: absolute;
+      z-index: 1;
+
+      @include breakpoint($tablet-break) {
+        height: $col-vw * 1.25;
+      }
+    }
+
+    .row-inner {
+      position: relative;
+      z-index: 4;
+    }
+  }
+}

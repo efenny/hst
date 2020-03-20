@@ -2,7 +2,7 @@
 {% import 'partial/ui.twig' as ui %}
 
 {% block content %}
-	{% include "partial/row-heading.twig" %}
+	{% include "partial/row-heading.twig" with {image: page.thumbnail} %}
 	<section class='row the-info'>
 		<div class='row-inner'>
 			<div class='col first x-lrg-col-4 lrg-col-5 med-col-10 sml-col-10'>

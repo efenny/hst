@@ -2,7 +2,7 @@
 {% import 'partial/ui.twig' as ui %}
 
 {% block content %}
-	{% include "partial/row-heading.twig" with {post: page} %}
+	{% include "partial/row-heading.twig" with {post: page, image: page.thumbnail} %}
   {# Understand provincial requirements #}
   <section class='row understand-provincial-requirements top-pad-0-5 bottom-pad-0-5  x-lrg-pad-right-1 x-lrg-pad-left-1'>
     <div class='row-inner center'>
