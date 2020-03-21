@@ -1,0 +1,89 @@
+.main-row {
+  padding-left: $col-vw;
+  padding-right: $col-vw;
+  padding-bottom: $col-vw * 1.25;
+  background: var(--gray);
+  position: relative;
+
+  @include breakpoint($mobile-break) {
+    padding-bottom: $col-vw * 2;
+  }
+
+  &::before {
+    content: "";
+    width: $col-vw * 6.5;
+    height: 100%;
+    background: var(--white);
+    position: absolute;
+    left: -$col-vw;
+    top: 0;
+    transform: skewX(-10deg);
+
+    @include breakpoint($tablet-break) {
+      width: $col-vw * 5;
+      left: -$col-vw * 1.5;
+    }
+    @include breakpoint($mobile-break) {
+      display: none;
+    }
+  }
+
+  .search-filter {
+    input {
+      @include breakpoint($mobile-break) {
+        background: var(--white);
+      }
+    }
+  }
+
+  .row-inner {
+    position: relative;
+    z-index: 4;
+
+    .accords {
+      padding-left: $col-vw;
+
+      @include breakpoint($laptop-break) {
+        padding-left: 0;
+      }
+      @include breakpoint($tablet-break) {
+        padding-left: $col-vw;
+        padding-right: $col-vw;
+      }
+      @include breakpoint($mobile-break) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    .image {
+      padding-left: $col-vw;
+      margin-top: calc(3rem + 0.65rem + 0.65rem + 2.25rem + 1rem);
+
+      @include breakpoint($tablet-break) {
+        display: none;
+      }
+
+      .img-wrapper {
+        position: relative;
+        padding-top: $col-vw/4;
+        &::before {
+          content: "";
+          background: var(--green);
+          height: $col-vw;
+          width: $col-vw * 3.75;
+          position: absolute;
+          left: $col-vw/4;
+          top: 0;
+          z-index: -1;
+        }
+      }
+    }
+  }
+}
+
+.still-have-questions {
+  margin-top: $col-vw * -0.75;
+  position: relative;
+  z-index: 2;
+}

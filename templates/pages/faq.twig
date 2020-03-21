@@ -2,10 +2,10 @@
 {% import 'partial/ui.twig' as ui %}
 
 {% block content %}
-	{% include "partial/row-heading.twig" with {post: page.type} %}
-  <section class='row'>
+	{% include "partial/row-heading.twig" with {post: page.type, image: options.faq_methods_image.url} %}
+  <section class='row main-row top-pad-0-5'>
     <div class='row-inner'>
-      <div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+      <div class='accords col x-lrg-col-6 lrg-col-5 med-col-10 sml-col-10'>
         <div class='col-inner'>
           <div class="tabs">
             <div class="tab-inner">
@@ -36,9 +36,9 @@
           </div>
         </div>
       </div>
-      <div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+      <div class='col image x-lrg-col-4 lrg-col-4 med-col-10 sml-col-10'>
         <div class='col-inner'>
-          image
+          {{ ui.image(options.faq_inside_image) }}
         </div>
       </div>
     </div>
