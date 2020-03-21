@@ -44,6 +44,13 @@
 
     @include breakpoint($tablet-break) {
       padding-bottom: $col-vw;
+      padding-left: $col-vw;
+      padding-right: $col-vw;
+    }
+
+    @include breakpoint($mobile-break) {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 

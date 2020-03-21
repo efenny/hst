@@ -40,7 +40,17 @@ footer {
         margin-bottom: 1rem;
       }
     }
+    .logo {
+      img {
+        max-width: 160px;
+      }
+    }
 
+    .cche-logo {
+      img {
+        max-width: 110px;
+      }
+    }
     .col {
       @include breakpoint($mobile-break) {
         text-align: center;

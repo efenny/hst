@@ -28,7 +28,7 @@
 					<div class="resources">
 						{{ ui.h3('Resources') }}
 						{{ ui.p(post.resources) }}
-						{% set backButton = {title: 'Back to Education Methods', url: '/' ~ post.type.rewrite.slug, } %}
+						{% set backButton = {title: 'Back to ' ~ post.type.label, url: '/' ~ post.type.rewrite.slug, } %}
 						{{ ui.button(backButton, "secondary") }} 
 					</div>
 				</div>
