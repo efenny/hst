@@ -7,6 +7,11 @@
     @include box-shadow;
     background: var(--white);
 
+    @include breakpoint($mobile-break-sml) {
+      padding-left: $col-vw/2;
+      padding-right: $col-vw/2;
+    }
+
     .col-inner {
       text-align: center;
       display: flex;
@@ -21,7 +26,7 @@
 @include dark-mode {
   .still-have-questions {
     .col {
-      background: $darkModeGray;
+      background: $darkModeMedGray;
     }
   }
 }

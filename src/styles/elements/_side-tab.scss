@@ -2,13 +2,28 @@
   .side-tab-inner {
     display: flex;
 
+    @include breakpoint($tablet-break) {
+      flex-direction: column;
+    }
+
     .side-tab-nav {
+      @include breakpoint($tablet-break) {
+        width: 100%;
+        overflow: hidden;
+      }
       .side-tab-nav-inner {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
         padding-right: 1.5rem;
+
+        @include breakpoint($tablet-break) {
+          flex-direction: row;
+          padding-right: 0;
+
+          overflow: auto;
+        }
 
         .extra-button {
           width: 100%;
@@ -34,6 +49,12 @@
           flex-direction: column;
           justify-content: flex-start;
           align-items: flex-start;
+
+          @include breakpoint($tablet-break) {
+            flex-direction: row;
+            padding-right: 0;
+            margin-bottom: 2rem;
+          }
         }
 
         button {
@@ -51,6 +72,11 @@
           margin-bottom: 0.5rem;
           transition: $transition;
           outline: none;
+
+          @include breakpoint($tablet-break) {
+            margin-right: 0.25rem;
+            margin-bottom: 0rem;
+          }
 
           &:last-child {
             margin-bottom: 0;
@@ -73,13 +99,17 @@
     }
     .side-tab-bodies {
       width: 100%;
+
       .side-tab-body {
         background: var(--white);
         padding: 2rem 1.5rem;
         border-radius: 10px;
         @include box-shadow;
-
         display: none;
+
+        @include breakpoint($mobile-break) {
+          padding: 1.5rem 1rem;
+        }
 
         &.active {
           display: block;
@@ -99,6 +129,18 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+}
+
+@include dark-mode {
+  .side-tab {
+    .side-tab-inner {
+      .side-tab-bodies {
+        .side-tab-body {
+          background: $darkModeMedGray;
         }
       }
     }

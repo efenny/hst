@@ -98,6 +98,10 @@ footer {
             > li {
               &:nth-child(2) {
                 margin-bottom: 0;
+
+                @include breakpoint($mobile-break) {
+                  margin-bottom: 0.75rem;
+                }
               }
             }
           }
@@ -142,6 +146,9 @@ footer {
       li {
         margin-bottom: 1rem;
         list-style: none;
+        @include breakpoint($mobile-break) {
+          margin-bottom: 0.75rem;
+        }
 
         &.current-menu-item {
           > a {
@@ -191,6 +198,9 @@ footer {
 
         nav {
           margin-top: 1rem;
+          @include breakpoint($mobile-break) {
+            margin-top: 0.75rem;
+          }
           li {
             &:last-child {
               margin-bottom: 0;
