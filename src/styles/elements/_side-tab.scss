@@ -29,6 +29,10 @@
           width: 100%;
           position: relative;
 
+          @include breakpoint($tablet-break) {
+            display: none;
+          }
+
           &::before {
             content: "";
             width: calc(100% - 1.25rem);
