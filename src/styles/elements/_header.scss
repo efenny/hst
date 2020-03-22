@@ -186,6 +186,52 @@ header {
       transition: $transition;
       z-index: 4;
 
+      #s {
+        width: 100%;
+        min-width: 150px;
+        padding: 0.5rem 0.75rem;
+        padding-right: 2.75rem;
+        @include box-shadow-light-hover;
+        outline: none;
+        background: none;
+        background: var(--gray);
+        border: none;
+        border-image: none;
+        border-radius: 5px;
+        font-size: 0.85rem;
+        height: 2.25rem;
+        line-height: 1;
+        font-family: $sans-serif;
+
+        &:focus {
+          box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
+        }
+      }
+
+      .button {
+        margin-top: 1rem;
+        input {
+          font-size: 1rem;
+          line-height: 1.25em;
+          padding: 0;
+          background: transparent;
+          display: inline-block;
+          color: var(--p);
+          font-family: $sans-serif;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          font-weight: 700;
+          border-radius: 5px;
+          box-shadow: none;
+          border: none;
+        }
+      }
+
+      &.active {
+        opacity: 1;
+        pointer-events: initial;
+      }
+
       > div {
         background: var(--white);
         border-radius: 5px;
@@ -197,7 +243,6 @@ header {
         }
 
         #searchsubmit {
-          margin-top: 1rem;
           border-radius: 0;
           border: none;
           cursor: pointer;

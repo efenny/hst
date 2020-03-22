@@ -35,6 +35,7 @@ $(document).ready(function() {
   accordionsInit();
   side_tabs(".side-tab-nav button", ".side-tab");
   top_tabs(".tab-nav button");
+  searchDropDown();
   search_keys(
     ".post-type-archive-faq .search-filter-input",
     ".search-wrapper",
@@ -48,6 +49,16 @@ $(document).ready(function() {
   );
   console.log("dank");
 });
+
+// Search drop down
+function searchDropDown() {
+  $(".search-icon-wrapper").click(function() {
+    $(this).toggleClass("active");
+    $(this)
+      .find("#searchform")
+      .toggleClass("active");
+  });
+}
 
 // general accordions
 function accordionsInit() {

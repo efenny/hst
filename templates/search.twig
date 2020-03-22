@@ -1,14 +1,43 @@
 {# see `archive.twig` for an alternative strategy of extending templates #}
 {% extends "base.twig" %}
+{% import 'partial/ui.twig' as ui %}
 
 {% block content %}
   {# see `base.twig:27` for where this block's content will be inserted #}
-  <h2>Search </h2>
-  <div class="content-wrapper">
-    {% for post in posts %}
-      <a href="{{ post.link }}">{{ post.title }}</a>
-    {% endfor %}
-
-    {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
-  </div>
+  <section class='row search-row'>
+    <div class='row-inner'>
+      <div class='col col-search x-lrg-col-3 lrg-col-3 med-col-10 sml-col-10'>
+        <div class='col-inner'>
+           {% include "partial/search-form.twig" %}
+        </div>
+      </div>
+      <div class='col col-results x-lrg-col-7 lrg-col-7 med-col-10 sml-col-10'>
+        <div class='col-inner'>
+          <div class="content-wrapper {% if posts.pagination.pages is empty %}empty{% endif %}">
+            {% if posts|length > 0 %}
+              {% for post in posts %}
+                <article>
+                  <a href="{{ post.link }}">
+                    {% if post.thumbnail %}
+                      <div class="image">
+                        {{ ui.image(post.thumbnail) }}
+                      </div>
+                    {% endif %}
+                    <div class="info">
+                      {{ ui.h3(post.title) }}
+                    </div>
+                  </a>
+                </article>
+              {% endfor %}
+            {% else %}
+              <h3>No items found, please search again.</h3>
+            {% endif %}
+          </div>
+          {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+        </div>
+      </div>
+    </div>
+  </section>
+  {% include "partial/row-still-have-questions.twig" %}
+  {% include "partial/row-stay-informed.twig" %}
 {% endblock %}
