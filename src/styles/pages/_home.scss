@@ -146,7 +146,6 @@
 // Education Methods
 .education-methods {
   padding-left: $col-vw;
-  padding-bottom: $col-vw/2;
   background-size: 70%;
   background-position: right top;
   position: relative;
@@ -165,7 +164,7 @@
   .text {
     padding-left: $col-vw;
     padding-top: $col-vw;
-    padding-bottom: $col-vw;
+    padding-bottom: $col-vw * 1.5;
     position: relative;
     width: $col-vw * 4;
 
@@ -177,6 +176,7 @@
       padding-left: $col-vw;
       padding-right: $col-vw;
       padding-top: 0;
+      padding-bottom: $col-vw;
       width: 100%;
     }
     @include breakpoint($mobile-break) {
@@ -214,6 +214,101 @@
     @include breakpoint($tablet-break) {
       width: 100%;
       height: $col-vw * 6;
+    }
+  }
+}
+
+// Resources
+.resources {
+  padding-left: $col-vw * 2;
+  padding-right: $col-vw * 2;
+  margin-top: -$col-vw/2;
+  position: relative;
+  z-index: 6;
+
+  @include breakpoint($laptop-break) {
+    padding-left: $col-vw;
+    padding-right: $col-vw;
+  }
+
+  @include breakpoint($tablet-break) {
+    margin-top: 0;
+    background: var(--gray);
+  }
+
+  .col {
+    width: 100%;
+    background: var(--gray);
+    padding: $col-vw/2 $col-vw;
+
+    @include breakpoint($tablet-break) {
+      padding: $col-vw 0;
+    }
+
+    .col-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .text-wrapper {
+      padding: 0 $col-vw * 1.5;
+      text-align: center;
+
+      @include breakpoint($tablet-break) {
+        padding: 0 $col-vw;
+      }
+
+      @include breakpoint($mobile-break) {
+        padding: 0;
+      }
+    }
+
+    .cards {
+      padding: 0 $col-vw/2;
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+
+      @include breakpoint($laptop-break) {
+        padding: 0;
+      }
+
+      @include breakpoint($mobile-break) {
+        padding: 0 $col-vw;
+      }
+      .card {
+        @include row-item-grid(3, 1.5rem);
+
+        @include breakpoint($mobile-break) {
+          @include row-item-grid(1, 1rem);
+        }
+
+        .card-inner {
+          background: var(--white);
+          padding: 2rem;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          border-radius: 10px;
+          @include box-shadow-dark-hover;
+
+          @include breakpoint($tablet-break) {
+            padding: 2rem 1rem;
+          }
+
+          .svg {
+            margin-bottom: 0.5rem;
+          }
+
+          h3 {
+            @include breakpoint($tablet-break) {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
     }
   }
 }
