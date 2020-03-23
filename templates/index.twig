@@ -18,7 +18,7 @@
 	</section>
 
 	{# latest news and send me info #}
-	<section class='row'>
+	<section class='row latest-news'>
 		<div class='row-inner'>
 			<div class='col x-lrg-col-4 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
@@ -48,9 +48,9 @@
 	</section>
 
 	{# what is homeschooling #}
-	<section class='row'>
+	<section class='row what-is-homeschooling top-pad-0-5 bottom-pad-0-5'>
 		<div class='row-inner'>
-			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+			<div class='col image x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
 					<a href="{{ page.new_to_homeschooling_video }}" data-lity>
 					video
@@ -58,7 +58,7 @@
 					</a>
 				</div>
 			</div>
-			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+			<div class='col text x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
 					{{ ui.side_tab(page.get_field('new_to_homeschooling').tabs, page.new_to_homeschooling_faq_link) }} 
 				</div>
@@ -67,9 +67,9 @@
 	</section>
 
 	{# You’ve Decided to Homeschool… Now What? #}
-	<section class='row '>
+	<section class='row now-what x-lrg-pad-left-1 x-lrg-pad-right-1 top-pad-0-5 bottom-pad-0-5 bottom-margin-0-5'>
 		<div class='row-inner'>
-			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+			<div class='col text x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
 					{{ ui.p(page.now_what_text) }}
 					<div class="download-wrapper" >
@@ -80,7 +80,7 @@
 					{{ ui.button(page.now_what_main_button) }}
 				</div>
 			</div>
-			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+			<div class='col image x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
 					{{ ui.image(page.now_what_image) }}
 				</div>
@@ -89,16 +89,16 @@
 	</section>
 
 	{# 5 Top Homeschool Questions #}
-	<section class='row top-homeschool-questions'>
+	<section class='row top-homeschool-questions x-lrg-pad-left-1 x-lrg-pad-right-1 top-pad-0-5 bottom-pad-1'>
 		<div class='row-inner'>
-			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+			<div class='col image x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
 					{{ ui.image(page.top_homeschool_questions_image) }}
 				</div>
 			</div>
-			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+			<div class='col text x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
-					{{ ui.h2(page.top_homeschool_questions_title) }}
+					{{ ui.h2(page.get_field('top_homeschool_questions').questions|length ~ page.top_homeschool_questions_title) }}
 					<div class="accordion-wrapper">
 						{% for question in page.get_field('top_homeschool_questions').questions %}
 							{{ ui.accordion(question.title, question.text) }}
@@ -111,7 +111,7 @@
 	</section>
 
 	{# Education Methods #}
-	<section class='row'>
+	<section class='row education-methods'>
 		<div class='row-inner'>
 			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
@@ -129,7 +129,7 @@
 	</section>
 
 	{# Resources #}
-	<section class='row'>
+	<section class='row resources'>
 		<div class='row-inner'>
 			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
@@ -153,7 +153,6 @@
 	</section>
 
 	{# Stories row #}
-
 	<section class='row stories'>
 		<div class='row-inner'>
 			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
