@@ -89,7 +89,7 @@
 	</section>
 
 	{# 5 Top Homeschool Questions #}
-	<section class='row top-homeschool-questions x-lrg-pad-left-1 x-lrg-pad-right-1 top-pad-0-5 bottom-pad-1'>
+	<section class='row top-homeschool-questions x-lrg-pad-left-1 x-lrg-pad-right-1 top-pad-0-5 bottom-pad-0-5'>
 		<div class='row-inner'>
 			<div class='col image x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
@@ -111,18 +111,16 @@
 	</section>
 
 	{# Education Methods #}
-	<section class='row education-methods'  style="background-image:url('{{ TimberImage(page.education_methods_image).src }}');">
+	<section class='row education-methods'>
 		<div class='row-inner'>
-			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+			<div class='col text x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
 					{{ ui.p(page.education_methods_text) }}
 					{{ ui.button(page.education_methods_main_button) }}
-					
 				</div>
 			</div>
-			<div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+			<div class='col image x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10' style="background-image:url('{{ TimberImage(page.education_methods_image).src }}');">
 				<div class='col-inner'>
-					bg image
 				</div>
 			</div>
 		</div>
