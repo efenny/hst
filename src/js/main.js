@@ -32,6 +32,7 @@ var $ = jQuery.noConflict();
 // When the document is ready
 $(document).ready(function() {
   console.log("Let's hope this all works");
+  mobileMenu();
   accordionsInit();
   side_tabs(".side-tab-nav button", ".side-tab");
   top_tabs(".tab-nav button");
@@ -74,11 +75,20 @@ $(document).ready(function() {
   });
 });
 
+function mobileMenu() {
+  $(".mobile-menu-button").click(function() {
+    $(this).toggleClass("active");
+    $("body").toggleClass("menu-active");
+    $(".menu-search-wrapper").toggleClass("active");
+  });
+}
+
 // Search drop down
 function searchDropDown() {
-  $(".search-icon-wrapper").click(function() {
+  $(".search-icon").click(function() {
     $(this).toggleClass("active");
     $(this)
+      .closest(".search-icon-wrapper")
       .find("#searchform")
       .toggleClass("active");
   });

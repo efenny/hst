@@ -10,4 +10,11 @@
  */
 
 $context = Timber::context();
+$args = array(
+	'posts_per_page' => 6,
+	'post_type' => 'post',
+);
+
+$context['posts'] = new Timber\PostQuery($args);
+
 Timber::render( 'pages/blog.twig', $context );
