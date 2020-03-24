@@ -315,13 +315,17 @@
 
 // Stories
 .stories {
-  padding-top: $col-vw;
+  padding-top: $col-vw/2;
   padding-left: $col-vw * 2;
   padding-right: $col-vw;
   position: relative;
 
   @include breakpoint($laptop-break) {
     padding-left: $col-vw;
+  }
+
+  @include breakpoint($tablet-break) {
+    padding-top: $col-vw;
   }
 
   &::after {
