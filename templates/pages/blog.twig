@@ -2,6 +2,41 @@
 {% import 'partial/ui.twig' as ui %}
 
 {% block content %}
-
+{% include "partial/row-heading.twig" with {post: page, image: page.thumbnail} %}
+<section class='row blog-row x-lrg-pad-right-1 x-lrg-pad-left-1 top-pad-0-5 bottom-pad-0-5'>
+  <div class='row-inner'>
+    <div class='col cat x-lrg-col-2 lrg-col-2 med-col-10 sml-col-10'>
+      <div class='col-inner'>
+        <h3>Categories</h3>
+        <div class='cat-wrapper'> 
+          {% for cat in cats %}
+            <a href="/category/{{ cat.slug }}/">{{ cat.name }}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class='col posts x-lrg-col-8 lrg-col-8 med-col-10 sml-col-10'>
+      <div class='col-inner'>
+        <div class='posts-wrapper'>
+          {% for post in posts %}
+            <article class="post-card">
+              <a href="{{ post.link }}"  class="post-card-wrapper">
+                {% if post.thumbnail %}
+                  <div class="image">
+                    {{ ui.image(post.thumbnail) }}
+                  </div>
+                {% endif %}
+                <div class="info">
+                  {{ ui.h3(post.title) }}
+                </div>
+              </a>
+            </article>
+          {% endfor %}
+         </div>
+        {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+      </div>
+    </div>
+  </div>
+</section>
 {% include "partial/row-stay-informed.twig" %}
 {% endblock %}

@@ -35,6 +35,11 @@ if ( is_day() ) {
 	array_unshift( $templates, 'archive-' . get_post_type() . '.twig' );
 }
 
+$context['cats'] = get_categories( array(
+	'orderby' => 'name',
+	'order'   => 'ASC'
+) );
+
 $context['posts'] = new Timber\PostQuery();
 
 Timber::render( $templates, $context );
