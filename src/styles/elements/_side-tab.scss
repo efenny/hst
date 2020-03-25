@@ -69,13 +69,17 @@
           border: none;
           font-size: 1rem;
           line-height: 1rem;
-          padding: 0.65rem 1.15rem;
+          padding: 0.65em 1.15em;
           font-family: $sans-serif;
           font-weight: 700;
           cursor: pointer;
           margin-bottom: 0.5rem;
           transition: $transition;
           outline: none;
+
+          @include breakpoint($laptop-break) {
+            font-size: 0.85rem;
+          }
 
           @include breakpoint($tablet-break) {
             margin-right: 0.25rem;
