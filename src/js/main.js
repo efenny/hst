@@ -49,6 +49,8 @@ $(document).ready(function() {
     ".method-card"
   );
 
+  homepageMenuScroll();
+
   $(".home .stories .articles-wrapper").slick({
     infinite: true,
     slidesToShow: 3,
@@ -99,6 +101,16 @@ $(document).ready(function() {
     ]
   });
 });
+
+function homepageMenuScroll() {
+  if ($("body").hasClass("home")) {
+    var controller = new ScrollMagic.Controller({});
+
+    new ScrollMagic.Scene({ triggerElement: ".latest-news-row" })
+      .setClassToggle("header", "active")
+      .addTo(controller);
+  }
+}
 
 function mobileMenu() {
   $(".mobile-menu-button").click(function() {

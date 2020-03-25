@@ -66,6 +66,7 @@ require_once('cpt.php');
 function wpdocs_theme_name_scripts() {
 	wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/dist/js/vendors/slick.min.js', array( 'jquery' ), '1.0.0', true );
 	wp_enqueue_script( 'lity-js', get_template_directory_uri() . '/dist/js/vendors/lity.min.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_script( 'scrollmagic-js', get_template_directory_uri() . '/dist/js/vendors/scrollmagic.js', array( 'jquery' ), '1.0.0', true );
 	wp_enqueue_script( 'main-js', get_template_directory_uri() . '/dist/js/main.min.js', array( 'jquery' ), '1.0.0', true );
 	wp_enqueue_style( 'main-style', get_template_directory_uri() . '/dist/css/main.css');
 }

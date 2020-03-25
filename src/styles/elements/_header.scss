@@ -17,25 +17,10 @@ header {
     }
   }
 
-  &::after {
-    content: "";
-    width: 50%;
-    left: 0;
-    top: 0;
-    height: 100%;
-    background: var(--white);
-    position: absolute;
-    z-index: 2;
-
-    @include breakpoint($laptop-break) {
-      width: $col-vw * 4;
-    }
-  }
-
   &::before {
     content: "";
-    width: $col-vw;
-    left: calc(50% - #{$col-vw/2});
+    width: $col-vw * 7;
+    left: -$col-vw;
     top: 0;
     height: 100%;
     background: var(--white);
@@ -44,7 +29,7 @@ header {
     z-index: 2;
 
     @include breakpoint($laptop-break) {
-      left: $col-vw * 3.5;
+      width: $col-vw * 6.5;
     }
   }
 

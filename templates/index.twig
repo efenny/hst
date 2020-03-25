@@ -4,6 +4,9 @@
 {% block content %}
 {# splash page #}
 	<section class='splash row heading'>
+		<div class='video-wrapper'>
+			<iframe width="560" height="315" src="{{ page.landing_area_video_url }}" frameborder="0" allow="autoplay; encrypted-media;"></iframe>
+		</div>
 		<div class='splash-inner'>
 			<div class='col'>
 				<div class='col-inner'>
@@ -17,7 +20,14 @@
 
 			<div class='col video'>
 				<div class='col-inner'>
-				
+					<a href="{{ page.landing_area_video_url }}" data-lity>
+						<div class="img-wrapper {{ class }}" >
+							<img src="{{ TimberImage(page.landing_area_video_cover_image).src }}" alt="{{ TimberImage(page.landing_area_video_cover_image).alt }}">
+							<svg width="94" height="94" viewBox="0 0 94 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M46.771 0C37.5206 0 28.4779 2.74307 20.7864 7.88233C13.095 13.0216 7.10024 20.3262 3.56025 28.8725C0.0202651 37.4188 -0.905957 46.8229 0.898713 55.8956C2.70338 64.9683 7.15789 73.3021 13.6989 79.8431C20.24 86.3841 28.5738 90.8386 37.6465 92.6433C46.7191 94.448 56.1232 93.5218 64.6695 89.9818C73.2158 86.4418 80.5204 80.447 85.6597 72.7556C90.799 65.0641 93.542 56.0214 93.542 46.771C93.5059 34.3777 88.5666 22.5023 79.8032 13.7388C71.0397 4.97539 59.1643 0.0361435 46.771 0V0ZM37.417 67.818V25.724L65.479 46.771L37.417 67.818Z" fill="currentColor"/>
+							</svg> 
+						</div>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -59,8 +69,12 @@
 			<div class='col image x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
 					<a href="{{ page.new_to_homeschooling_video }}" data-lity>
-					video
-					{{ ui.image(page.new_to_homeschooling_image )}}
+						<div class="img-wrapper {{ class }}" >
+							<img src="{{ TimberImage(page.new_to_homeschooling_image).src }}" alt="{{ TimberImage(page.new_to_homeschooling_image).alt }}">
+							<svg width="94" height="94" viewBox="0 0 94 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M46.771 0C37.5206 0 28.4779 2.74307 20.7864 7.88233C13.095 13.0216 7.10024 20.3262 3.56025 28.8725C0.0202651 37.4188 -0.905957 46.8229 0.898713 55.8956C2.70338 64.9683 7.15789 73.3021 13.6989 79.8431C20.24 86.3841 28.5738 90.8386 37.6465 92.6433C46.7191 94.448 56.1232 93.5218 64.6695 89.9818C73.2158 86.4418 80.5204 80.447 85.6597 72.7556C90.799 65.0641 93.542 56.0214 93.542 46.771C93.5059 34.3777 88.5666 22.5023 79.8032 13.7388C71.0397 4.97539 59.1643 0.0361435 46.771 0V0ZM37.417 67.818V25.724L65.479 46.771L37.417 67.818Z" fill="currentColor"/>
+							</svg> 
+						</div>
 					</a>
 				</div>
 			</div>
