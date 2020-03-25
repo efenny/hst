@@ -24,6 +24,13 @@ footer {
 
   .footer-top {
     background: var(--gray);
+    padding-top: $col-vw/2 !important;
+    padding-bottom: $col-vw/2 !important;
+
+    @include breakpoint($tablet-break) {
+      padding-top: $col-vw !important;
+      padding-bottom: $col-vw !important;
+    }
 
     .footer-top-inner {
       display: flex;

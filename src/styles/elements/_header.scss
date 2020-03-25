@@ -58,6 +58,12 @@ header {
       @include breakpoint($laptop-break) {
         width: $col-vw * 4;
       }
+
+      .col-inner {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
       img {
         width: auto;
         height: 90px;
