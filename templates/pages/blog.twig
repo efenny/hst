@@ -20,7 +20,7 @@
         <div class='posts-wrapper'>
           {% for post in posts %}
             <article class="post-card">
-              <a href="{{ post.link }}"  class="post-card-wrapper">
+              <a href="{% if post.external_link %}{{ post.external_link }}{% else %}{{ post.link }}{% endif %}" target="_blank" class="post-card-wrapper">
                 {% if post.thumbnail %}
                   <div class="image">
                     {{ ui.image(post.thumbnail) }}

@@ -18,28 +18,28 @@
 	</section>
 
 	{# latest news and send me info #}
-	<section class='row latest-news'>
+	<section class='row latest-news-row'>
 		<div class='row-inner'>
-			<div class='col x-lrg-col-4 lrg-col-5 med-col-10 sml-col-10'>
+			<div class='col articles x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
 					<div class="latest-news-wrapper">
 						{% for post in page.get_field('news') %}
 							<article class="latest-news">
-								<div class="latest-news-inner">
+								<a href="{{ post.external_link }}" target="_blank" class="latest-news-inner">
 									<div class="image">
 										{{ ui.image(post.thumbnail) }}
 									</div>
 									<div class="info">
 										<h3>{{ post.title }}</h3>
-										{{ ui.p(post.date) }}
+										{{ ui.p(post.date, 'date') }}
 									</div>
-								</div>
+								</a>
 							</article>
 						{% endfor %}
 					</div>
 				</div>
 			</div>
-			<div class='col x-lrg-col-8 lrg-col-7 med-col-10 sml-col-10'>
+			<div class='col form x-lrg-col-6 lrg-col-6 med-col-10 sml-col-10'>
 				<div class='col-inner'>
 						{% include "partial/stay-informed-form.twig" %}
 				</div>

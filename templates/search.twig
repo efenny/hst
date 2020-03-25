@@ -17,7 +17,7 @@
             {% if posts|length > 0 %}
               {% for post in posts %}
                 <article>
-                  <a href="{{ post.link }}">
+                  <a href="{% if post.type == 'faq' %}/faq/{% elseif post.external_link %}{{ post.external_link }}{% else %}{{ post.link }}{% endif %}">
                     {% if post.thumbnail %}
                       <div class="image">
                         {{ ui.image(post.thumbnail) }}
@@ -25,6 +25,7 @@
                     {% endif %}
                     <div class="info">
                       {{ ui.h3(post.title) }}
+                      
                     </div>
                   </a>
                 </article>
