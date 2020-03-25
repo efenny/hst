@@ -5,7 +5,7 @@
 {# splash page #}
 	<section class='splash row heading'>
 		<div class='splash-inner'>
-			<div class='col col-'>
+			<div class='col'>
 				<div class='col-inner'>
 					<h3>{{ page.landing_area_subitle }}</h3>
 					<h1>{{ page.landing_area_title }}</h1>
@@ -14,11 +14,17 @@
 					{{ ui.button(page.landing_area_secondary_button, 'secondary') }}
 				</div>
 			</div>
+
+			<div class='col video'>
+				<div class='col-inner'>
+				
+				</div>
+			</div>
 		</div>
 	</section>
 
 	{# latest news and send me info #}
-	<section class='row latest-news-row'>
+	<section id="info" class='row latest-news-row'>
 		<div class='row-inner'>
 			<div class='col articles x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
