@@ -320,6 +320,13 @@ header {
           }
         }
 
+        @include breakpoint($mobile-break) {
+          margin-bottom: 0.5rem;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
         &.current-menu-item,
         &.current-page-parent {
           > a {
@@ -377,6 +384,7 @@ header {
 
           @include breakpoint($mobile-break) {
             padding-bottom: 3px;
+            font-size: 1.15rem;
           }
 
           &::before {
@@ -425,6 +433,11 @@ header {
             margin-bottom: 1rem;
           }
 
+          @include breakpoint($mobile-break) {
+            margin-bottom: 0.5rem;
+            padding-top: 0.5rem;
+          }
+
           ul {
             background: var(--white);
             border-radius: 5px;
@@ -455,6 +468,10 @@ header {
 
             @include breakpoint($tablet-break) {
               font-size: 1.15rem;
+            }
+
+            @include breakpoint($mobile-break) {
+              font-size: 0.9rem;
             }
           }
         }

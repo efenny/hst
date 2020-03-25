@@ -1,4 +1,10 @@
 .stay-informed-row {
+  .row-inner {
+    width: 100%;
+  }
+  .col {
+    width: 100%;
+  }
   h3 {
     color: var(--p) !important;
     opacity: 0.9;
