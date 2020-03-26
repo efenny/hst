@@ -6,10 +6,7 @@
 @import "utility/vendors/lity";
 @import "utility/vendors/slick";
 @import "pages/base";
-
-.home {
-  @import "pages/home";
-}
+@import "pages/home";
 
 .page-id-12 {
   @import "pages/about";
