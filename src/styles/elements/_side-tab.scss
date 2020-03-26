@@ -10,6 +10,21 @@
       @include breakpoint($tablet-break) {
         width: 100%;
         overflow: hidden;
+        position: relative;
+
+        &::after {
+          content: "";
+          width: 2rem;
+          height: 100%;
+          position: absolute;
+          right: 0;
+          top: 0;
+          background-image: linear-gradient(
+            to right,
+            transparentize(white, 1),
+            var(--white)
+          );
+        }
       }
       .side-tab-nav-inner {
         display: flex;
@@ -21,7 +36,6 @@
         @include breakpoint($tablet-break) {
           flex-direction: row;
           padding-right: 0;
-
           overflow: auto;
         }
 
@@ -58,6 +72,7 @@
             flex-direction: row;
             padding-right: 0;
             margin-bottom: 2rem;
+            padding-right: 2rem;
           }
         }
 
