@@ -74,9 +74,9 @@ p {
   }
 
   em {
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: var(--p);
-    display: block;
+    display: inline-block;
     margin-top: 44px;
     white-space: nowrap;
     font-family: inherit;
@@ -84,10 +84,15 @@ p {
   }
 }
 .theme-switch {
-  display: inline-block;
+  display: flex;
   height: 34px;
   position: relative;
   width: 60px;
+  cursor: pointer;
+
+  @include breakpoint($mobile-break) {
+    justify-content: center;
+  }
 }
 
 .theme-switch input {
@@ -97,7 +102,7 @@ p {
 .slider {
   background-color: var(--blue);
   bottom: 0;
-  cursor: pointer;
+
   left: 0;
   position: absolute;
   right: 0;

@@ -153,7 +153,7 @@
       padding-left: $col-vw * 2;
       padding-right: $col-vw * 2;
       padding-top: $col-vw;
-      padding-bottom: $col-vw;
+      padding-bottom: $col-vw * 2;
     }
 
     @include breakpoint($mobile-break) {
@@ -191,7 +191,7 @@
       display: none;
 
       @include breakpoint($tablet-break) {
-        display: block;
+        // display: block;
         width: 100%;
         padding-top: 0;
         padding-right: $col-vw;
