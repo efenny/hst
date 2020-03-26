@@ -16,12 +16,12 @@
 
   &::before {
     content: "";
-    width: $col-vw * 8.5;
+    width: $col-vw * 9;
     height: 100%;
     background: var(--white);
     position: absolute;
     top: 0;
-    left: -$col-vw;
+    left: -$col-vw * 1.5;
     transform: skewX(-10deg);
     @include breakpoint($mobile-break) {
       display: none;

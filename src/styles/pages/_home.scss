@@ -64,6 +64,7 @@
 }
 
 .splash {
+  overflow: hidden;
   background: var(--blue);
   margin-top: 0;
   position: relative;
@@ -851,15 +852,10 @@
     }
 
     .cards {
-      padding: 0 $col-vw/2;
       display: flex;
       width: 100%;
       flex-wrap: wrap;
       margin-top: 2rem;
-
-      @include breakpoint($laptop-break) {
-        padding: 0;
-      }
 
       @include breakpoint($mobile-break) {
         padding: 0 $col-vw;
@@ -889,6 +885,7 @@
           }
 
           h3 {
+            text-align: center;
             @include breakpoint($tablet-break) {
               font-size: 1rem;
             }

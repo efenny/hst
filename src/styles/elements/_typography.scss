@@ -62,3 +62,72 @@ p {
     }
   }
 }
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+
+  @include breakpoint($mobile-break) {
+    margin-bottom: calc(10px + 2rem);
+    justify-content: center;
+  }
+
+  em {
+    font-size: 1rem;
+    color: var(--p);
+    display: block;
+    margin-top: 44px;
+    white-space: nowrap;
+    font-family: inherit;
+    font-style: normal;
+  }
+}
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: var(--blue);
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: var(--gray);
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: var(--green);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
