@@ -1,6 +1,6 @@
 // Button Style Sheet
 // Primary
-.button {
+@mixin button {
   font-size: 1rem;
   line-height: 1.25em;
   padding: 0.625em 1.5em;
@@ -18,6 +18,9 @@
   &:hover {
     background: var(--highlight-green);
   }
+}
+.button {
+  @include button;
 
   &.secondary,
   &.secondray,
@@ -87,6 +90,6 @@
 
 @include dark-mode {
   .button {
-    color: $darkModeWhite;
+    color: $darkModeWhite !important;
   }
 }

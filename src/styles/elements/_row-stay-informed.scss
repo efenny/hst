@@ -5,8 +5,17 @@
   .col {
     width: 100%;
   }
-  h3 {
-    color: var(--p) !important;
-    opacity: 0.9;
+
+  .wForm {
+    form {
+      > .oneField {
+        > .label:not(#yes) {
+          b {
+            color: var(--p) !important;
+            opacity: 0.8;
+          }
+        }
+      }
+    }
   }
 }

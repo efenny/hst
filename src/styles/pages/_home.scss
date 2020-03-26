@@ -288,6 +288,12 @@
       padding-left: $col-vw;
       padding-right: $col-vw;
     }
+
+    .section.group {
+      input {
+        background: var(--white) !important;
+      }
+    }
   }
 
   .latest-news {
