@@ -3,11 +3,11 @@
 
 {% block content %}
 	{% include "partial/row-heading.twig" with {post: page, image: page.thumbnail} %}
-  <section class='row contact-row top-pad-0-5 bottom-pad-0-5'>
+  <section class='row contact-row top-pad-0-5'>
     <div class='row-inner'>
       <div class='col form x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
         <div class='col-inner'>
-          {{ page.form }}
+          {{ function('do_shortcode', page.form) }}
         </div>
       </div>
       <div class='col image x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>

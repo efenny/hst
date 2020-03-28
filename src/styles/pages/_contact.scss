@@ -1,1 +1,115 @@
 // Contact Style Sheet
+.contact-row {
+  padding-left: $col-vw;
+  padding-right: $col-vw;
+  overflow: hidden;
+
+  .form {
+    padding-left: $col-vw;
+    padding-right: $col-vw;
+
+    @include breakpoint($laptop-break) {
+      padding-left: $col-vw;
+    }
+
+    @include breakpoint($tablet-break) {
+      padding-bottom: $col-vw;
+      padding-left: $col-vw;
+      padding-right: $col-vw;
+    }
+
+    @include breakpoint($mobile-break) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .frm_description {
+      p {
+        font: $body-font !important;
+        color: var(--p);
+      }
+    }
+
+    .frm_form_field {
+      margin-bottom: 1rem !important;
+
+      &:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    input,
+    textarea {
+      padding: 0.5rem 0.75rem;
+      padding-right: 2.75rem;
+      @include box-shadow-dark-hover;
+      outline: none;
+      background: none;
+      background: var(--gray) !important;
+      color: var(--p) !important;
+      border: none;
+      border-image: none;
+      border-radius: 5px;
+      font-size: 0.85rem;
+      height: 2.25rem;
+      line-height: 1;
+      font-family: $sans-serif;
+
+      &:focus {
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    textarea {
+      height: 120px;
+      margin-bottom: 0;
+
+      @include breakpoint($mobile-break) {
+        height: 110px;
+      }
+    }
+
+    .frm_submit {
+      display: flex;
+      justify-content: flex-end;
+      .frm_button_submit {
+        @include button;
+        width: auto !important;
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+
+  .image {
+    .img-wrapper {
+      position: relative;
+      padding-top: $col-vw/4;
+
+      @include breakpoint($tablet-break) {
+        padding-top: $col-vw/2;
+
+        img {
+          height: $col-vw * 7;
+          object-fit: cover;
+        }
+      }
+
+      &::before {
+        content: "";
+        background: var(--green);
+        height: $col-vw;
+        width: $col-vw * 6.75;
+        position: absolute;
+        left: $col-vw/4;
+        top: 0;
+        z-index: -1;
+
+        @include breakpoint($tablet-break) {
+          width: $col-vw * 10.5;
+          left: $col-vw/2;
+          height: $col-vw;
+        }
+      }
+    }
+  }
+}
