@@ -9,10 +9,34 @@
   .wForm {
     form {
       > .oneField {
+        .inputWrapper {
+          width: 100%;
+        }
         > .label:not(#yes) {
           b {
             color: var(--p) !important;
             opacity: 0.8;
+          }
+        }
+      }
+      > .section.group {
+        display: flex;
+        flex-wrap: wrap;
+        .oneField[id*="tfa"]:not(#yes) {
+          &:nth-child(1),
+          &:nth-child(2) {
+            width: 50% !important;
+          }
+          &:nth-child(1) {
+            padding-right: calc(0.75rem / 2) !important;
+          }
+
+          &:nth-child(2) {
+            padding-left: calc(0.75rem / 2) !important;
+          }
+
+          &:nth-child(3) {
+            width: 100% !important;
           }
         }
       }
