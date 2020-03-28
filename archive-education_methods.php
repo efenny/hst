@@ -21,6 +21,8 @@ $context['posts'] = new Timber\PostQuery();
 $args = array(
   'posts_per_page' => -1,
   'post_type' => 'education_methods',
+  'orderby' => 'title',
+  'order' => 'ASC'
 );
 
 $context['education_methods'] = new Timber\PostQuery($args);

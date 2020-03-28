@@ -56,10 +56,6 @@ a {
 p {
   a {
     text-decoration: underline;
-
-    &:hover {
-      filter: brightness(150%);
-    }
   }
 }
 

@@ -320,7 +320,8 @@ header {
         }
 
         &.current-menu-item,
-        &.current-page-parent {
+        &.current-page-parent,
+        &.current-menu-ancestor {
           > a {
             &::before {
               transform: scaleX(1);

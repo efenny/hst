@@ -16,6 +16,10 @@
   @import "pages/contact";
 }
 
+.single {
+  @import "pages/single";
+}
+
 @import "pages/resources/getting-started";
 @import "pages/resources/resources";
 @import "pages/faq";

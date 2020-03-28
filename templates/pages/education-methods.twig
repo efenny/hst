@@ -18,5 +18,5 @@
     </div>
   </section>
 	{% include "partial/row-still-have-questions.twig" %}
-	{% include "partial/row-stay-informed.twig" %}
+	{% include "partial/row-stay-informed.twig" with { form_shortcode: options.form_shortcode } %}
 {% endblock %}  

@@ -505,6 +505,19 @@
         padding-left: $col-vw;
         padding-right: $col-vw;
       }
+
+      .text-wrapper {
+        margin-bottom: 2rem;
+        padding-right: $col-vw * 2;
+
+        @include breakpoint($laptop-break) {
+          padding-right: $col-vw;
+        }
+
+        @include breakpoint($tablet-break) {
+          padding: 0;
+        }
+      }
     }
 
     .image {
@@ -522,40 +535,12 @@
         padding-right: $col-vw;
       }
 
-      a {
-        color: var(--white);
-
-        &:hover {
-          .img-wrapper {
-            &::before {
-              opacity: 0.65;
-            }
-            svg {
-              transform: translate(-50%, -50%) scale(1.1);
-            }
-          }
-        }
-      }
-
-      .img-wrapper {
-        position: relative;
+      .col-inner {
         margin-top: $col-vw/4;
+        position: relative;
 
         @include breakpoint($tablet-break) {
           margin-top: $col-vw/2;
-        }
-
-        &::before {
-          content: "";
-          width: 100%;
-          height: 100%;
-          background: var(--blue);
-          opacity: 0.5;
-          position: absolute;
-          left: 0;
-          top: 0;
-          transition: $transition;
-          z-index: 2;
         }
 
         &::after {
@@ -573,22 +558,6 @@
             top: -$col-vw/2;
             height: $col-vw * 2;
             left: -$col-vw * 2;
-          }
-        }
-
-        svg {
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-          transition: $transition;
-          width: 6rem;
-          height: 6rem;
-          z-index: 4;
-
-          @include breakpoint($laptop-break) {
-            width: 4rem;
-            height: 4rem;
           }
         }
       }

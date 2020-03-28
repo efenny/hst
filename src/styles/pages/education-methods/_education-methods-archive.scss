@@ -1,14 +1,22 @@
 .post-type-archive-education_methods {
+  .row-inner {
+    width: 100%;
+  }
   .card-row {
     background: var(--gray);
     padding: $col-vw / 2 $col-vw * 2;
+    padding-bottom: $col-vw/4;
+    padding-right: $col-vw * 1.75;
 
     @include breakpoint($laptop-break) {
       padding: $col-vw / 2 $col-vw;
+      padding-bottom: $col-vw/4;
+      padding-right: $col-vw * 0.75;
     }
 
     @include breakpoint($mobile-break) {
       padding: $col-vw;
+      padding-bottom: $col-vw/2;
     }
 
     .col {
@@ -29,24 +37,52 @@
     justify-content: flex-start;
   }
   .method-card {
-    background: var(--white);
-    border-radius: 10px;
-    overflow: hidden;
-    @include box-shadow-dark-hover;
-
-    @include row-item-grid(3, $col-vw / 4);
+    width: calc(100% / 3 - #{$col-vw / 4});
+    margin-right: $col-vw/4;
+    margin-bottom: $col-vw/4;
 
     @include breakpoint($tablet-break) {
-      border-radius: 5px;
-      @include row-item-grid(2, $col-vw / 4);
+      width: calc(100% / 2 - #{$col-vw / 4});
     }
 
     @include breakpoint($mobile-break) {
-      @include row-item-grid(1, $col-vw / 2);
+      width: calc(100%);
+      margin-right: 0;
+      margin-bottom: $col-vw/2;
+    }
+
+    a {
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      @include box-shadow-dark-hover;
+
+      &:hover {
+        .image::before {
+          opacity: 0.25;
+        }
+      }
     }
 
     .image {
+      position: relative;
+      line-height: 0;
+
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: var(--blue);
+        opacity: 0.5;
+        transition: $transition;
+      }
       img {
+        line-height: 0;
         width: 100%;
         height: $col-vw * 1.25;
         object-fit: cover;

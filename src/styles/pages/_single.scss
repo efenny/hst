@@ -1,0 +1,25 @@
+.article-content {
+  margin-top: 100px;
+  padding: $col-vw $col-vw * 3;
+
+  @include breakpoint($laptop-break) {
+    padding: $col-vw $col-vw * 2;
+  }
+
+  @include breakpoint($mobile-break) {
+    padding: $col-vw;
+  }
+
+  img {
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    margin-bottom: 2rem;
+  }
+
+  .button {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+}

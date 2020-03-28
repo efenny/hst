@@ -41,7 +41,7 @@
       <div class='col text x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10 x-lrg-pad-right-1 x-lrg-pad-left-1'>
         <div class='col-inner'>
           {{ ui.p(page.connect_with_other_homeschoolers_text) }}
-          {{ ui.button(page.connect_with_other_homeschoolers_button, 'secondary') }}
+          {{ ui.button(page.connect_with_other_homeschoolers_button, 'external') }}
         </div>
       </div>
       <div class='col image x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10 x-lrg-pad-right-0-5'>
@@ -84,5 +84,5 @@
       </div>
     </div>
   </section>
-	{% include "partial/row-stay-informed.twig" %}
+	{% include "partial/row-stay-informed.twig" with { form_shortcode: options.form_shortcode } %}
 {% endblock %}

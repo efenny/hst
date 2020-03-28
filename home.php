@@ -11,7 +11,7 @@
 
 $context = Timber::context();
 $args = array(
-	'posts_per_page' => 6,
+	'posts_per_page' => 20,
 	'post_type' => 'post',
 	'category_name' => 'stories'
 );

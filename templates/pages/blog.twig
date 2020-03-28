@@ -2,7 +2,7 @@
 {% import 'partial/ui.twig' as ui %}
 
 {% block content %}
-{% include "partial/row-heading.twig" with {post: page, image: page.thumbnail} %}
+{% include "partial/row-heading.twig" with {post: page, image: options.blog_header_image.url} %}
 <section class='row blog-row x-lrg-pad-right-1 x-lrg-pad-left-1 top-pad-0-5 bottom-pad-0-5'>
   <div class='row-inner'>
     <div class='col cat x-lrg-col-2 lrg-col-2 med-col-10 sml-col-10'>
@@ -38,5 +38,5 @@
     </div>
   </div>
 </section>
-{% include "partial/row-stay-informed.twig" %}
+{% include "partial/row-stay-informed.twig" with { form_shortcode: options.form_shortcode } %}
 {% endblock %}
