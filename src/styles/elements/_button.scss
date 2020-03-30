@@ -33,12 +33,12 @@
   &.document,
   &.redirect,
   &.external {
-    padding: 0;
-    background: transparent;
-    box-shadow: none;
-    color: var(--p);
-    text-transform: none;
-    letter-spacing: initial;
+    padding: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: var(--p) !important;
+    text-transform: none !important;
+    letter-spacing: initial !important;
 
     svg {
       margin-left: 0.5rem;
