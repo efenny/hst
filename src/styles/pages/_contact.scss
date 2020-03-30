@@ -37,47 +37,6 @@
         margin-bottom: 0 !important;
       }
     }
-
-    input,
-    textarea {
-      padding: 0.5rem 0.75rem;
-      padding-right: 2.75rem;
-      @include box-shadow-dark-hover;
-      outline: none;
-      background: none;
-      background: var(--gray) !important;
-      color: var(--p) !important;
-      border: none;
-      border-image: none;
-      border-radius: 5px;
-      font-size: 0.85rem;
-      height: 2.25rem;
-      line-height: 1;
-      font-family: $sans-serif;
-
-      &:focus {
-        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
-      }
-    }
-
-    textarea {
-      height: 120px;
-      margin-bottom: 0;
-
-      @include breakpoint($mobile-break) {
-        height: 110px;
-      }
-    }
-
-    .frm_submit {
-      display: flex;
-      justify-content: flex-end;
-      .frm_button_submit {
-        @include button;
-        width: auto !important;
-        margin-bottom: 0 !important;
-      }
-    }
   }
 
   .image {

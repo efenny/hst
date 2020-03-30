@@ -171,6 +171,62 @@
   }
 }
 
+.gform_wrapper {
+  margin: 0;
+
+  .gform_description {
+    margin-bottom: 2rem;
+  }
+
+  .gform_fields {
+    .gfield {
+      input {
+        height: 2.25rem;
+        margin: 0 !important;
+      }
+
+      input,
+      textarea {
+        width: 100% !important;
+        padding: 0.5rem 0.75rem !important;
+        padding-right: 2.75rem !important;
+        @include box-shadow-dark-hover;
+        outline: none;
+        background: none;
+        background: var(--gray);
+        color: var(--p);
+        border: none;
+        border-image: none;
+        border-radius: 5px;
+        font-size: 0.85rem !important;
+
+        line-height: 1;
+        font-family: $sans-serif;
+
+        &:focus {
+          box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
+        }
+      }
+    }
+  }
+
+  .gform_footer {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    justify-content: flex-end;
+
+    .gform_button {
+      @include button;
+      width: auto !important;
+    }
+  }
+
+  .gform_ajax_spinner {
+    display: none !important;
+  }
+}
+
 @include dark-mode {
   #submit_button {
     color: $darkModeWhite !important;

@@ -1,20 +1,22 @@
 // Button Style Sheet
 // Primary
 @mixin button {
-  font-size: 1rem;
-  line-height: 1.25em;
-  padding: 0.625em 1.5em;
-  background: var(--green);
-  display: inline-block;
-  color: var(--white);
-  font-family: $sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-weight: 700;
-  border-radius: 5px;
+  font-size: 1rem !important;
+  line-height: 1.25em !important;
+  padding: 0.625em 1.5em !important;
+  background: var(--green) !important;
+  border-color: var(--green) !important;
+  display: inline-block !important;
+  color: var(--white) !important;
+  font-family: $sans-serif !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  font-weight: 700 !important;
+  border-radius: 5px !important;
   @include box-shadow-dark-hover;
-  margin-top: 2rem;
-  border: none !important;
+  margin-top: 2rem !important;
+  border: none !important !important;
+  cursor: pointer;
 
   &:hover {
     background: var(--highlight-green);
