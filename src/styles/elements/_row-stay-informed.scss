@@ -23,19 +23,19 @@
         display: flex;
         flex-wrap: wrap;
         .oneField[id*="tfa"]:not(#yes) {
-          &:nth-child(1),
-          &:nth-child(2) {
+          &:nth-last-child(3),
+          &:nth-last-child(2) {
             width: 50% !important;
           }
-          &:nth-child(1) {
+          &:nth-last-child(3) {
             padding-right: calc(0.75rem / 2) !important;
           }
 
-          &:nth-child(2) {
+          &:nth-last-child(2) {
             padding-left: calc(0.75rem / 2) !important;
           }
 
-          &:nth-child(3) {
+          &:nth-last-child(1) {
             width: 100% !important;
           }
         }

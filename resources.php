@@ -11,7 +11,7 @@
 
 $context = Timber::context();
 
-$field = get_field_object('field_5e8697a83e596');
+$field = get_field_object(get_field('tag_field_key'));
 $context['field_options'] = $field;
 
 Timber::render( 'pages/resources.twig', $context );

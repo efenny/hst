@@ -2,6 +2,7 @@
   margin-bottom: 1rem;
   display: inline-block;
   position: relative;
+
   .search-filter-input {
     padding: 0.5rem 0.75rem;
     padding-right: 2.75rem;
@@ -9,6 +10,7 @@
     outline: none;
     background: none;
     background: var(--gray);
+    color: var(--p);
     border: none;
     border-image: none;
     border-radius: 5px;

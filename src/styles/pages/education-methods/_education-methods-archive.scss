@@ -130,7 +130,7 @@
 
       @include breakpoint($tablet-break) {
         width: $col-vw * 10.75;
-        height: $col-vw * 1.25;
+        height: $col-vw * 2;
       }
 
       @include breakpoint($mobile-break) {

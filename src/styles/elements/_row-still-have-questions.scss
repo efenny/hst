@@ -7,9 +7,13 @@
     @include box-shadow;
     background: var(--white);
 
-    @include breakpoint($mobile-break-sml) {
+    @include breakpoint($mobile-break) {
       padding-left: $col-vw/2;
       padding-right: $col-vw/2;
+    }
+    @include breakpoint($mobile-break-sml) {
+      padding-left: $col-vw/4;
+      padding-right: $col-vw/4;
     }
 
     .col-inner {
