@@ -12,7 +12,27 @@
       </div>
       <div class='col text x-lrg-col-6 lrg-col-6 med-col-10 sml-col-10'>
         <div class='col-inner'>
-          {{ ui.side_tab(page.get_field('tabs')) }}
+          {{ ui.p(page.text) }}
+          <div class="search-wrapper">
+            {{ ui.search('Search resources...', 'resources-search') }}
+
+            <div class="search-filter-nav">
+              <ul class="search-filter-nav-inner">
+                {% for field_option in field_options.choices|keys %}
+                  <li>
+                    <button id="{{ field_option|slugify }}">{{ field_options.choices[field_option] }}</button>
+                  </li>
+                {% endfor %}    
+              </ul>
+            </div>
+
+
+            <div class="accordion-wrapper">
+              {% for resource in page.get_field('resources') %}
+                {{ ui.accordion(resource.title, resource.content, resource.tag|join(' ')) }}
+              {% endfor %}
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -22,25 +22,17 @@ $terms = array();
 $templates = array('pages/faq.twig', 'archive.twig', 'index.twig' );
 $context = Timber::context();
 
+
 foreach ($terms_array as $term) {
   $terms[$term->slug] = $term->name;
-  
-  $args = array(
-    'posts_per_page' => -1,
-    'post_type' => 'faq',
-    'tax_query' => array(
-      array (
-          'taxonomy' => 'faq_cat',
-          'field' => 'slug',
-          'terms' => $term->slug, 
-      )
-    ),
-  );
-
-  $loop_name = substr($term->slug, 0, 2). '_loop';
-  $context[$loop_name] = new Timber\PostQuery($args);
 }
 
+$args = array(
+  'posts_per_page' => -1,
+  'post_type' => 'faq',
+);
+
+$context['faq_posts'] = new Timber\PostQuery($args);
 $context['faq_terms'] = $terms;
 $context['posts'] = new Timber\PostQuery();
 Timber::render( $templates, $context );

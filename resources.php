@@ -10,4 +10,8 @@
  */
 
 $context = Timber::context();
+
+$field = get_field_object('field_5e8697a83e596');
+$context['field_options'] = $field;
+
 Timber::render( 'pages/resources.twig', $context );

@@ -10,7 +10,6 @@
 		<div class='splash-inner'>
 			<div class='col'>
 				<div class='col-inner'>
-					<h3>{{ page.landing_area_subitle }}</h3>
 					<h1>{{ page.landing_area_title }}</h1>
 					<h5>{{ page.landing_area_text }}</h5>
 					{{ ui.button(page.landing_area_main_button, 'top') }}
@@ -63,18 +62,23 @@
 		</div>
 	</section>
 
-	{# what is homeschooling #}
-	<section class='row what-is-homeschooling top-pad-0-5 bottom-pad-0-5'>
+{# Top Homeschool Questions #}
+	<section class='row top-homeschool-questions x-lrg-pad-left-1 x-lrg-pad-right-1 top-pad-0-5 bottom-pad-0-5'>
 		<div class='row-inner'>
 			<div class='col image x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
-					{{ page.new_to_homeschooling_video_markup }}
+					{{ ui.image(page.top_homeschool_questions_image) }}
 				</div>
 			</div>
-			<div class='col text x-lrg-col-6 lrg-col-6 med-col-10 sml-col-10'>
+			<div class='col text x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
-					{{ ui.p(page.new_to_homeschooling_text) }}
-					{{ ui.side_tab(page.get_field('new_to_homeschooling').tabs, page.new_to_homeschooling_faq_link) }} 
+					{{ ui.h2(page.get_field('top_homeschool_questions').faqs|length ~ page.top_homeschool_questions_title) }}
+					<div class="accordion-wrapper">
+						{% for question in page.get_field('top_homeschool_questions').faqs %}
+							{{ ui.accordion(question.title, question.content) }}
+						{% endfor %}
+					</div>
+					{{ ui.button(page.top_homeschool_questions_main_button) }}
 				</div>
 			</div>
 		</div>
@@ -102,43 +106,19 @@
 		</div>
 	</section>
 
-	{# 5 Top Homeschool Questions #}
-	<section class='row top-homeschool-questions x-lrg-pad-left-1 x-lrg-pad-right-1 top-pad-0-5 bottom-pad-0-5'>
+	
+	{# Homeschooling success story #}
+	<section class='row what-is-homeschooling bottom-pad-0-5'>
 		<div class='row-inner'>
 			<div class='col image x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
-					{{ ui.image(page.top_homeschool_questions_image) }}
-				</div>
-			</div>
-			<div class='col text x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
-				<div class='col-inner'>
-					{{ ui.h2(page.get_field('top_homeschool_questions').questions|length ~ page.top_homeschool_questions_title) }}
-					<div class="accordion-wrapper">
-						{% for question in page.get_field('top_homeschool_questions').questions %}
-							{{ ui.accordion(question.title, question.text) }}
-						{% endfor %}
-					</div>
-					{{ ui.button(page.top_homeschool_questions_main_button) }}
+					{{ ui.h2(page.new_to_homeschooling_title) }}
+					{{ page.new_to_homeschooling_video_markup }}
 				</div>
 			</div>
 		</div>
 	</section>
 
-	{# Education Methods #}
-	<section class='row education-methods'>
-		<div class='row-inner'>
-			<div class='col text x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
-				<div class='col-inner'>
-					{{ ui.p(page.education_methods_text) }}
-					{{ ui.button(page.education_methods_main_button) }}
-				</div>
-			</div>
-			<div class='col image x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10' style="background-image:url('{{ TimberImage(page.education_methods_image).src }}');">
-				<div class='col-inner'>
-				</div>
-			</div>
-		</div>
-	</section>
 
 	{# Resources #}
 	<section class='row resources'>
@@ -159,6 +139,22 @@
 					</div>
 					
 					{{ ui.button(page.resources_secondary_button, 'secondary') }}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{# Education Methods #}
+	<section class='row education-methods'>
+		<div class='row-inner'>
+			<div class='col text x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+				<div class='col-inner'>
+					{{ ui.p(page.education_methods_text) }}
+					{{ ui.button(page.education_methods_main_button) }}
+				</div>
+			</div>
+			<div class='col image x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10' style="background-image:url('{{ TimberImage(page.education_methods_image).src }}');">
+				<div class='col-inner'>
 				</div>
 			</div>
 		</div>

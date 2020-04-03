@@ -66,6 +66,20 @@
           padding-left: 0;
           padding-right: 0;
         }
+
+        .text-wrapper {
+          margin-bottom: 2rem;
+        }
+
+        .search-filter-nav {
+          &::after {
+            background-image: linear-gradient(
+              to right,
+              transparentize(white, 1),
+              var(--white)
+            );
+          }
+        }
       }
     }
   }

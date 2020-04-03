@@ -37,6 +37,7 @@ $(document).ready(function() {
   side_tabs(".side-tab-nav button", ".side-tab");
   top_tabs(".tab-nav button");
   searchDropDown();
+
   search_keys(
     ".post-type-archive-faq .search-filter-input",
     ".search-wrapper",
@@ -47,6 +48,18 @@ $(document).ready(function() {
     ".post-type-archive-education_methods .search-filter-input",
     ".search-wrapper",
     ".method-card"
+  );
+
+  search_keys(
+    ".page-template-resources .search-filter-input",
+    ".search-wrapper",
+    ".accordion"
+  );
+
+  search_filters(
+    ".search-filter-nav-inner button",
+    ".search-wrapper",
+    ".accordion"
   );
 
   homepageMenuScroll();
@@ -104,6 +117,62 @@ $(document).ready(function() {
     ]
   });
 });
+
+function search_filters(buttons, itemsWrapper, eleSearched) {
+  $(buttons).click(function() {
+    $(buttons).each(function() {
+      $(this).removeClass("active");
+    });
+
+    $(this).addClass("active");
+
+    var $filter = $(this).attr("id");
+
+    var searchedItems = $(this)
+      .closest(itemsWrapper)
+      .find(eleSearched)
+      .filter(function() {
+        $(this)
+          .closest(itemsWrapper + " " + eleSearched)
+          .toggle(
+            $(this)
+              .attr("data-tag")
+              .indexOf($filter) > -1
+          );
+        return (
+          $(this)
+            .closest(itemsWrapper + " " + eleSearched)
+            .attr("data-tag")
+            .indexOf($filter) > -1
+        );
+      });
+
+    if (searchedItems.length <= 0 && $(".no-items-found").length <= 0) {
+      $(this)
+        .closest(itemsWrapper)
+        .append('<h3 class="no-items-found" >No items found</h3>');
+    }
+
+    if (searchedItems.length > 0) {
+      $(this)
+        .closest(itemsWrapper)
+        .find(".no-items-found")
+        .remove();
+    }
+  });
+
+  if ($(buttons).length > 0) {
+    var hash = location.hash;
+    $(hash).click();
+
+    $("html, body").animate(
+      {
+        scrollTop: 0
+      },
+      1
+    );
+  }
+}
 
 function homepageMenuScroll() {
   if ($("body").hasClass("home")) {
@@ -181,7 +250,6 @@ function side_tabs(ele, tabBodyWrapper) {
 
   if ($(".side-tab").length > 0) {
     var hash = location.hash;
-    // console.log();
     $(hash).click();
   }
 }
@@ -217,6 +285,10 @@ function top_tabs(ele, tabBodyWrapper) {
 // input search for custom lists
 function search_keys(input, itemsWrapper, eleSearched) {
   function handleKeyUp() {
+    $(".search-filter-nav button").each(function() {
+      $(this).removeClass("active");
+    });
+
     var value = $(this)
       .val()
       .toLowerCase();

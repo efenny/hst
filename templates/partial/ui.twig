@@ -68,8 +68,8 @@
 	</div>
 {% endmacro %}
 
-{% macro accordion(title, content) %}
-	<div class="accordion">
+{% macro accordion(title, content, tag) %}
+	<div class="accordion" data-tag="{{ tag }}">
 		<div class="accordion-inner">
 				<button class="title">
 						<div class="title-inner">
