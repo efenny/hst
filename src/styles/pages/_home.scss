@@ -486,14 +486,6 @@
       }
     }
 
-    .image {
-      padding-left: $col-vw / 2;
-
-      @include breakpoint($laptop-break) {
-        padding-left: 0;
-      }
-    }
-
     .text {
       padding-left: $col-vw / 2;
       padding-right: $col-vw;
