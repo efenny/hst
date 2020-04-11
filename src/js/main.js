@@ -30,8 +30,8 @@ toggleSwitch.addEventListener("change", switchTheme, false);
 var $ = jQuery.noConflict();
 
 // When the document is ready
-$(document).ready(function() {
-  console.log("Let's hope this all works");
+$(document).ready(function () {
+  console.log("Let's do this!");
   mobileMenu();
   accordionsInit();
   side_tabs(".side-tab-nav button", ".side-tab");
@@ -79,17 +79,17 @@ $(document).ready(function() {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2
-        }
+          slidesToScroll: 2,
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToScroll: 1,
+        },
+      },
+    ],
   });
 
   $(".home .latest-news-wrapper").slick({
@@ -105,22 +105,22 @@ $(document).ready(function() {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2
-        }
+          slidesToShow: 2,
+        },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1
-        }
-      }
-    ]
+          slidesToShow: 1,
+        },
+      },
+    ],
   });
 });
 
 function search_filters(buttons, itemsWrapper, eleSearched) {
-  $(buttons).click(function() {
-    $(buttons).each(function() {
+  $(buttons).click(function () {
+    $(buttons).each(function () {
       $(this).removeClass("active");
     });
 
@@ -131,14 +131,10 @@ function search_filters(buttons, itemsWrapper, eleSearched) {
     var searchedItems = $(this)
       .closest(itemsWrapper)
       .find(eleSearched)
-      .filter(function() {
+      .filter(function () {
         $(this)
           .closest(itemsWrapper + " " + eleSearched)
-          .toggle(
-            $(this)
-              .attr("data-tag")
-              .indexOf($filter) > -1
-          );
+          .toggle($(this).attr("data-tag").indexOf($filter) > -1);
         return (
           $(this)
             .closest(itemsWrapper + " " + eleSearched)
@@ -154,10 +150,7 @@ function search_filters(buttons, itemsWrapper, eleSearched) {
     }
 
     if (searchedItems.length > 0) {
-      $(this)
-        .closest(itemsWrapper)
-        .find(".no-items-found")
-        .remove();
+      $(this).closest(itemsWrapper).find(".no-items-found").remove();
     }
   });
 
@@ -167,7 +160,7 @@ function search_filters(buttons, itemsWrapper, eleSearched) {
 
     $("html, body").animate(
       {
-        scrollTop: 0
+        scrollTop: 0,
       },
       1
     );
@@ -178,23 +171,28 @@ function homepageMenuScroll() {
   if ($("body").hasClass("home")) {
     var controller = new ScrollMagic.Controller({});
 
-    new ScrollMagic.Scene({ triggerElement: ".latest-news-row" })
+    new ScrollMagic.Scene({ triggerElement: ".splash-inner .button" })
       .setClassToggle("header", "active")
       .addTo(controller);
   }
 }
 
 function mobileMenu() {
-  $(".mobile-menu-button").click(function() {
+  $(".mobile-menu-button").click(function () {
     $(this).toggleClass("active");
     $("body").toggleClass("menu-active");
     $(".menu-search-wrapper").toggleClass("active");
+  });
+
+  $(".menu-item-has-children").click(function () {
+    $(this).find("nav").slideToggle();
+    $(this).toggleClass("menu-active");
   });
 }
 
 // Search drop down
 function searchDropDown() {
-  $(".search-icon").click(function() {
+  $(".search-icon").click(function () {
     $(this).toggleClass("active");
     $(this)
       .closest(".search-icon-wrapper")
@@ -206,14 +204,10 @@ function searchDropDown() {
 // general accordions
 function accordionsInit() {
   function accordionFunc(ele) {
-    $(ele + " " + ele + "-inner > .title").click(function(e) {
-      $(this)
-        .closest(ele)
-        .toggleClass("active");
+    $(ele + " " + ele + "-inner > .title").click(function (e) {
+      $(this).closest(ele).toggleClass("active");
       $(this).toggleClass("active");
-      $(this)
-        .siblings()
-        .slideToggle();
+      $(this).siblings().slideToggle();
 
       e.stopPropagation();
     });
@@ -229,24 +223,22 @@ function side_tabs(ele, tabBodyWrapper) {
     var bodyEle = tabBodyWrapper;
   }
   var Button = $(ele);
-  $(Button).click(function(e) {
+  $(Button).click(function (e) {
     e.preventDefault();
     var Href = $(this).attr("id");
-    $(Button).each(function() {
+    $(Button).each(function () {
       $(this).removeClass("active");
     });
     $(this).addClass("active");
     $(this)
       .closest(bodyEle)
       .find(".side-tab-body")
-      .each(function() {
+      .each(function () {
         $(this).removeClass("active");
       });
     $(".side-tab-body#" + Href).addClass("active");
   });
-  $(Button)
-    .first()
-    .click();
+  $(Button).first().click();
 
   if ($(".side-tab").length > 0) {
     var hash = location.hash;
@@ -262,49 +254,40 @@ function top_tabs(ele, tabBodyWrapper) {
     var bodyEle = tabBodyWrapper;
   }
   var Button = $(ele);
-  $(Button).click(function(e) {
+  $(Button).click(function (e) {
     e.preventDefault();
     var Href = $(this).attr("id");
-    $(Button).each(function() {
+    $(Button).each(function () {
       $(this).removeClass("active");
     });
     $(this).addClass("active");
     $(this)
       .closest(bodyEle)
       .find(".tab-body")
-      .each(function() {
+      .each(function () {
         $(this).removeClass("active");
       });
     $(".tab-body#" + Href).addClass("active");
   });
-  $(Button)
-    .first()
-    .click();
+  $(Button).first().click();
 }
 
 // input search for custom lists
 function search_keys(input, itemsWrapper, eleSearched) {
   function handleKeyUp() {
-    $(".search-filter-nav button").each(function() {
+    $(".search-filter-nav button").each(function () {
       $(this).removeClass("active");
     });
 
-    var value = $(this)
-      .val()
-      .toLowerCase();
+    var value = $(this).val().toLowerCase();
 
     var searchedItems = $(this)
       .closest(itemsWrapper)
       .find(eleSearched)
-      .filter(function() {
+      .filter(function () {
         $(this)
           .closest(itemsWrapper + " " + eleSearched)
-          .toggle(
-            $(this)
-              .text()
-              .toLowerCase()
-              .indexOf(value) > -1
-          );
+          .toggle($(this).text().toLowerCase().indexOf(value) > -1);
         return (
           $(this)
             .closest(itemsWrapper + " " + eleSearched)
@@ -321,16 +304,13 @@ function search_keys(input, itemsWrapper, eleSearched) {
     }
 
     if (searchedItems.length > 0) {
-      $(this)
-        .closest(itemsWrapper)
-        .find(".no-items-found")
-        .remove();
+      $(this).closest(itemsWrapper).find(".no-items-found").remove();
     }
   }
 
   $(input).on("keyup", handleKeyUp);
 
-  $(input).each(function() {
+  $(input).each(function () {
     handleKeyUp.call($(this));
   });
 }
@@ -341,7 +321,7 @@ function smooth_scroll() {
     // Remove links that don't actually link to anything
     .not('[href="#"]')
     .not('[href="#0"]')
-    .click(function(event) {
+    .click(function (event) {
       // On-page links
       if (
         location.pathname.replace(/^\//, "") ==
@@ -359,10 +339,10 @@ function smooth_scroll() {
           event.preventDefault();
           $("html, body").animate(
             {
-              scrollTop: target.offset().top - 100
+              scrollTop: target.offset().top - 100,
             },
             1000,
-            function() {
+            function () {
               // Callback after animation
               // Must change focus!
               var $target = $(target);

@@ -95,6 +95,7 @@ class StarterSite extends Timber\Site {
 	public function add_to_context( $context ) {
 		$context['page'] = new Timber\Post(get_the_ID());
 		$context['menu']  = new Timber\Menu();
+		$context['privacy_menu']  = new Timber\Menu('Privacy Menu');
 		$context['site']  = $this;
 		$context['options'] = get_fields('option');
 		return $context;

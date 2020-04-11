@@ -51,12 +51,6 @@
       }
 
       .text {
-        padding-right: $col-vw;
-
-        @include breakpoint($laptop-break) {
-          padding-right: 0;
-        }
-
         @include breakpoint($tablet-break) {
           padding-left: $col-vw;
           padding-right: $col-vw;
@@ -69,6 +63,21 @@
 
         .text-wrapper {
           margin-bottom: 2rem;
+          width: $col-vw * 4;
+
+          @include breakpoint($laptop-break) {
+            width: $col-vw * 5.5;
+          }
+
+          @include breakpoint($tablet-break) {
+            width: $col-vw * 8;
+            margin-left: $col-vw;
+          }
+
+          @include breakpoint($mobile-break) {
+            width: 100%;
+            margin-left: 0;
+          }
         }
 
         .search-filter-nav {
@@ -79,6 +88,42 @@
               var(--white)
             );
           }
+        }
+      }
+    }
+
+    .items-wrapper {
+      margin: 0;
+      padding: 0;
+      .item {
+        list-style: none;
+        margin-bottom: 1.5rem;
+
+        .title {
+          font-weight: 900 !important;
+          margin-bottom: 0.25rem;
+          color: var(--p);
+
+          a {
+            color: var(--blue);
+
+            &::after {
+              content: "";
+              display: inline-block;
+              width: 1em;
+              height: 1em;
+              margin-left: 0.35em;
+              margin-bottom: -0.1em;
+              background-image: url("/hst/wp-content/themes/homeschooltoday/static/HST-external-blue.svg");
+              background-size: contain;
+              background-position: center;
+              background-repeat: no-repeat;
+            }
+          }
+        }
+
+        &:last-child {
+          margin-bottom: 0;
         }
       }
     }
@@ -103,6 +148,24 @@
       z-index: -1;
       @include breakpoint($mobile-break) {
         height: calc(100% - #{$col-vw});
+      }
+    }
+  }
+}
+
+@include dark-mode {
+  .page-template-resources {
+    .main-row {
+      .items-wrapper {
+        .item {
+          .title {
+            a {
+              &::after {
+                background-image: url("/hst/wp-content/themes/homeschooltoday/static/HST-external-dark.svg");
+              }
+            }
+          }
+        }
       }
     }
   }

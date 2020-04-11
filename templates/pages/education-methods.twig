@@ -8,7 +8,7 @@
       <div class='col x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
         <div class='col-inner search-wrapper'>
           {{ ui.p(options.education_methods_text) }}
-          {{ ui.search('Search method titles...', 'education-methods-search') }}
+          {{ ui.search('Search method...', 'education-methods-search') }}
            <div class="method-wrappers">
             {% for method in education_methods %}
               {{ ui.method_card(method, method.slug) }}

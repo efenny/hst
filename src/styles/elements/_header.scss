@@ -127,11 +127,15 @@ header {
       align-items: center;
       justify-content: flex-end;
 
+      width: 100%;
+
       @include breakpoint($tablet-break) {
         opacity: 0;
         pointer-events: none;
         visibility: hidden;
         width: 100vw;
+        overflow-y: auto;
+        overflow-x: hidden;
         height: calc(100vh - 70px);
         position: fixed;
         left: 0;
@@ -306,6 +310,7 @@ header {
 
         @include breakpoint($tablet-break) {
           margin-bottom: 1rem;
+          width: 100%;
 
           &:last-child {
             margin-bottom: 0;
@@ -343,6 +348,29 @@ header {
             z-index: 8;
             opacity: 0;
             transition: $transition;
+          }
+          @include breakpoint($tablet-break) {
+            &::after {
+              display: none;
+            }
+            &.menu-active {
+              > a {
+                &::after {
+                  transform: rotate(135deg);
+                  color: var(--blue);
+                }
+              }
+            }
+            > a {
+              &::after {
+                content: "\002b";
+                position: absolute;
+                right: -1.25em;
+                font-size: 1em;
+                pointer-events: none;
+                transition: $transition;
+              }
+            }
           }
         }
 
@@ -412,22 +440,22 @@ header {
           left: -1.5rem;
           top: 1.65rem;
           pointer-events: none;
-          opacity: 0;
           transition: $transition;
           z-index: 4;
+          opacity: 0;
           min-width: calc(100% + 3rem);
 
           @include breakpoint($tablet-break) {
-            position: relative;
+            position: initial;
             left: initial;
             top: initial;
-            pointer-events: initial;
             opacity: 1;
-            margin-bottom: 1rem;
+            pointer-events: initial;
+            display: none;
+            transition: none;
           }
 
           @include breakpoint($mobile-break) {
-            margin-bottom: 0.5rem;
             padding-top: 0.5rem;
           }
 
@@ -442,6 +470,7 @@ header {
               box-shadow: none;
               background: transparent;
               padding: 0;
+              margin-bottom: 1rem;
             }
 
             li {

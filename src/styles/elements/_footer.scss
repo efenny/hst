@@ -96,7 +96,7 @@ footer {
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
-            height: 19.5rem;
+            height: 22.5rem;
 
             @include breakpoint($mobile-break) {
               height: auto;
@@ -242,6 +242,17 @@ footer {
         }
       }
     }
+    .main-menu {
+      ul li a {
+        font-size: 0.85rem;
+        color: var(--white);
+        opacity: 0.5;
+
+        &:hover {
+          opacity: 0.75;
+        }
+      }
+    }
   }
 }
 
@@ -251,6 +262,11 @@ footer {
     .footer-bottom {
       background: $darkModeBlack;
       color: $darkModeWhite;
+      .main-menu {
+        ul li a {
+          color: $darkModeWhite;
+        }
+      }
     }
   }
 }

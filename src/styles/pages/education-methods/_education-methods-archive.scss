@@ -25,6 +25,20 @@
 
     .text-wrapper {
       margin-bottom: 2rem;
+      width: $col-vw * 4;
+
+      @include breakpoint($laptop-break) {
+        width: $col-vw * 5.5;
+      }
+
+      @include breakpoint($tablet-break) {
+        width: $col-vw * 8;
+      }
+
+      @include breakpoint($mobile-break) {
+        width: 100%;
+        margin-left: 0;
+      }
     }
 
     .search-filter {
@@ -33,6 +47,7 @@
       }
     }
   }
+
   .method-wrappers {
     width: 100%;
     display: flex;
@@ -67,6 +82,11 @@
         .image::before {
           opacity: 0.25;
         }
+      }
+
+      p {
+        margin-top: 0.25rem;
+        color: var(--p);
       }
     }
 

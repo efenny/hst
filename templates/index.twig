@@ -12,8 +12,8 @@
 				<div class='col-inner'>
 					<h1>{{ page.landing_area_title }}</h1>
 					<h5>{{ page.landing_area_text }}</h5>
-					{{ ui.button(page.landing_area_main_button, 'top') }}
-					{{ ui.button(page.landing_area_secondary_button, 'secondary') }}
+					{% if page.landing_area_main_button %}{{ ui.button(page.landing_area_main_button, 'top') }}{% endif %}
+					{% if page.landing_area_secondary_button %}{{ ui.button(page.landing_area_secondary_button, 'secondary') }}{% endif %}
 				</div>
 			</div>
 
@@ -37,6 +37,10 @@
 		<div class='row-inner'>
 			<div class='col articles x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
+					<a href="#faqs" class="tagline">
+						{{ ui.h3(site.description) }}
+						{{ ui.image(page.top_homeschool_questions_image) }}
+					</a>
 					<div class="latest-news-wrapper">
 						{% for post in page.get_field('news') %}
 							<article class="latest-news">
@@ -54,23 +58,7 @@
 					</div>
 				</div>
 			</div>
-			<div class='col form x-lrg-col-6 lrg-col-6 med-col-10 sml-col-10'>
-				<div class='col-inner'>
-						{% include "partial/stay-informed-form.twig" with { form_shortcode: options.form_shortcode } %}
-				</div>
-			</div>
-		</div>
-	</section>
-
-{# Top Homeschool Questions #}
-	<section class='row top-homeschool-questions x-lrg-pad-left-1 x-lrg-pad-right-1 bottom-pad-0-5'>
-		<div class='row-inner'>
-			<div class='col image x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
-				<div class='col-inner'>
-					{{ ui.image(page.top_homeschool_questions_image) }}
-				</div>
-			</div>
-			<div class='col text x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+			<div id="faqs" class='col form x-lrg-col-6 lrg-col-6 med-col-10 sml-col-10'>
 				<div class='col-inner'>
 					{{ ui.h2(page.get_field('top_homeschool_questions').faqs|length ~ page.top_homeschool_questions_title) }}
 					<div class="accordion-wrapper">
@@ -79,6 +67,23 @@
 						{% endfor %}
 					</div>
 					{{ ui.button(page.top_homeschool_questions_main_button) }}
+
+					<div class="latest-news-wrapper">
+						{% for post in page.get_field('news') %}
+							<article class="latest-news">
+								<a href="{{ post.external_link }}" target="_blank" class="latest-news-inner">
+									<div class="image">
+										{{ ui.image(post.thumbnail) }}
+									</div>
+									<div class="info">
+										<h3>{{ post.title }}</h3>
+										{{ ui.p(post.date, 'date') }}
+									</div>
+								</a>
+							</article>
+						{% endfor %}
+					</div>
+
 				</div>
 			</div>
 		</div>
@@ -193,7 +198,7 @@
 		</div>
 	</section>
 
-	{# {% include "partial/row-stay-informed.twig" %} #}
+	{% include "partial/row-stay-informed.twig" with { form_shortcode: options.form_shortcode } %}
 	
 
 {% endblock %}

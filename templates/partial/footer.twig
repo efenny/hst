@@ -6,8 +6,12 @@
       <div class='footer-top-inner'>
         <div class='col x-lrg-col-5 lrg-col-3 med-col-10 sml-col-11'>
           <div class='col-inner'>
+            <a href="{{ site.url }}">
             {{ ui.image(options.footer.logo, 'logo') }}
-            {{ ui.image(options.footer.cche_logo, 'cche-logo') }}
+            </a> 
+            <a href="{{ options.footer.cche_logo_link.url }}" target="_blank">
+              {{ ui.image(options.footer.cche_logo, 'cche-logo') }}
+            </a>
             <div class="theme-switch-wrapper">
                 <label class="theme-switch" for="checkbox">
                     <input type="checkbox" id="checkbox" />
@@ -58,6 +62,7 @@
         <div class='col col-right x-lrg-col-5 lrg-col-5 med-col-10 sml-col-11'>
           <div class='col-inner'>
             <p>Copyright © {{"now"|date('Y')}} <a href="https://cche.ca/en/" target="_blank">Canadian Centre for Home Education</a>. <br>All Rights Reserved.</p>
+            {% include "menu.twig" with {'items': privacy_menu.get_items} %}
           </div>
         </div>
       </div>
