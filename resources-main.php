@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Education Resources
+ * Template Name: Resources Main
  *
  * Methods for TimberHelper can be found in the /functions sub-directory
  *
@@ -10,8 +10,4 @@
  */
 
 $context = Timber::context();
-
-$field = get_field_object(get_field('tag_field_key'));
-$context['field_options'] = $field;
-
-Timber::render( 'pages/resources.twig', $context );
+Timber::render( 'pages/resources-main.twig', $context );

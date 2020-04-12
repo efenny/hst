@@ -11,7 +11,7 @@
           {{ ui.search('Search method...', 'education-methods-search') }}
            <div class="method-wrappers">
             {% for method in education_methods %}
-              {{ ui.method_card(method, method.slug) }}
+              {{ ui.method_card(method.title, method.thumbnail, method.link, method.excerpt) }}
             {% endfor %}
            </div>
         </div>

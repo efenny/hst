@@ -139,15 +139,15 @@
 {% endmacro %}
 
 {# method_card #}
-{% macro method_card(post, class) %}
+{% macro method_card(title, image, link, excerpt, class) %}
 	<div class="method-card" >
-		<a href="{{ post.link }}" class="method-card-wrapper {{ class }}" >
+		<a href="{{ link }}" class="method-card-wrapper {{ class }}" >
 			<div class="image">
-				<img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}">
+				<img src="{{ TimberImage(image).src }}" alt="{{ TimberImage(image).alt }}">
 			</div>
 			<div class="info">
-				<h3>{{ post.title }}</h3>
-				{% if post.excerpt %}<p>{{ post.excerpt }}</p>{% endif %}
+				<h3>{{ title }}</h3>
+				{% if excerpt %}<p>{{ excerpt }}</p>{% endif %}
 			</div>
 		</a>
 	</div>

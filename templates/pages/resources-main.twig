@@ -1,0 +1,22 @@
+{% extends "base.twig" %}
+{% import 'partial/ui.twig' as ui %}
+
+{% block content %}
+	{% include "partial/row-heading.twig" with {post: page, image: page.thumbnail} %}
+  <section class='row pages-row'>
+    <div class='row-inner'>
+      <div class='col'>
+        <div class='col-inner'>
+          {% for item in page.get_field('pages') %}
+            {% if item.no_page == true %}
+              {{ ui.method_card(item.manual_page_title, item.manual_page_image, item.manual_page_link.url) }}
+            {% else %}
+              {{ ui.method_card(item.page.title, item.page.thumbnail, item.page.link) }}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+  {% include "partial/row-stay-informed.twig" with { form_shortcode: options.form_shortcode } %}
+{% endblock %}  
