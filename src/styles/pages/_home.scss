@@ -277,6 +277,10 @@
     .articles {
       margin-top: calc(-4rem - (1.25rem * 1.4));
 
+      @include breakpoint($laptop-break) {
+        margin-top: calc(-4rem - (1.1rem * 1.4));
+      }
+
       @include breakpoint($tablet-break) {
         width: 100%;
         padding-left: $col-vw;
@@ -336,6 +340,10 @@
       position: relative;
       display: block;
 
+      @include breakpoint($laptop-break) {
+        padding-left: $col-vw/2;
+      }
+
       @include breakpoint($tablet-break) {
         padding-left: 0;
       }
@@ -345,8 +353,20 @@
         padding-bottom: 2rem;
         color: var(--white);
 
+        @include breakpoint($laptop-break) {
+          padding-left: $col-vw/2;
+          font-size: 1.1rem;
+          line-height: 1.4;
+        }
+
         @include breakpoint($tablet-break) {
           padding-left: $col-vw;
+          font-size: 1.25rem;
+          line-height: 1.4;
+        }
+
+        @include breakpoint($mobile-break) {
+          padding-left: 0;
         }
       }
 
@@ -359,6 +379,9 @@
         top: 0;
         position: absolute;
         z-index: -1;
+        @include breakpoint($laptop-break) {
+          height: calc(2.5rem + #{$col-vw});
+        }
 
         @include breakpoint($tablet-break) {
           height: $col-vw * 2;
@@ -420,6 +443,10 @@
 
         .info {
           padding: 2rem;
+
+          @include breakpoint($laptop-break) {
+            padding: 1rem;
+          }
 
           h3 {
             color: var(--p);
