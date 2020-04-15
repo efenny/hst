@@ -183,7 +183,7 @@
           }
 
           @include breakpoint($mobile-break) {
-            font-size: 2.25rem;
+            font-size: 2rem;
           }
           @include breakpoint($mobile-break-sml) {
             font-size: 1.75rem;

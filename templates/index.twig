@@ -11,9 +11,9 @@
 			<div class='col'>
 				<div class='col-inner'>
 					<h1>{{ page.landing_area_title }}</h1>
-					<h5>{{ page.landing_area_text }}</h5>
+					{{ ui.p(page.landing_area_text) }}
 					{% if page.landing_area_main_button %}{{ ui.button(page.landing_area_main_button, 'top') }}{% endif %}
-					{% if page.landing_area_secondary_button %}{{ ui.button(page.landing_area_secondary_button, 'secondary') }}{% endif %}
+					{% if page.landing_area_secondary_button %}{{ ui.button(page.landing_area_secondary_button, 'top') }}{% endif %}
 				</div>
 			</div>
 

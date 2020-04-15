@@ -4,6 +4,42 @@
 {% block content %}
 	{% include "partial/row-heading.twig" with {post: page, image: page.thumbnail} %}
   
+  {# Introduction #}
+  <section class='row introduction'>
+    <div class='row-inner'>
+      <div class='col'>
+        <div class='col-inner'>
+          {{ ui.p(page.introduction) }}
+          <div class="buttons-wrapper" >
+          {% for item in page.get_field('intro_buttons') %}
+            {{ ui.button(item.button, item.class) }} 
+          {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Know your why? #}
+   <section class='row understand-provincial-requirements top-pad-0-5 bottom-pad-0-5  x-lrg-pad-right-1 x-lrg-pad-left-1'>
+     <div class='row-inner center'>
+       <div class='col text x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10  x-lrg-pad-right-1 x-lrg-pad-left-1'>
+         <div class='col-inner'>
+           {{ ui.p(page.know_you_why_text) }}
+           	<div class="buttons-wrapper" >
+            {% for item in page.get_field('know_you_why').buttons %}
+              {{ ui.button(item.button, item.class) }} 
+            {% endfor %}
+            </div>
+         </div>
+       </div>
+       <div class='col image x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10 x-lrg-pad-right-0-5'>
+         <div class='col-inner'>
+           {{ ui.image(page.know_you_why_image) }}
+         </div>
+       </div>
+     </div>
+   </section>
 
   {# Establish your goals #}
   <section class='row establish-your-goals top-pad-0-5 bottom-pad-0-5  x-lrg-pad-right-1 '>
@@ -16,10 +52,17 @@
       <div class='col text x-lrg-col-5 lrg-col-5 med-col-10 sml-col-11 x-lrg-pad-right-1 x-lrg-pad-left-1'>
         <div class='col-inner'>
           {{ ui.p(page.establish_your_goals_text) }}
+          <div class="buttons-wrapper" >
+            {% for item in page.get_field('establish_your_goals').buttons %}
+              {{ ui.button(item.button, item.class) }} 
+            {% endfor %}
+            </div>
         </div>
       </div>
     </div>
   </section>
+
+  
 
   {# Connect with other homeschoolers #}
   <section class='row connect-with-other-homeschoolers top-pad-0-5 x-lrg-pad-right-1 x-lrg-pad-left-1'>
@@ -27,7 +70,11 @@
       <div class='col text x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10 x-lrg-pad-right-1 x-lrg-pad-left-1'>
         <div class='col-inner'>
           {{ ui.p(page.connect_with_other_homeschoolers_text) }}
-          {{ ui.button(page.connect_with_other_homeschoolers_button, 'external') }}
+          <div class="buttons-wrapper" >
+            {% for item in page.get_field('connect_with_other_homeschoolers').buttons %}
+              {{ ui.button(item.button, item.class) }} 
+            {% endfor %}
+            </div>
         </div>
       </div>
       <div class='col image x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10 x-lrg-pad-right-0-5'>
@@ -49,7 +96,11 @@
       <div class='col text x-lrg-col-5 lrg-col-5 med-col-10 sml-col-11 top-pad-1 x-lrg-pad-right-1 x-lrg-pad-left-1'>
         <div class='col-inner'>
           {{ ui.p(page.choose_your_curriculum_text) }}
-          {{ ui.button(page.choose_your_curriculum_button, 'secondary') }}
+          <div class="buttons-wrapper" >
+            {% for item in page.get_field('choose_your_curriculum').buttons %}
+              {{ ui.button(item.button, item.class) }} 
+            {% endfor %}
+            </div>
         </div>
       </div>
     </div>
@@ -61,7 +112,11 @@
       <div class='col text x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10  x-lrg-pad-right-1 x-lrg-pad-left-1'>
         <div class='col-inner'>
           {{ ui.p(page.understand_provincial_requirements_text) }}
-          {{ ui.button(page.understand_provincial_requirements_button, 'external') }} 
+          <div class="buttons-wrapper" >
+            {% for item in page.get_field('understand_provincial_requirements').buttons %}
+              {{ ui.button(item.button, item.class) }} 
+            {% endfor %}
+            </div>
         </div>
       </div>
       <div class='col image x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10 x-lrg-pad-right-0-5'>

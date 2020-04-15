@@ -69,7 +69,7 @@
 {% endmacro %}
 
 {% macro accordion(title, content, tag) %}
-	<div class="accordion" data-tag="{{ tag }}">
+	<div class="accordion" data-tag="{{ tag }}" id="{{ title|slugify }}">
 		<div class="accordion-inner">
 				<button class="title">
 						<div class="title-inner">
