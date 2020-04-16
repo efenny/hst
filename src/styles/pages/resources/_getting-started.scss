@@ -63,10 +63,6 @@
       transform: skewX(-10deg);
 
       @include breakpoint($tablet-break) {
-        width: $col-vw * 1;
-      }
-
-      @include breakpoint($mobile-break) {
         display: none;
       }
     }

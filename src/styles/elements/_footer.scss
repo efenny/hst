@@ -173,6 +173,11 @@ footer {
           display: inline-block;
           position: relative;
 
+          @include breakpoint($tablet-break) {
+            font-size: 1rem;
+            line-height: 1.5;
+          }
+
           @include breakpoint($mobile-break) {
             padding-bottom: 3px;
           }

@@ -63,7 +63,9 @@ $(document).ready(function () {
   );
 
   homepageMenuScroll();
+  // resourcesImageSCroll();
   smooth_scroll();
+  // faqPageHash();
 
   $(".home .stories .articles-wrapper").slick({
     infinite: true,
@@ -118,39 +120,78 @@ $(document).ready(function () {
   });
 });
 
+function faqPageHash() {
+  if ($("body").hasClass("post-type-archive-faq")) {
+    if ($(".accordion" + window.location.hash).length != 0) {
+      console.log("dank");
+      var target = $(".accordion" + window.location.hash);
+
+      $("html, body").animate(
+        {
+          scrollTop: target.offset().top - 120,
+        },
+        1000,
+        function () {}
+      );
+    }
+  }
+}
+
 function search_filters(buttons, itemsWrapper, eleSearched) {
   $(buttons).click(function () {
-    $(buttons).each(function () {
+    if ($(this).hasClass("active")) {
       $(this).removeClass("active");
-    });
 
-    $(this).addClass("active");
-
-    var $filter = $(this).attr("id");
-
-    var searchedItems = $(this)
-      .closest(itemsWrapper)
-      .find(eleSearched)
-      .filter(function () {
-        $(this)
-          .closest(itemsWrapper + " " + eleSearched)
-          .toggle($(this).attr("data-tag").indexOf($filter) > -1);
-        return (
+      var searchedItems = $(this)
+        .closest(itemsWrapper)
+        .find(eleSearched)
+        .filter(function () {
           $(this)
             .closest(itemsWrapper + " " + eleSearched)
-            .attr("data-tag")
-            .indexOf($filter) > -1
-        );
+            .toggle($(this).attr("data-tag").indexOf("") > -1);
+          return (
+            $(this)
+              .closest(itemsWrapper + " " + eleSearched)
+              .attr("data-tag")
+              .indexOf("") > -1
+          );
+        });
+
+      return;
+    } else {
+      $(buttons).each(function () {
+        $(this).removeClass("active");
       });
 
-    if (searchedItems.length <= 0 && $(".no-items-found").length <= 0) {
-      $(this)
-        .closest(itemsWrapper)
-        .append('<h3 class="no-items-found" >No items found</h3>');
-    }
+      $(this).addClass("active");
 
-    if (searchedItems.length > 0) {
-      $(this).closest(itemsWrapper).find(".no-items-found").remove();
+      var $filter = $(this).attr("id");
+
+      var searchedItems = $(this)
+        .closest(itemsWrapper)
+        .find(eleSearched)
+        .filter(function () {
+          $(this)
+            .closest(itemsWrapper + " " + eleSearched)
+            .toggle($(this).attr("data-tag").indexOf($filter) > -1);
+          return (
+            $(this)
+              .closest(itemsWrapper + " " + eleSearched)
+              .attr("data-tag")
+              .indexOf($filter) > -1
+          );
+        });
+
+      if (searchedItems.length <= 0 && $(".no-items-found").length <= 0) {
+        $(this)
+          .closest(itemsWrapper)
+          .append('<h3 class="no-items-found" >No items found</h3>');
+      }
+
+      if (searchedItems.length > 0) {
+        $(this).closest(itemsWrapper).find(".no-items-found").remove();
+      }
+      return;
     }
   });
 
@@ -171,9 +212,30 @@ function homepageMenuScroll() {
   if ($("body").hasClass("home")) {
     var controller = new ScrollMagic.Controller({});
 
-    new ScrollMagic.Scene({ triggerElement: ".splash-inner .button" })
+    var scene = new ScrollMagic.Scene({
+      triggerElement: ".splash-inner .button",
+    })
       .setClassToggle("header", "active")
       .addTo(controller);
+  }
+}
+
+function resourcesImageSCroll() {
+  if ($("body").hasClass("page-template-resources")) {
+    $(window).on("load resize orientationchange", function () {
+      var controller = new ScrollMagic.Controller({});
+      if ($(window).width() > 1025) {
+        var scene = new ScrollMagic.Scene({
+          triggerElement: ".main-row .img-wrapper",
+          duration:
+            $(".col.text").outerHeight() -
+            $(".main-row .img-wrapper").outerHeight(),
+        })
+          .setPin(".main-row .img-wrapper")
+          .triggerHook(0.15)
+          .addTo(controller);
+      }
+    });
   }
 }
 
@@ -328,6 +390,20 @@ function smooth_scroll() {
           this.pathname.replace(/^\//, "") &&
         location.hostname == this.hostname
       ) {
+        if ($("body").hasClass("post-type-archive-faq")) {
+          $(".accordion").filter(function () {
+            $(this)
+              .closest(".search-wrapper .accordion")
+              .toggle($(this).attr("data-tag").indexOf("") > -1);
+            return (
+              $(this)
+                .closest(".search-wrapper .accordion")
+                .attr("data-tag")
+                .indexOf("") > -1
+            );
+          });
+        }
+
         // Figure out element to scroll to
         var target = $(this.hash);
         target = target.length

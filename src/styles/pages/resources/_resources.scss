@@ -61,7 +61,7 @@
           padding-right: 0;
         }
 
-        .text-wrapper {
+        > .col-inner > .text-wrapper {
           margin-bottom: 2rem;
           width: $col-vw * 4;
 
@@ -71,7 +71,6 @@
 
           @include breakpoint($tablet-break) {
             width: $col-vw * 8;
-            margin-left: $col-vw;
           }
 
           @include breakpoint($mobile-break) {

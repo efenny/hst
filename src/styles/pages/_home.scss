@@ -182,6 +182,10 @@
             font-size: 2.75rem;
           }
 
+          @include breakpoint($tablet-break) {
+            font-size: 2.5rem;
+          }
+
           @include breakpoint($mobile-break) {
             font-size: 2rem;
           }
