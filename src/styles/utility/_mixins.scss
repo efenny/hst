@@ -16,6 +16,23 @@ MEDIA QUERY (MQ)
   }
 }
 
+@mixin button-wrapper {
+  .buttons-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    .button {
+      margin-top: 1.15rem !important;
+
+      &:first-child {
+        margin-top: 2rem !important;
+      }
+    }
+  }
+}
+
 @mixin box-shadow {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }

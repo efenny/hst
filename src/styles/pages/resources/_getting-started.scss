@@ -1,18 +1,5 @@
 .page-template-getting-started {
-  .buttons-wrapper {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-
-    .button {
-      margin-top: 1.15rem !important;
-
-      &:first-child {
-        margin-top: 2rem !important;
-      }
-    }
-  }
+  @include button-wrapper;
   .introduction {
     background: var(--gray);
     padding-top: $col-vw/2;

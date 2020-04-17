@@ -64,6 +64,7 @@ $(document).ready(function () {
 
   homepageMenuScroll();
   // resourcesImageSCroll();
+  alreadyStartedImageSCroll();
   smooth_scroll();
   // faqPageHash();
 
@@ -233,6 +234,24 @@ function resourcesImageSCroll() {
         })
           .setPin(".main-row .img-wrapper")
           .triggerHook(0.15)
+          .addTo(controller);
+      }
+    });
+  }
+}
+
+function alreadyStartedImageSCroll() {
+  if ($("body").hasClass("page-template-already-started")) {
+    $(window).on("load resize orientationchange", function () {
+      var controller = new ScrollMagic.Controller({});
+      if ($(window).width() > 1025) {
+        var $ele = ".organizations .img-wrapper";
+        var scene = new ScrollMagic.Scene({
+          triggerElement: $ele,
+          duration: $(".orgs").outerHeight() - $($ele).outerHeight(),
+        })
+          .setPin($ele)
+          .triggerHook(0.175)
           .addTo(controller);
       }
     });
