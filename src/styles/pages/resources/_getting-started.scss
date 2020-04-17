@@ -37,13 +37,39 @@
       padding-right: $col-vw;
     }
 
-    .col {
-      width: 50%;
-      padding-right: $col-vw;
+    .row-inner {
+      align-items: center;
 
       @include breakpoint($tablet-break) {
-        width: 100%;
-        padding-right: 0;
+        flex-direction: column-reverse;
+      }
+    }
+
+    .col {
+      &.image {
+        width: $col-vw * 4;
+        padding-right: $col-vw;
+
+        @include breakpoint($laptop-break) {
+          width: $col-vw * 5;
+        }
+
+        @include breakpoint($tablet-break) {
+          width: 100%;
+          padding-right: 0;
+          padding-top: $col-vw;
+        }
+      }
+      &.text {
+        width: $col-vw * 3;
+
+        @include breakpoint($laptop-break) {
+          width: $col-vw * 4;
+        }
+
+        @include breakpoint($tablet-break) {
+          width: 100%;
+        }
       }
     }
   }

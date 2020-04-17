@@ -7,7 +7,12 @@
   {# Introduction #}
   <section class='row introduction'>
     <div class='row-inner'>
-      <div class='col'>
+    <div class='col image'>
+         <div class='col-inner'>
+           {{ ui.image(page.intro_image) }}
+         </div>
+       </div>
+      <div class='col text'>
         <div class='col-inner'>
           {{ ui.p(page.introduction) }}
           <div class="buttons-wrapper" >
