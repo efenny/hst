@@ -41,7 +41,7 @@
      </div>
    </section>
 
-  {# Establish your goals #}
+  {# Wehen to start #}
   <section class='row establish-your-goals top-pad-0-5 bottom-pad-0-5  x-lrg-pad-right-1 '>
     <div class='row-inner center  '>
      <div class='col image x-lrg-col-6 lrg-col-5 med-col-10 sml-col-11'>
@@ -69,17 +69,20 @@
     <div class='row-inner'>
       <div class='col text x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10 x-lrg-pad-right-1 x-lrg-pad-left-1'>
         <div class='col-inner'>
-          {{ ui.p(page.connect_with_other_homeschoolers_text) }}
+
+        {{ ui.p(page.understand_provincial_requirements_text) }}
           <div class="buttons-wrapper" >
-            {% for item in page.get_field('connect_with_other_homeschoolers').buttons %}
+            {% for item in page.get_field('understand_provincial_requirements').buttons %}
               {{ ui.button(item.button, item.class) }} 
             {% endfor %}
             </div>
+
+            
         </div>
       </div>
       <div class='col image x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10 x-lrg-pad-right-0-5'>
         <div class='col-inner'>
-          {{ ui.image(page.connect_with_other_homeschoolers_image) }}
+         {{ ui.image(page.understand_provincial_requirements_image) }}
         </div>
       </div>
     </div>
@@ -90,17 +93,17 @@
     <div class='row-inner'>
       <div class='col image x-lrg-col-5 lrg-col-5 med-col-10 sml-col-11'>
         <div class='col-inner'>
-          {{ ui.image(page.choose_your_curriculum_image) }}
+          {{ ui.image(page.connect_with_other_homeschoolers_image) }}
         </div>
       </div>
       <div class='col text x-lrg-col-5 lrg-col-5 med-col-10 sml-col-11 top-pad-1 x-lrg-pad-right-1 x-lrg-pad-left-1'>
         <div class='col-inner'>
-          {{ ui.p(page.choose_your_curriculum_text) }}
+        {{ ui.p(page.connect_with_other_homeschoolers_text) }}
           <div class="buttons-wrapper" >
-            {% for item in page.get_field('choose_your_curriculum').buttons %}
+            {% for item in page.get_field('connect_with_other_homeschoolers').buttons %}
               {{ ui.button(item.button, item.class) }} 
             {% endfor %}
-            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -111,9 +114,9 @@
     <div class='row-inner center'>
       <div class='col text x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10  x-lrg-pad-right-1 x-lrg-pad-left-1'>
         <div class='col-inner'>
-          {{ ui.p(page.understand_provincial_requirements_text) }}
+          {{ ui.p(page.choose_your_curriculum_text) }}
           <div class="buttons-wrapper" >
-            {% for item in page.get_field('understand_provincial_requirements').buttons %}
+            {% for item in page.get_field('choose_your_curriculum').buttons %}
               {{ ui.button(item.button, item.class) }} 
             {% endfor %}
             </div>
@@ -121,8 +124,7 @@
       </div>
       <div class='col image x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10 x-lrg-pad-right-0-5'>
         <div class='col-inner'>
-          {{ ui.image(page.understand_provincial_requirements_image) }}
-          
+          {{ ui.image(page.choose_your_curriculum_image) }}
         </div>
       </div>
     </div>

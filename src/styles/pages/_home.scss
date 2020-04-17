@@ -187,10 +187,11 @@
           }
 
           @include breakpoint($mobile-break) {
-            font-size: 2rem;
+            font-size: 1.95rem;
+            margin-bottom: 1rem;
           }
           @include breakpoint($mobile-break-sml) {
-            font-size: 1.75rem;
+            font-size: 1.65rem;
           }
 
           span {
@@ -371,6 +372,7 @@
 
         @include breakpoint($mobile-break) {
           padding-left: 0;
+          max-width: 17rem;
         }
       }
 

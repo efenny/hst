@@ -415,7 +415,7 @@ function smooth_scroll() {
           event.preventDefault();
           $("html, body").animate(
             {
-              scrollTop: target.offset().top - 100,
+              scrollTop: target.offset().top - 120,
             },
             1000,
             function () {

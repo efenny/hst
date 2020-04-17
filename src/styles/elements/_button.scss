@@ -18,6 +18,11 @@
   border: none !important !important;
   cursor: pointer;
 
+  @include breakpoint($mobile-break) {
+    font-size: 0.9rem !important;
+    padding: 0.625em 1em !important;
+  }
+
   &:hover {
     background: var(--highlight-green);
   }
