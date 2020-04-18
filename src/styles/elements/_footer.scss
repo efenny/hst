@@ -96,7 +96,7 @@ footer {
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
-            height: 22.5rem;
+            height: 24.5rem;
 
             @include breakpoint($mobile-break) {
               height: auto;

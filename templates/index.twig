@@ -5,7 +5,10 @@
 {# splash page #}
 	<section class='splash row heading'>
 		<div class='video-wrapper'>
-			<iframe width="560" height="315" src="{{ page.landing_area_video_url }}" frameborder="0" allow="autoplay; encrypted-media;"></iframe>
+			{{ ui.image(page.landing_area_video_cover_image, 'video-cover') }}
+			<div id="landing-video" data-youtube="{{ page.landing_area_video_url }}">
+			</div>
+			{# <iframe width="560" height="315" src="{{ page.landing_area_video_url }}" frameborder="0" allow="autoplay; encrypted-media;"></iframe> #}
 		</div>
 		<div class='splash-inner'>
 			<div class='col'>

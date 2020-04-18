@@ -152,40 +152,39 @@
       }
     }
   }
-}
-
-.still-have-questions {
-  position: relative;
-  margin-bottom: $col-vw/2;
-
-  @include breakpoint($tablet-break) {
-    margin-bottom: $col-vw;
-  }
-
-  &::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background: var(--gray);
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -1;
-  }
-
-  &::after {
-    content: "";
-    width: 100%;
-    height: $col-vw;
-    background: var(--blue);
-    position: absolute;
-    left: 0;
-    bottom: -$col-vw/2;
-    z-index: -1;
+  .still-have-questions {
+    position: relative;
+    margin-bottom: $col-vw/2;
 
     @include breakpoint($tablet-break) {
-      height: $col-vw * 2;
-      bottom: -$col-vw;
+      margin-bottom: $col-vw;
+    }
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: var(--gray);
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+    }
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: $col-vw;
+      background: var(--blue);
+      position: absolute;
+      left: 0;
+      bottom: -$col-vw/2;
+      z-index: -1;
+
+      @include breakpoint($tablet-break) {
+        height: $col-vw * 2;
+        bottom: -$col-vw;
+      }
     }
   }
 }

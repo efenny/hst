@@ -113,6 +113,12 @@
           left: 1rem;
         }
 
+        iframe {
+          @include breakpoint($tablet-break) {
+            width: 100%;
+          }
+        }
+
         a[target="_blank"] {
           font-size: 1rem !important;
           line-height: 1.25em !important;

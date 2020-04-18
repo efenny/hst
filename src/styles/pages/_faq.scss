@@ -17,11 +17,11 @@
 
     &::before {
       content: "";
-      width: $col-vw * 6.5;
-      height: 100%;
+      width: $col-vw * 10;
+      height: calc(100% + #{$col-vw * 2});
       background: var(--white);
       position: absolute;
-      left: -$col-vw;
+      right: $col-vw * 4;
       top: 0;
       transform: skewX(-10deg);
 
