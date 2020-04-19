@@ -91,10 +91,25 @@
         padding-right: 0;
       }
 
+      sup {
+        font-size: 0.5em;
+      }
+
       .points-to-consider,
       .strengths {
         margin-bottom: 2rem;
       }
+    }
+  }
+
+  .footnote {
+    padding: 0 $col-vw;
+    padding-top: 1.5rem;
+    max-width: calc(#{$col-vw * 2} + 25rem);
+
+    p {
+      font-size: 0.7rem;
+      line-height: 1.2;
     }
   }
 }

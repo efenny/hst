@@ -286,9 +286,18 @@ function searchDropDown() {
 function accordionsInit() {
   function accordionFunc(ele) {
     $(ele + " " + ele + "-inner > .title").click(function (e) {
-      $(this).closest(ele).toggleClass("active");
-      $(this).toggleClass("active");
-      $(this).siblings().slideToggle();
+      var activeClass = $(this).hasClass("active");
+      $(ele).each(function () {
+        $(this).removeClass("active");
+        $(this).find(".title").removeClass("active");
+        $(this).find(".title").siblings().slideUp();
+      });
+
+      if (!activeClass) {
+        $(this).closest(ele).toggleClass("active");
+        $(this).toggleClass("active");
+        $(this).siblings().slideToggle();
+      }
 
       e.stopPropagation();
     });
