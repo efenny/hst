@@ -161,6 +161,15 @@
 @include dark-mode {
   .side-tab {
     .side-tab-inner {
+      .side-tab-nav {
+        &::after {
+          background-image: linear-gradient(
+            to right,
+            transparentize($darkModeBlack, 1),
+            var(--white)
+          );
+        }
+      }
       .side-tab-bodies {
         .side-tab-body {
           background: $darkModeMedGray;
