@@ -119,47 +119,47 @@
           }
         }
 
-        a[target="_blank"] {
-          font-size: 1rem !important;
-          line-height: 1.25em !important;
-          border: none !important;
-          display: inline-block !important;
-          font-family: $sans-serif !important;
-          font-weight: 700 !important;
-          border-radius: 5px !important;
-          @include box-shadow-dark-hover;
-          margin-top: 0 !important;
-          border: none !important !important;
-          cursor: pointer;
-          padding: 0 !important;
-          background: transparent !important;
-          box-shadow: none !important;
-          color: var(--p) !important;
-          text-transform: none !important;
-          text-decoration: none !important;
-          letter-spacing: initial !important;
+        // a[target="_blank"] {
+        //   font-size: 1rem !important;
+        //   line-height: 1.25em !important;
+        //   border: none !important;
+        //   display: inline-block !important;
+        //   font-family: $sans-serif !important;
+        //   font-weight: 700 !important;
+        //   border-radius: 5px !important;
+        //   @include box-shadow-dark-hover;
+        //   margin-top: 0 !important;
+        //   border: none !important !important;
+        //   cursor: pointer;
+        //   padding: 0 !important;
+        //   background: transparent !important;
+        //   box-shadow: none !important;
+        //   color: var(--p) !important;
+        //   text-transform: none !important;
+        //   text-decoration: none !important;
+        //   letter-spacing: initial !important;
 
-          span {
-            font-weight: 700 !important;
-          }
+        //   span {
+        //     font-weight: 700 !important;
+        //   }
 
-          &:hover {
-            opacity: 0.9;
-          }
+        //   &:hover {
+        //     opacity: 0.9;
+        //   }
 
-          &::after {
-            content: "";
-            width: 1em;
-            height: 1em;
-            display: inline-block;
-            background-image: url("/hst/wp-content/themes/homeschooltoday/static/HST-external.svg");
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            margin-left: 0.5rem;
-            margin-bottom: -0.1em;
-          }
-        }
+        //   &::after {
+        //     content: "";
+        //     width: 1em;
+        //     height: 1em;
+        //     display: inline-block;
+        //     background-image: url("/hst/wp-content/themes/homeschooltoday/static/HST-external.svg");
+        //     background-size: contain;
+        //     background-position: center;
+        //     background-repeat: no-repeat;
+        //     margin-left: 0.5rem;
+        //     margin-bottom: -0.1em;
+        //   }
+        // }
       }
     }
   }
