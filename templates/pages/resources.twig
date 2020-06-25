@@ -40,12 +40,19 @@
                       <div class="side-tab-body" id="{{ item.type_name|slugify }}">
                         <div class="side-tab-body-inner" >
                           <ul class="items-wrapper">
-                          {% for list_item in item.resource %}
-                            <li class="item">
-                              <h4 class="title">{% if list_item.link %}<a href="{{ list_item.link.url }}" target="_blank">{% endif %}{{ list_item.title }}{% if list_item.link %}</a>{% endif %}</h4>
-                              {{ ui.p(list_item.content )}}
-                            </li>
-                          {% endfor %}
+                          {% if item.alphabetize %}
+                         
+                            {% for list_item in item.resource|sort %}
+                              {{ ui.item(list_item) }}
+                            {% endfor %}
+
+                          {% else %}
+
+                            {% for list_item in item.resource %}
+                              {{ ui.item(list_item) }}
+                            {% endfor %}
+                          
+                          {% endif %}
                           </ul>
                         </div>
                       </div>

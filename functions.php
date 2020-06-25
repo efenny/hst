@@ -175,7 +175,6 @@ class StarterSite extends Timber\Site {
 	} ) );
 		return $twig;
 	}
-
 }
 
 new StarterSite();

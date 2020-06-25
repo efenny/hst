@@ -152,3 +152,10 @@
 		</a>
 	</div>
 {% endmacro %}
+
+{% macro item(piece) %}
+  <li class="item">
+    <h4 class="title">{% if piece.link %}<a href="{{ piece.link.url }}" target="_blank">{% endif %}{{ piece.title }}{% if piece.link %}</a>{% endif %}</h4>
+		<div class="text-wrapper" >{{ piece.content|wpautop }}</div>
+  </li>
+{% endmacro %}
