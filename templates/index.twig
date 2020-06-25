@@ -116,7 +116,7 @@
 
 	
 	{# Homeschooling success story #}
-	<section class='row what-is-homeschooling bottom-pad-0-5'>
+	{# <section class='row what-is-homeschooling bottom-pad-0-5'>
 		<div class='row-inner'>
 			<div class='col image x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
 				<div class='col-inner'>
@@ -125,8 +125,27 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> #}
 
+	{# Education Methods #}
+	<section class='row education-methods'>
+		<div class='row-inner'>
+			
+			<div class='col image x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10' style="background-image:url('{{ TimberImage(page.education_methods_image).src }}');">
+				<div class='col-inner'>
+				</div>
+			</div>
+
+			<div class='col text x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+				<div class='col-inner'>
+					{{ ui.p(page.education_methods_text) }}
+					{{ ui.button(page.education_methods_main_button) }}
+				</div>
+			</div>
+
+			
+		</div>
+	</section>
 
 	{# Resources #}
 	<section class='row resources'>
@@ -152,21 +171,6 @@
 		</div>
 	</section>
 
-	{# Education Methods #}
-	<section class='row education-methods'>
-		<div class='row-inner'>
-			<div class='col text x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
-				<div class='col-inner'>
-					{{ ui.p(page.education_methods_text) }}
-					{{ ui.button(page.education_methods_main_button) }}
-				</div>
-			</div>
-			<div class='col image x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10' style="background-image:url('{{ TimberImage(page.education_methods_image).src }}');">
-				<div class='col-inner'>
-				</div>
-			</div>
-		</div>
-	</section>
 
 	{# Stories row #}
 	<section class='row stories'>
