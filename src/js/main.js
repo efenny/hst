@@ -265,7 +265,15 @@ function mobileMenu() {
     $(".menu-search-wrapper").toggleClass("active");
   });
 
-  $(".menu-item-has-children").click(function () {
+  $(window).on("load resize orientationchange", function () {
+    if ($(window).width() <= 1024) {
+      $("header").addClass("mobile");
+    } else {
+      $("header").removeClass("mobile");
+    }
+  });
+
+  $("header.mobile .menu-item-has-children").click(function () {
     $(this).find("nav").slideToggle();
     $(this).toggleClass("menu-active");
   });
