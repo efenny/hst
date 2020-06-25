@@ -29,6 +29,10 @@
         > ul > li > a {
           color: var(--white);
 
+          &::before {
+            background: var(--white);
+          }
+
           @include breakpoint($tablet-break) {
             color: var(--p);
           }
@@ -55,6 +59,9 @@
         > .main-menu {
           > ul > li > a {
             color: var(--p);
+            &::before {
+              background: var(--blue);
+            }
           }
         }
       }
