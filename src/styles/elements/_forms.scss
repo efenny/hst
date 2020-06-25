@@ -172,7 +172,8 @@
       padding: 0;
       margin: 0;
       border: none;
-      justify-content: flex-end;
+      flex-direction: column;
+      align-items: flex-end;
 
       #submit_button {
         @include button;
