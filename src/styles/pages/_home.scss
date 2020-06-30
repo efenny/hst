@@ -470,8 +470,13 @@
           position: relative;
 
           @include breakpoint($laptop-break) {
-            height: $col-vw * 1.75;
+            height: $col-vw * 2;
           }
+
+          @include breakpoint($laptop-break-sml) {
+            height: $col-vw * 2.5;
+          }
+
           @include breakpoint($tablet-break) {
             height: $col-vw * 3.5;
           }
