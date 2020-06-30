@@ -44,6 +44,14 @@ footer {
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
+
+        @include breakpoint($tablet-break) {
+          align-items: center;
+
+          .main-menu {
+            width: 100%;
+          }
+        }
       }
     }
 
