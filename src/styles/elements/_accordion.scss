@@ -21,7 +21,7 @@
     width: 100%;
     background: var(--white);
     border-radius: 5px;
-    @include box-shadow-dark-hover;
+    @include box-shadow-light-hover;
 
     .icon {
       transition: $transition;

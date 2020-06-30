@@ -38,41 +38,30 @@
 	{# latest news and send me info #}
 	<section id="info" class='row latest-news-row'>
 		<div class='row-inner'>
-			<div class='col articles x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
+			<div class='col articles  med-col-10 sml-col-10'>
 				<div class='col-inner'>
 					<a href="#faqs" class="tagline">
 						{{ ui.h3(site.description) }}
 						{{ ui.image(page.top_homeschool_questions_image) }}
 					</a>
-					<div class="latest-news-wrapper">
-						{% for post in page.get_field('news') %}
-							<article class="latest-news">
-								<a href="{{ post.external_link }}" target="_blank" class="latest-news-inner">
-									<div class="image">
-										{{ ui.image(post.thumbnail) }}
-									</div>
-									<div class="info">
-										<h3>{{ post.title }}</h3>
-										{{ ui.p(post.date, 'date') }}
-									</div>
-								</a>
-							</article>
-						{% endfor %}
+
+					<div id="faqs" class="faq-wrapper">
+						{{ ui.h2(page.get_field('top_homeschool_questions').faqs|length ~ page.top_homeschool_questions_title) }}
+						<div class="accordion-wrapper">
+							{% for question in page.get_field('top_homeschool_questions').faqs %}
+								{{ ui.accordion(question.title, question.content) }}
+							{% endfor %}
+						</div>
+						{{ ui.button(page.top_homeschool_questions_main_button) }}
 					</div>
 				</div>
 			</div>
-			<div id="faqs" class='col form x-lrg-col-6 lrg-col-6 med-col-10 sml-col-10'>
+			<div class='col form  med-col-10 sml-col-10'>
 				<div class='col-inner'>
-					{{ ui.h2(page.get_field('top_homeschool_questions').faqs|length ~ page.top_homeschool_questions_title) }}
-					<div class="accordion-wrapper">
-						{% for question in page.get_field('top_homeschool_questions').faqs %}
-							{{ ui.accordion(question.title, question.content) }}
-						{% endfor %}
-					</div>
-					{{ ui.button(page.top_homeschool_questions_main_button) }}
+					
 
 					<div class="latest-news-wrapper">
-						{% for post in page.get_field('news') %}
+						{% for post in page.get_field('news')|slice(0,3) %}
 							<article class="latest-news">
 								<a href="{{ post.external_link }}" target="_blank" class="latest-news-inner">
 									<div class="image">
@@ -113,19 +102,6 @@
 			</div>
 		</div>
 	</section>
-
-	
-	{# Homeschooling success story #}
-	{# <section class='row what-is-homeschooling bottom-pad-0-5'>
-		<div class='row-inner'>
-			<div class='col image x-lrg-col-5 lrg-col-5 med-col-10 sml-col-10'>
-				<div class='col-inner'>
-					{{ ui.h2(page.new_to_homeschooling_title) }}
-					{{ page.new_to_homeschooling_video_markup }}
-				</div>
-			</div>
-		</div>
-	</section> #}
 
 	{# Education Methods #}
 	<section class='row education-methods'>
