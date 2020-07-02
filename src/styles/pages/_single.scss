@@ -1,9 +1,9 @@
 .article-content {
   margin-top: 100px;
-  padding: $col-vw $col-vw * 3;
+  padding: $col-vw/2 $col-vw * 3 $col-vw;
 
   @include breakpoint($laptop-break) {
-    padding: $col-vw $col-vw * 2;
+    padding: $col-vw/2 $col-vw * 2 $col-vw;
   }
 
   @include breakpoint($mobile-break) {
