@@ -118,6 +118,11 @@ footer {
             }
 
             > li {
+              margin-right: 1.25rem;
+
+              @include breakpoint($tablet-break) {
+                margin-right: 0;
+              }
               &:nth-child(2) {
                 margin-bottom: 0;
 
