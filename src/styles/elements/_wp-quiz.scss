@@ -47,6 +47,10 @@
 
     p {
       margin-bottom: 1rem;
+
+      img {
+        margin-bottom: 0 !important;
+      }
     }
 
     .wq-result-quiz-title {
@@ -59,6 +63,10 @@
     .gform_wrapper {
       margin: 0;
       margin-top: 2rem;
+
+      span.gform_description {
+        font-weight: 600;
+      }
     }
     .gform_footer {
       align-items: flex-start;
