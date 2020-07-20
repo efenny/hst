@@ -1,0 +1,55 @@
+.wq-quiz.personality_quiz {
+  .wq-question {
+    margin-bottom: $col-vw / 2;
+
+    @include breakpoint($tablet-break) {
+      margin-bottom: $col-vw;
+    }
+
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+    .wq_questionMediaCtr {
+      display: none;
+    }
+
+    .wq_questionTextCtr {
+      background-color: transparent !important;
+      padding: 0 !important;
+      margin-bottom: 1rem;
+
+      h4 {
+        font: $h4;
+      }
+    }
+
+    .wq_answersWrapper {
+      .wq_singleAnswerCtr {
+        padding: 0;
+        background-color: transparent !important;
+        border: none;
+
+        label {
+          &::before,
+          &::after {
+            border-color: var(--green);
+          }
+        }
+      }
+    }
+  }
+
+  .wq-results {
+    padding: 0;
+    background-color: transparent !important;
+    border: none;
+
+    .wq-result-quiz-title {
+      display: none;
+    }
+
+    .wq-result-title {
+      font: $h3;
+    }
+  }
+}
