@@ -107,6 +107,14 @@ p {
     &:last-child {
       margin-bottom: 0;
     }
+
+    &.gform_fields {
+      li {
+        &::before {
+          display: none !important;
+        }
+      }
+    }
     li {
       margin-bottom: 0.25em;
 
