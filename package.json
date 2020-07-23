@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "gulp",
-    "build": "node build.js"
+    "build": "gulp build; node build.js"
   },
   "author": "Erik Freundorfer",
   "license": "ISC",
