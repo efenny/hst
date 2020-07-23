@@ -14,21 +14,21 @@ var scssSource = ["src/styles/main.scss"],
   javascriptSource = ["src/js/**/*.js"],
   javascriptWatch = ["src/js/**/*.js"];
 
-gulp.task("sass", function() {
+gulp.task("sass", function () {
   return gulp
     .src(scssWatch)
     .pipe(sourcemaps.init())
     .pipe(
       sass({
-        outputStyle: "compressed"
+        outputStyle: "compressed",
       })
     )
     .pipe(postcss([flexibility]))
     .pipe(
       postcss([
         autoprefixer({
-          cascade: true
-        })
+          cascade: true,
+        }),
       ])
     )
     .pipe(sass().on("error", sass.logError))
@@ -36,12 +36,12 @@ gulp.task("sass", function() {
     .pipe(gulp.dest("dist/css"));
 });
 
-gulp.task("js", function() {
+gulp.task("js", function () {
   return gulp
     .src(javascriptSource)
     .pipe(
       babel({
-        presets: ["@babel/env"]
+        presets: ["@babel/env"],
       })
     )
     .pipe(concat("main.min.js"))
@@ -49,10 +49,11 @@ gulp.task("js", function() {
     .pipe(gulp.dest("dist/js"));
 });
 
-gulp.task("watch", function(done) {
+gulp.task("watch", function (done) {
   gulp.watch(scssWatch, gulp.parallel("sass"));
   gulp.watch(javascriptWatch, gulp.parallel("js"));
   done();
 });
 
 gulp.task("default", gulp.series("sass", "js", "watch"));
+gulp.task("build", gulp.series("sass", "js"));
