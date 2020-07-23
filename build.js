@@ -1,6 +1,23 @@
 const copydir = require("copy-dir");
 const { exec } = require("child_process");
-const name = "homeschooltoday-archive";
+const copyName = "themeCopy";
+
+function zip_the_dir(name) {
+  exec(
+    `cd .. && zip -r ${name}.zip ${name} && rm -rf ${name} && mv "${name}.zip" "${__dirname}.zip"`,
+    (error, stdout, stderr) => {
+      if (error) {
+        console.log(`error: ${error.message}`);
+        return;
+      }
+      if (stderr) {
+        console.log(`stderr: ${stderr}`);
+        return;
+      }
+      console.log(`stdout: ${stdout}`);
+    }
+  );
+}
 
 function copy_the_dir(name) {
   copydir(
@@ -22,35 +39,9 @@ function copy_the_dir(name) {
     function (err) {
       if (err) throw err;
       console.log("done");
+      zip_the_dir(name);
     }
   );
 }
 
-function zip_the_dir(name) {
-  exec(`cd .. zip -r ${name}.zip ${name}`, (error, stdout, stderr) => {
-    if (error) {
-      console.log(`error: ${error.message}`);
-      return;
-    }
-    if (stderr) {
-      console.log(`stderr: ${stderr}`);
-      return;
-    }
-    console.log(`stdout: ${stdout}`);
-  });
-
-  exec(`rmdir ${name}`, (error, stdout, stderr) => {
-    if (error) {
-      console.log(`error: ${error.message}`);
-      return;
-    }
-    if (stderr) {
-      console.log(`stderr: ${stderr}`);
-      return;
-    }
-    console.log(`stdout: ${stdout}`);
-  });
-}
-
-copy_the_dir(name);
-zip_the_dir(name);
+copy_the_dir(copyName);
