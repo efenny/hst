@@ -1,6 +1,6 @@
 const copydir = require("copy-dir");
 const { exec } = require("child_process");
-const copyName = "themeCopy";
+const copyName = "homeschooltoday-theme";
 
 function zip_the_dir(name) {
   exec(
