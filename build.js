@@ -1,20 +1,22 @@
 const copydir = require("copy-dir");
 const { exec } = require("child_process");
 const copyName = "homeschooltoday-theme";
+const chalk = require("chalk");
 
 function zip_the_dir(name) {
   exec(
     `cd .. && zip -r ${name}.zip ${name} && rm -rf ${name} && mv "${name}.zip" "${__dirname}.zip"`,
     (error, stdout, stderr) => {
       if (error) {
-        console.log(`error: ${error.message}`);
+        console.log(chalk.bgRed(`error: ${error.message}`));
         return;
       }
       if (stderr) {
-        console.log(`stderr: ${stderr}`);
+        console.log(chalk.green(`stderr: ${stderr}`));
         return;
       }
       console.log(`stdout: ${stdout}`);
+      console.log(chalk.green("Done zipping"));
     }
   );
 }
@@ -38,7 +40,7 @@ function copy_the_dir(name) {
     },
     function (err) {
       if (err) throw err;
-      console.log("done");
+      console.log(chalk.green("Done copy"));
       zip_the_dir(name);
     }
   );
